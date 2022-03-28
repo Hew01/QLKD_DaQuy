@@ -33,10 +33,10 @@
             this.ButtonExit = new System.Windows.Forms.Button();
             this.ButtonLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,20 +78,21 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txbPassword);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(1, 70);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(490, 63);
             this.panel3.TabIndex = 1;
             // 
-            // textBox2
+            // txbPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(304, 27);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txbPassword.Location = new System.Drawing.Point(129, 21);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.Size = new System.Drawing.Size(304, 27);
+            this.txbPassword.TabIndex = 1;
+            this.txbPassword.UseSystemPasswordChar = true;
+            this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPassword_KeyDown);
             // 
             // label2
             // 
@@ -105,19 +106,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txbUsername);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(490, 65);
             this.panel2.TabIndex = 0;
             // 
-            // textBox1
+            // txbUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 27);
-            this.textBox1.TabIndex = 1;
+            this.txbUsername.Location = new System.Drawing.Point(129, 21);
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.Size = new System.Drawing.Size(304, 27);
+            this.txbUsername.TabIndex = 1;
+            this.txbUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbUsername_KeyDown);
             // 
             // label1
             // 
@@ -156,10 +158,10 @@
 
         private Panel panel1;
         private Panel panel3;
-        private TextBox textBox2;
+        private TextBox txbPassword;
         private Label label2;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox txbUsername;
         private Label label1;
         private Button ButtonExit;
         private Button ButtonLogin;

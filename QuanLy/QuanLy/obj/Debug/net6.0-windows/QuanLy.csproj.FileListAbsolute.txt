@@ -23,3 +23,28 @@ E:\Winforms Tu hoc\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormDichVu.reso
 E:\Winforms Tu hoc\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormBaoCaoTonKho.resources
 E:\Winforms Tu hoc\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormDanhSachPhieuDichVu.resources
 E:\Winforms Tu hoc\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormThongTinTaiKhoan.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.csproj.AssemblyReference.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormBanHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormBaoCaoTonKho.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormDanhSachPhieuDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormLogin.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormManager.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormMuaHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.FormThongTinTaiKhoan.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.Properties.Resources.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.csproj.GenerateResource.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.AssemblyInfoInputs.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.AssemblyInfo.cs
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\ref\QuanLy.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\QuanLy.exe
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\QuanLy.deps.json
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\QuanLy.runtimeconfig.json
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\QuanLy.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\ref\QuanLy.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\bin\Debug\net6.0-windows\QuanLy.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\QLKD_DaQuy\QuanLy\QuanLy\obj\Debug\net6.0-windows\QuanLy.genruntimeconfig.cache

@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\duong\\.nuget\\packages\\": {}
+    "C:\\Users\\nhokb\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Winforms Tu hoc\\QuanLy\\QuanLy\\QuanLy.csproj",
+      "projectUniqueName": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
       "projectName": "QuanLy",
-      "projectPath": "E:\\Winforms Tu hoc\\QuanLy\\QuanLy\\QuanLy.csproj",
-      "packagesPath": "C:\\Users\\duong\\.nuget\\packages\\",
-      "outputPath": "E:\\Winforms Tu hoc\\QuanLy\\QuanLy\\obj\\",
+      "projectPath": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
+      "packagesPath": "C:\\Users\\nhokb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\duong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nhokb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
