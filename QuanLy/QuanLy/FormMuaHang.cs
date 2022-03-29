@@ -14,7 +14,7 @@ namespace QuanLy
     {
         public static List<BHList> bHLists = new List<BHList>();
         public static DataGridView dgv;
-        public int value;
+        public int value, selection;
         public FormMuaHang()
         {
             InitializeComponent();
@@ -46,39 +46,97 @@ namespace QuanLy
             CBSanPham.SelectedIndex = -1;
             TBSoLuong.Text = "";
         }
-        private void AddItem(int i)
+        private void AdjustItem()
         {
-            string lsp = FormMuaHang.bHLists[i].LoaiSP;
-            string sp = FormMuaHang.bHLists[i].SanPham;
-            string dvt = FormMuaHang.bHLists[i].DonViTinh;
+            string lsp = CBLoaiSP.SelectedItem.ToString();
+            string sp = CBSanPham.SelectedItem.ToString();
+            string sl = TBSoLuong.Text.ToString();
+            string dvt = new string("");
+            int dg = 0, tt;
             switch (lsp)
             {
-                //thêm vào dựa trên SQL
+                //thêm vào dựa trên SQL về dvt, dg
+                case "a":
+                    dvt = "Chiếc";
+                    dg = 1;
+                    break;
                 default:
                     break;
             }
-            int sl = int.Parse(FormMuaHang.bHLists[i].SoLuong);
-            int dg = FormMuaHang.bHLists[i].DonGia;
-            int tt = FormMuaHang.bHLists[i].ThanhTien;
-            //int id = FormMuaHang.bHLists[i].ID;
-            //Đơn giá cũng dựa trên SQL
-            tt = sl * dg;
+            tt = int.Parse(sl) * dg;
             value += tt;
-            LbSumMoney.Text = $"{value.ToString()} đồng";
-            FormMuaHang.dgv.Rows.Add((i + 1).ToString(), lsp, sp, sl, dvt, dg, tt);
+            bHLists.Add(new BHList(lsp, sp, sl, dvt, dg, tt));
+            LbSumMoney.Text = $"{value} đồng";
+        }
+        private static void AddItemToDGV()
+        {
+            for (int i = 0; i < bHLists.Count; i++)
+                dgv.Rows.Add((i + 1).ToString(),
+                    bHLists[i].LoaiSP,
+                    bHLists[i].SanPham,
+                    bHLists[i].SoLuong,
+                    bHLists[i].DonViTinh,
+                    bHLists[i].DonGia,
+                    bHLists[i].ThanhTien);
+        }
+        private void DeleteItem()
+        {
+            foreach (DataGridViewRow row in dgv.SelectedRows)
+            {
+                int tt = int.Parse(row.Cells[6].Value.ToString());
+                value -= tt;
+                LbSumMoney.Text = $"{value} đồng";
+                dgv.Rows.RemoveAt(row.Index);
+                bHLists.RemoveAt(selection);
+            }
+        }
+        private void EditItem()
+        {
+            foreach (DataGridViewRow row in dgv.SelectedRows)
+            {
+                string dvt, lsp, sp, sl;
+                int dg, tt;
+                lsp = CBLoaiSP.SelectedItem.ToString();
+                sp = CBSanPham.SelectedItem.ToString();
+                sl = TBSoLuong.Text.ToString();
+                dvt = "";
+
+                //insert SQL về dvt và dg here
+
+                tt = int.Parse(row.Cells[6].Value.ToString());
+                value -= tt;
+                dg = 1;                 //gắn giá trị tạm, ở đây phải dùng SQL để thay đổi giá trị dg và dvt
+                tt = dg * int.Parse(sl);
+
+                //Edit ở dgv
+                row.Cells[1].Value = CBLoaiSP.SelectedItem.ToString();
+                row.Cells[2].Value = CBSanPham.SelectedItem.ToString();
+                row.Cells[3].Value = TBSoLuong.Text.ToString();
+
+                //row.Cells[4].Value - dvt
+                //row.Cells[5].Value - dg
+
+                value += tt;
+                row.Cells[6].Value = tt.ToString();
+                LbSumMoney.Text = $"{value} đồng";
+
+                //Edit ở ListBH
+                bHLists[selection].LoaiSP = lsp;
+                bHLists[selection].SanPham = sp;
+                bHLists[selection].SoLuong = sl;
+                bHLists[selection].DonViTinh = dvt;
+                bHLists[selection].DonGia = dg;
+                bHLists[selection].ThanhTien = tt;
+            }
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             bool valid = int.TryParse(TBSoLuong.Text, out int value);
             if (valid)
             {
-                FormMuaHang.bHLists.Add(new BHList(
-                    CBLoaiSP.SelectedItem.ToString(),
-                    CBSanPham.SelectedItem.ToString(),
-                    TBSoLuong.Text.ToString()));
-                FormMuaHang.dgv.Rows.Clear();
-                for (int i = 0; i < FormMuaHang.bHLists.Count; i++)
-                    AddItem(i);
+                AdjustItem();
+                dgv.Rows.Clear();
+                AddItemToDGV();
             }
             else
                 MessageBox.Show("Số lượng không hợp lệ!");
@@ -92,13 +150,7 @@ namespace QuanLy
                 MessageBox.Show("Bạn vẫn chưa điền thông tin!");
             else
             {
-                foreach (DataGridViewRow row in dgv.SelectedRows)
-                {
-                    int tt = int.Parse(row.Cells[6].Value.ToString());
-                    value -= tt;
-                    LbSumMoney.Text = $"{value.ToString()} đồng";
-                    dgv.Rows.RemoveAt(row.Index);
-                }
+                DeleteItem();
                 MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK);
                 ResetInputBH();
                 dgv.ClearSelection();
@@ -131,31 +183,13 @@ namespace QuanLy
                 CBSanPham.Text = row.Cells[2].Value.ToString();
                 TBSoLuong.Text = row.Cells[3].Value.ToString();
             }
+            selection = dgv.CurrentCell.RowIndex;
             BtnEdit.Enabled = true;
             BtnDelete.Enabled = true;
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgv.SelectedRows)
-            {
-                string dvt;
-                int sl, dg, tt;
-                sl = int.Parse(TBSoLuong.Text.ToString());
-                tt = int.Parse(row.Cells[6].Value.ToString());
-                value -= tt;
-                dg = 1;                 //gắn giá trị tạm
-                row.Cells[1].Value = CBLoaiSP.SelectedItem.ToString();
-                row.Cells[2].Value = CBSanPham.SelectedItem.ToString();
-                row.Cells[3].Value = TBSoLuong.Text.ToString();
-
-                //row.Cells[4].Value - dvt
-                //row.Cells[5].Value - dg
-
-                tt = dg * sl;
-                value += tt;
-                row.Cells[6].Value = tt.ToString();
-                LbSumMoney.Text = $"{value.ToString()} đồng";
-            }
+            EditItem();
             MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
             ResetInputBH();
             dgv.ClearSelection();
