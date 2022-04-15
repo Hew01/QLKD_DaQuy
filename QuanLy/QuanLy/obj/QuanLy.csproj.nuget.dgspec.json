@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj": {}
+    "C:\\Users\\DELL\\Downloads\\QLKD_DaQuy\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj": {
+    "C:\\Users\\DELL\\Downloads\\QLKD_DaQuy\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Downloads\\QLKD_DaQuy\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
         "projectName": "QuanLy",
-        "projectPath": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
-        "packagesPath": "C:\\Users\\nhokb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhokb\\OneDrive\\Desktop\\Git Project\\QLKD_DaQuy\\QuanLy\\QuanLy\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\Downloads\\QLKD_DaQuy\\QLKD_DaQuy\\QuanLy\\QuanLy\\QuanLy.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Downloads\\QLKD_DaQuy\\QLKD_DaQuy\\QuanLy\\QuanLy\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nhokb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,22 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
