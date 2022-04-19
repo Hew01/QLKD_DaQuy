@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +37,7 @@ namespace NewProject
                          where c.MaPBH == mapbh
                          select new CT_PhieuBanHang
                          {
+                             //Mã_Phiếu_Bán_Hàng = e.MaPBH,
                              Sản_Phẩm = t.TenSP,
                              Mã_Loại_Sản_Phẩm = k.MaLoaiSP,
                              Số_Lượng = c.SoLuong.Value,
@@ -197,7 +197,6 @@ namespace NewProject
                       where c.TenSP == tenSP
                       select c.MaSP;
             int masp = Convert.ToInt32(msp.First());
-
             var donGiaMuaVao = from c in db.SANPHAMs
                                where c.MaSP == masp
                                select c.DonGiaMuaVao;
