@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a876d73c114429e9931545950ef88da" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_QLKDModel.BAOCAOTON" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.CT_PBH" Width="1.5" PointX="5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.CT_PDV" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.CT_PMH" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.DICHVU" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.DONVITINH" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.LOAISP" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.NHACUNGCAP" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUBANHANG" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUDV" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUMUAHANG" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QLKDModel.SANPHAM" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="DB_QLKDModel.fk01_BAOCAOTON" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk02_BAOCAOTON" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk_CTPBH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk02_CTPDV" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk_CTPMH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk02_CTPMH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk_LOAISP" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QLKDModel.fk_PMH" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
