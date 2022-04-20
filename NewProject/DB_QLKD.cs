@@ -4,25 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
+using System.IO;
 
 namespace NewProject
 {
     public class CT_PhieuBanHang
     {
-        //public int Mã_Phiếu_Bán_Hàng { get; set; }
         public string Sản_Phẩm { get; set; }
         public int Mã_Loại_Sản_Phẩm { get; set; }
-        
         public int Số_Lượng { get; set; }
         public string Đơn_Vị_Tính { get; set; }
         public long Đơn_Giá { get; set; }
         public long Thành_Tiền { get; set; }
-
     }
-
+    
     public class CT_PhieuMuaHang
     {
-        
         public string Sản_Phẩm { get; set; }
         public int Loại_Sản_Phẩm { get; set; }
         public string Nhà_Cung_Cấp { get; set; }
@@ -44,15 +42,170 @@ namespace NewProject
         public DateTime Ngày_Giao { get; set; }
         public string Tình_Trạng { get; set; }
     }
+
+
     public class DB_QLKD
     {
+        public static int TonDau(int masp, DateTime date)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                int tondau = 0;
+                int thang, nam;
+                if (date.Month == 1)
+                {
+                    thang = 12;
+                    nam = date.Year - 1;
+                }
+                else
+                {
+                    thang = date.Month - 1;
+                    nam = date.Year;
+                }
+
+                if(db.BAOCAOTONs.Find(date.Month,date.Year,masp)==null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    var a = from c in db.BAOCAOTONs
+                            where c.Thang == thang && c.Nam == nam && c.MaSP == masp
+                            select c.TonCuoi;
+                    tondau = a.First().Value;
+                    return tondau; 
+                }
+            }
+        }
+        public static bool CheckSoLuong(int sl, int masp)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                var soluong = from c in db.SANPHAMs
+                              where c.MaSP == masp
+                              select c.SoLuongTon;
+                if (sl > soluong.First().Value)
+                {
+                    MessageBox.Show("Không đủ số lượng trong kho", "Thông báo");
+                    return false;
+                }
+                else return true;
+            }
+        }
+
+        public static void ChangeQuantity(int sl, int masp)
+        {
+            using (DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                var sanpham = db.SANPHAMs.Where(c => c.MaSP == masp).First();
+                sanpham.SoLuongTon += sl;
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeStored_SLBanRa(int sl, int masp, DateTime date)
+        {
+            using (DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                if (db.BAOCAOTONs.Find(date.Month,date.Year,masp)==null)
+                {
+                    var dvt = from c in db.LOAISPs
+                              join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
+                              where d.MaSP == masp
+                              select c.MaDVT;
+                    int madvt = Convert.ToInt32(dvt.First().ToString());
+                    BAOCAOTON a = new BAOCAOTON
+                    {
+                        Thang = date.Month,
+                        Nam = date.Year,
+                        SLBanRa = sl,
+                        SLMuaVao = 0,
+                        MaSP = masp,
+                        MaDVT = madvt,
+                        TonDau=TonDau(masp,date)
+                    };
+                    db.BAOCAOTONs.Add(a);
+                }
+                else
+                {
+                    var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                    bc.SLBanRa += sl;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeStored_SLMuaVao(int sl, int masp, DateTime date)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                if (db.BAOCAOTONs.Find(date.Month, date.Year, masp) == null)
+                {
+                    var dvt = from c in db.LOAISPs
+                              join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
+                              where d.MaSP == masp
+                              select c.MaDVT;
+                    int madvt = Convert.ToInt32(dvt.First().ToString());
+                    BAOCAOTON a = new BAOCAOTON
+                    {
+                        Thang = date.Month,
+                        Nam = date.Year,
+                        SLMuaVao = sl,
+                        SLBanRa = 0,
+                        MaSP = masp,
+                        MaDVT=madvt,
+                        TonDau = TonDau(masp, date)
+                    };
+                    db.BAOCAOTONs.Add(a);
+                }
+                else
+                {
+                    var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                    bc.SLMuaVao += sl;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void AutoGenerate_BaoCaoTon(DateTime date)
+        {
+            using(DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                var masp = from c in db.SANPHAMs
+                           select c.MaSP;
+                foreach(var i in masp)
+                {
+                    if(db.BAOCAOTONs.Find(date.Month,date.Year,i)==null)
+                    {
+                        var dvt = from c in db.LOAISPs
+                                  join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
+                                  where d.MaSP == i
+                                  select c.MaDVT;
+                        int madvt = Convert.ToInt32(dvt.First().ToString());
+                        BAOCAOTON a = new BAOCAOTON
+                        {
+                            Thang = date.Month,
+                            Nam = date.Year,
+                            SLMuaVao = 0,
+                            SLBanRa = 0,
+                            MaSP = i,
+                            MaDVT = madvt,
+                            TonDau = TonDau(i, date),
+                        };
+                        if (TonDau(i, date) == 0) a.TonCuoi = 0;
+                        db.BAOCAOTONs.Add(a);
+                    }
+                }
+                db.SaveChanges();
+            }
+        }
         //FormBanHang
-        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, string ngaylapphieu)
+        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, DateTime ngaylapphieu)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 int thanhTien = soluong * donGiaBan;
-
+                if (!CheckSoLuong(soluong, maSP)) return;
                 if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH))==null)
                 {
                     PHIEUBANHANG pbh = new PHIEUBANHANG
@@ -90,7 +243,9 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
-
+                ChangeStored_SLBanRa(soluong, maSP, ngaylapphieu);
+                ChangeQuantity(-soluong, maSP);
+                MessageBox.Show("Thêm thành công", "Thông Báo");
                 //SAVE CHANGES
                 db.SaveChanges();
             }
@@ -103,9 +258,10 @@ namespace NewProject
                 PHIEUBANHANG p = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
                 CT_PBH ct = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP == maSP).First();
                 p.TongTien -= ct.ThanhTien;
+                ChangeQuantity(ct.SoLuong.Value, maSP);
+                ChangeStored_SLBanRa(-ct.SoLuong.Value, maSP, p.NgayLapPBH.Value);
                 db.CT_PBH.Remove(ct);
 
-                //db.PHIEUBANHANGs.Remove(db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First());
                 db.SaveChanges();
             }
         }
@@ -114,10 +270,15 @@ namespace NewProject
         {
             using (DB_QLKDEntities db= new DB_QLKDEntities())
             {
-                CT_PBH ctPBH = db.CT_PBH.Where(c => c.MaPBH == maPBH).First();
+                CT_PBH ctPBH = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP==maSP).First();
                 PHIEUBANHANG pbh = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
 
-                ctPBH.MaSP = maSP;
+                if (CheckSoLuong(soluong-ctPBH.SoLuong.Value,maSP)==true)
+                {
+                    ChangeStored_SLBanRa(soluong - ctPBH.SoLuong.Value, maSP, pbh.NgayLapPBH.Value);
+                    ChangeQuantity(ctPBH.SoLuong.Value, maSP);
+                    ChangeQuantity(-soluong, maSP);
+                }
                 ctPBH.SoLuong = soluong;
                 ctPBH.DonGiaBan = donGiaBan;
                 ctPBH.ThanhTien = thanhTien;
@@ -132,7 +293,8 @@ namespace NewProject
         {
             using(DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                if(db.PHIEUMUAHANGs.Find(maPMH)==null)
+                
+                if (db.PHIEUMUAHANGs.Find(maPMH)==null)
                 {
                     PHIEUMUAHANG pmh = new PHIEUMUAHANG
                     {
@@ -154,6 +316,8 @@ namespace NewProject
                 };
                 db.CT_PMH.Add(ctPMH);
 
+                ChangeStored_SLMuaVao(soLuongMua, maSP, ngayLapPhieu);
+                ChangeQuantity(soLuongMua, maSP);
                 db.SaveChanges();
             }
         }
@@ -162,11 +326,11 @@ namespace NewProject
         {
             using (DB_QLKDEntities db=new DB_QLKDEntities())
             {
+                PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
                 CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH && c.MaSP==masp).First();
-                //PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
-                
+                ChangeQuantity(-ctPMH.SoLuongMuaVao.Value, masp);
+                ChangeStored_SLMuaVao(-ctPMH.SoLuongMuaVao.Value, masp, pmh.NgLapPMH.Value);
                 db.CT_PMH.Remove(ctPMH);
-                //db.PHIEUMUAHANGs.Remove(pmh);
 
                 db.SaveChanges();
             }
@@ -177,12 +341,12 @@ namespace NewProject
             using (DB_QLKDEntities db =new DB_QLKDEntities())
             {
                 PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
-                CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH).First();
+                CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH && c.MaSP==masp).First();
 
-                //pmh.MaPMH = maPMH;
                 pmh.MaNCC = maNCC;
-                //ctPMH.MaPMH = maPMH;
-                ctPMH.MaSP = masp;
+                ChangeStored_SLMuaVao(soLuong - ctPMH.SoLuongMuaVao.Value, masp,pmh.NgLapPMH.Value);
+                ChangeQuantity(-ctPMH.SoLuongMuaVao.Value, masp);
+                ChangeQuantity(soLuong, masp);
                 ctPMH.SoLuongMuaVao = soLuong;
                 ctPMH.DonGiaMuaVao = donGia;
                 ctPMH.ThanhTien = thanhTien;
@@ -191,7 +355,7 @@ namespace NewProject
             }
         }
 
-        public static void Add_CTPhieuDichVu(int maPDV, int maDV, int soLuong, long donGia, long thanhTien, long traTruoc, long conLai, DateTime ngayGiao, DateTime ngayLapPhieu, string tenKH, int sdt)
+        public static void Add_CTPhieuDichVu(int maPDV, int maDV, int soLuong, long donGia, long thanhTien, long traTuoc, long conLai, DateTime ngayGiao, DateTime ngayLapPhieu, string tenKH, int sdt)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -222,14 +386,14 @@ namespace NewProject
                     ThanhTien = thanhTien,
                     MaTT = 0,
                     NgayGiao = ngayGiao,
-                    TraTruoc = traTruoc,
+                    TraTruoc = traTuoc,
                     ConLai = conLai,
                     TinhTrang = "Chưa Giao",
                 };
                 db.CT_PDV.Add(ctpdv);
                 PHIEUDV a = db.PHIEUDVs.Where(c => c.MaPDV == maPDV).First();
                 a.TongTien += thanhTien;
-                a.TongTienTraTruoc += traTruoc;
+                a.TongTienTraTruoc += traTuoc;
                 a.TongTienConLai += conLai;
                 db.SaveChanges();
             }
@@ -244,7 +408,7 @@ namespace NewProject
             }
         }
 
-        public static void Edit_CTPDV(int maPDV, int maDV, int soLuong, long traTruoc, DateTime ngayGiao, string tinhTrang)
+        public static void Edit_CTPDV(int maPDV, int maDV, int soLuong, int traTruoc, DateTime ngayGiao, string tinhTrang)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {

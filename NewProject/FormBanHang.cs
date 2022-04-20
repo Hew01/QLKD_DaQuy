@@ -26,29 +26,34 @@ namespace NewProject
             value = 0;
         }
 
+        //Xuất data vào grid
         public void LoadData() 
         {
-            int mapbh = Convert.ToInt32(TB_IDPBH.Text);
-            var result = from c in db.CT_PBH
-                         join e in db.PHIEUBANHANGs on c.MaPBH equals e.MaPBH
-                         join t in db.SANPHAMs on c.MaSP equals t.MaSP
-                         join k in db.LOAISPs on t.MaLoaiSP equals k.MaLoaiSP
-                         join q in db.DONVITINHs on k.MaDVT equals q.MaDVT
-                         where c.MaPBH == mapbh
-                         select new CT_PhieuBanHang
-                         {
-                             //Mã_Phiếu_Bán_Hàng = e.MaPBH,
-                             Sản_Phẩm = t.TenSP,
-                             Mã_Loại_Sản_Phẩm = k.MaLoaiSP,
-                             Số_Lượng = c.SoLuong.Value,
-                             Đơn_Vị_Tính = q.LoaiDVT,
-                             Đơn_Giá = c.DonGiaBan.Value,
-                             Thành_Tiền = c.ThanhTien.Value
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                int mapbh = Convert.ToInt32(TB_IDPBH.Text);
+                var result = from c in db.CT_PBH
+                             join e in db.PHIEUBANHANGs on c.MaPBH equals e.MaPBH
+                             join t in db.SANPHAMs on c.MaSP equals t.MaSP
+                             join k in db.LOAISPs on t.MaLoaiSP equals k.MaLoaiSP
+                             join q in db.DONVITINHs on k.MaDVT equals q.MaDVT
+                             where c.MaPBH == mapbh
+                             select new CT_PhieuBanHang
+                             {
+                                 //Mã_Phiếu_Bán_Hàng = e.MaPBH,
+                                 Sản_Phẩm = t.TenSP,
+                                 Mã_Loại_Sản_Phẩm = k.MaLoaiSP,
+                                 Số_Lượng = c.SoLuong.Value,
+                                 Đơn_Vị_Tính = q.LoaiDVT,
+                                 Đơn_Giá = c.DonGiaBan.Value,
+                                 Thành_Tiền = c.ThanhTien.Value
+                             };
 
-                         };
-            dgv.DataSource = result.ToList();
+                dgv.DataSource = result.ToList();
+            }
         }
-        private bool IsSPMuaValid()
+        
+        private bool IsTBValid()
         {
             if ((CBSanPham.Text != "") &&
                 (CBLoaiSP.Text != "") &&

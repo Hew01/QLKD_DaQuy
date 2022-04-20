@@ -26,30 +26,35 @@ namespace NewProject
             value = 0;
         }
 
+        //Xuất data vào gird
         public void LoadData()
         {
-            int maPMH = Convert.ToInt32(tbSoPhieu.Text);
-            var result = from lsp in db.LOAISPs
-                         join sp in db.SANPHAMs on lsp.MaLoaiSP equals sp.MaLoaiSP
-                         join ctpmh in db.CT_PMH on sp.MaSP equals ctpmh.MaSP
-                         join pmh in db.PHIEUMUAHANGs on ctpmh.MaPMH equals pmh.MaPMH
-                         join ncc in db.NHACUNGCAPs on pmh.MaNCC equals ncc.MaNCC
-                         where pmh.MaPMH==maPMH
-                         select new CT_PhieuMuaHang
-                         {
-                             Loại_Sản_Phẩm = lsp.MaLoaiSP,
-                             Sản_Phẩm = sp.TenSP,
-                             Nhà_Cung_Cấp = ncc.TenNCC,
-                             Số_Lượng = ctpmh.SoLuongMuaVao.Value,
-                             Đơn_Vị_Tính = lsp.DONVITINH.LoaiDVT,
-                             Đơn_Giá = ctpmh.DonGiaMuaVao.Value,
-                             Thành_Tiền = ctpmh.ThanhTien.Value,
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                int maPMH = Convert.ToInt32(tbSoPhieu.Text);
+                var result = from lsp in db.LOAISPs
+                             join sp in db.SANPHAMs on lsp.MaLoaiSP equals sp.MaLoaiSP
+                             join ctpmh in db.CT_PMH on sp.MaSP equals ctpmh.MaSP
+                             join pmh in db.PHIEUMUAHANGs on ctpmh.MaPMH equals pmh.MaPMH
+                             join ncc in db.NHACUNGCAPs on pmh.MaNCC equals ncc.MaNCC
+                             where pmh.MaPMH == maPMH
+                             select new CT_PhieuMuaHang
+                             {
+                                 Loại_Sản_Phẩm = lsp.MaLoaiSP,
+                                 Sản_Phẩm = sp.TenSP,
+                                 Nhà_Cung_Cấp = ncc.TenNCC,
+                                 Số_Lượng = ctpmh.SoLuongMuaVao.Value,
+                                 Đơn_Vị_Tính = lsp.DONVITINH.LoaiDVT,
+                                 Đơn_Giá = ctpmh.DonGiaMuaVao.Value,
+                                 Thành_Tiền = ctpmh.ThanhTien.Value,
+                             };
 
-                         };
-            dgv.DataSource = result.ToList();
-            dgv.AutoResizeColumns();
+                dataGridView1.DataSource = result.ToList();
+                dataGridView1.AutoResizeColumns();
+            }
         }
-        private bool IsSPMuaValid()
+        
+        private bool IsTBValid()
         {
             if ((CBSanPham.Text != "") &&
                 (CBLoaiSP.Text != "") &&
@@ -108,6 +113,7 @@ namespace NewProject
             ResetInputBH();
         }
 
+        //Xóa sản phẩm trong phiếu
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
