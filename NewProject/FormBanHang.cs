@@ -12,6 +12,7 @@ namespace NewProject
 {
     public partial class FormBanHang : Form
     {
+        DB_QLKDEntities db = new DB_QLKDEntities();
         public static List<BHList> bHLists = new List<BHList>();
         public static DataGridView dgv;
         public int value, selection;
@@ -25,6 +26,27 @@ namespace NewProject
             BtnEdit.Enabled = false;
             BtnDelete.Enabled = false;
             value = 0;
+            LoadData(); // Xuất data vào grid view
+        }
+
+        public void LoadData() 
+        {
+            var result = from c in db.CT_PBH
+                         join e in db.PHIEUBANHANGs on c.MaPBH equals e.MaPBH
+                         join t in db.SANPHAMs on c.MaSP equals t.MaSP
+                         join k in db.LOAISPs on t.MaLoaiSP equals k.MaLoaiSP
+                         join q in db.DONVITINHs on k.MaDVT equals q.MaDVT
+                         select new
+                         {
+                             MaPBH = c.MaPBH,
+                             LoaiSP = k.MaLoaiSP,
+                             SanPham=t.TenSP,
+                             SoLuong=c.SoLuong,
+                             DonViTinh= q.LoaiDVT,
+                             DonGia=c.DonGiaBan,
+                             ThanhTien=c.ThanhTien
+                         };
+            dgv.DataSource = result.ToList();
         }
         private bool IsEmptyCell(DataGridViewRow row)
         {
@@ -118,6 +140,7 @@ namespace NewProject
                     dvt = "";
 
                     //insert SQL về dvt và dg here
+
 
                     tt = int.Parse(row.Cells[6].Value.ToString());
                     value -= tt;
