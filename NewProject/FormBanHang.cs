@@ -26,7 +26,7 @@ namespace NewProject
             BtnEdit.Enabled = false;
             BtnDelete.Enabled = false;
             value = 0;
-            LoadData(); // Xuất data vào grid view
+            //LoadData(); // Xuất data vào grid view
         }
 
         public void LoadData() 
@@ -203,6 +203,10 @@ namespace NewProject
         private void CBLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
             BtnAdd_Visible();
+            var loaisp = from c in db.LOAISPs
+                         select c.MaLoaiSP;
+            CBLoaiSP.DataSource = loaisp.ToList();
+            
         }
 
         private void CBSanPham_SelectedIndexChanged(object sender, EventArgs e)
