@@ -171,17 +171,7 @@ namespace NewProject
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            bool valid = int.TryParse(TBSoLuong.Text, out _);
-            if (valid)
-            {
-                AdjustItem();
-                dgv.Rows.Clear();
-                AddItemToDGV();
-            }
-            else
-                MessageBox.Show("Số lượng không hợp lệ!");
-            BtnAdd.Enabled = false;
-            ResetInputBH();
+            
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -202,16 +192,16 @@ namespace NewProject
 
         private void CBLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BtnAdd_Visible();
-            var loaisp = from c in db.LOAISPs
-                         select c.MaLoaiSP;
-            CBLoaiSP.DataSource = loaisp.ToList();
+            //BtnAdd_Visible();
+            //var loaisp = from c in db.LOAISPs
+            //             select c.MaLoaiSP;
+            //CBLoaiSP.DataSource = loaisp.ToList();
             
         }
 
         private void CBSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BtnAdd_Visible();
+            //BtnAdd_Visible();
         }
 
         private void TBSoLuong_TextChanged(object sender, EventArgs e)
@@ -238,6 +228,22 @@ namespace NewProject
                 BtnEdit.Enabled = true;
                 BtnDelete.Enabled = true;
             }
+        }
+
+        private void CBLoaiSP_DropDown(object sender, EventArgs e)
+        {
+            BtnAdd_Visible();
+            var loaisp = from c in db.LOAISPs
+                         select c.MaLoaiSP;
+            CBLoaiSP.DataSource = loaisp.ToList();
+        }
+
+        private void CBSanPham_DropDown(object sender, EventArgs e)
+        {
+            BtnAdd_Visible();
+            var sanpham = from sp in db.SANPHAMs
+                          select sp.TenSP;
+            CBSanPham.DataSource = sanpham.ToList();
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
