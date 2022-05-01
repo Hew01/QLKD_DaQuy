@@ -36,14 +36,6 @@
             this.CBLoaiSP = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TBSoLuong = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.TB_NameKH = new System.Windows.Forms.TextBox();
             this.BtnDelete = new System.Windows.Forms.Button();
@@ -59,6 +51,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.LbSumMoney = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +80,7 @@
             // TxbGhiChu
             // 
             this.TxbGhiChu.Location = new System.Drawing.Point(466, 73);
-            this.TxbGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxbGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.TxbGhiChu.Multiline = true;
             this.TxbGhiChu.Name = "TxbGhiChu";
             this.TxbGhiChu.Size = new System.Drawing.Size(194, 78);
@@ -123,7 +116,7 @@
             "a",
             "b"});
             this.CBLoaiSP.Location = new System.Drawing.Point(146, 179);
-            this.CBLoaiSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBLoaiSP.Margin = new System.Windows.Forms.Padding(2);
             this.CBLoaiSP.Name = "CBLoaiSP";
             this.CBLoaiSP.Size = new System.Drawing.Size(215, 24);
             this.CBLoaiSP.TabIndex = 8;
@@ -144,93 +137,16 @@
             // 
             this.TBSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBSoLuong.Location = new System.Drawing.Point(146, 232);
-            this.TBSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.TBSoLuong.Name = "TBSoLuong";
             this.TBSoLuong.Size = new System.Drawing.Size(57, 23);
             this.TBSoLuong.TabIndex = 10;
             this.TBSoLuong.TextChanged += new System.EventHandler(this.TBSoLuong_TextChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.LoaiSanPham,
-            this.SanPham,
-            this.SoLuong,
-            this.DonViTinh,
-            this.DonGia,
-            this.ThanhTien});
-            this.dataGridView1.Location = new System.Drawing.Point(76, 280);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(614, 180);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // stt
-            // 
-            this.stt.HeaderText = "STT";
-            this.stt.MinimumWidth = 6;
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            this.stt.Width = 50;
-            // 
-            // LoaiSanPham
-            // 
-            this.LoaiSanPham.HeaderText = "Loại Sản Phẩm";
-            this.LoaiSanPham.MinimumWidth = 6;
-            this.LoaiSanPham.Name = "LoaiSanPham";
-            this.LoaiSanPham.ReadOnly = true;
-            this.LoaiSanPham.Width = 150;
-            // 
-            // SanPham
-            // 
-            this.SanPham.HeaderText = "Sản Phẩm";
-            this.SanPham.MinimumWidth = 6;
-            this.SanPham.Name = "SanPham";
-            this.SanPham.ReadOnly = true;
-            this.SanPham.Width = 150;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            this.SoLuong.Width = 75;
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.MinimumWidth = 6;
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.ReadOnly = true;
-            this.DonViTinh.Width = 75;
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            this.DonGia.Width = 125;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.MinimumWidth = 6;
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            this.ThanhTien.Width = 125;
-            // 
             // BtnAdd
             // 
             this.BtnAdd.Location = new System.Drawing.Point(448, 211);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(46, 25);
             this.BtnAdd.TabIndex = 12;
@@ -242,7 +158,7 @@
             // 
             this.TB_NameKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_NameKH.Location = new System.Drawing.Point(146, 99);
-            this.TB_NameKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NameKH.Margin = new System.Windows.Forms.Padding(2);
             this.TB_NameKH.Name = "TB_NameKH";
             this.TB_NameKH.Size = new System.Drawing.Size(215, 23);
             this.TB_NameKH.TabIndex = 13;
@@ -250,7 +166,7 @@
             // BtnDelete
             // 
             this.BtnDelete.Location = new System.Drawing.Point(506, 211);
-            this.BtnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(46, 25);
             this.BtnDelete.TabIndex = 14;
@@ -261,7 +177,7 @@
             // BtnEdit
             // 
             this.BtnEdit.Location = new System.Drawing.Point(562, 211);
-            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(46, 25);
             this.BtnEdit.TabIndex = 15;
@@ -272,7 +188,7 @@
             // btnIn
             // 
             this.btnIn.Location = new System.Drawing.Point(638, 493);
-            this.btnIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(52, 28);
             this.btnIn.TabIndex = 16;
@@ -298,7 +214,7 @@
             "a",
             "b"});
             this.CBSanPham.Location = new System.Drawing.Point(146, 206);
-            this.CBSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.CBSanPham.Name = "CBSanPham";
             this.CBSanPham.Size = new System.Drawing.Size(215, 24);
             this.CBSanPham.TabIndex = 20;
@@ -319,7 +235,7 @@
             // 
             this.TBDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDate.Location = new System.Drawing.Point(146, 128);
-            this.TBDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBDate.Margin = new System.Windows.Forms.Padding(2);
             this.TBDate.Name = "TBDate";
             this.TBDate.Size = new System.Drawing.Size(215, 23);
             this.TBDate.TabIndex = 21;
@@ -350,7 +266,7 @@
             // 
             this.TB_IDPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_IDPhieu.Location = new System.Drawing.Point(146, 71);
-            this.TB_IDPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_IDPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.TB_IDPhieu.Name = "TB_IDPhieu";
             this.TB_IDPhieu.Size = new System.Drawing.Size(215, 23);
             this.TB_IDPhieu.TabIndex = 13;
@@ -387,11 +303,20 @@
             this.LbSumMoney.TabIndex = 24;
             this.LbSumMoney.Text = "0 đồng";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(30, 286);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(708, 191);
+            this.dataGridView1.TabIndex = 25;
+            // 
             // FormBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 566);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LbSumMoney);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -406,7 +331,6 @@
             this.Controls.Add(this.TB_IDPhieu);
             this.Controls.Add(this.TB_NameKH);
             this.Controls.Add(this.BtnAdd);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TBSoLuong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CBLoaiSP);
@@ -416,7 +340,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập Hóa Đơn";
@@ -435,7 +359,6 @@
         private System.Windows.Forms.ComboBox CBLoaiSP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TBSoLuong;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.TextBox TB_NameKH;
         private System.Windows.Forms.Button BtnDelete;
@@ -449,14 +372,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TB_IDPhieu;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LbSumMoney;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

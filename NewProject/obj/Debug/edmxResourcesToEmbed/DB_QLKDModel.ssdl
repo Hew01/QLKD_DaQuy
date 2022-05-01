@@ -138,6 +138,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_CTPBH2">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CT_PBH" Type="Self.CT_PBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CT_PBH">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_CTPMH">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CT_PMH" Type="Self.CT_PMH" Multiplicity="*" />
@@ -261,6 +273,10 @@
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_CTPBH" Association="Self.fk_CTPBH">
       <End Role="PHIEUBANHANG" EntitySet="PHIEUBANHANG" />
+      <End Role="CT_PBH" EntitySet="CT_PBH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CTPBH2" Association="Self.fk_CTPBH2">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CT_PBH" EntitySet="CT_PBH" />
     </AssociationSet>
     <AssociationSet Name="fk_CTPMH" Association="Self.fk_CTPMH">

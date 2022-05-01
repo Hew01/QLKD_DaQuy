@@ -26,7 +26,7 @@ namespace NewProject
             BtnEdit.Enabled = false;
             BtnDelete.Enabled = false;
             value = 0;
-            //LoadData(); // Xuất data vào grid view
+            LoadData(); // Xuất data vào grid view
         }
 
         public void LoadData() 
