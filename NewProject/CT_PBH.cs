@@ -21,5 +21,6 @@ namespace NewProject
         public Nullable<long> ThanhTien { get; set; }
     
         public virtual PHIEUBANHANG PHIEUBANHANG { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }
