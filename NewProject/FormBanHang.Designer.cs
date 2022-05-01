@@ -120,6 +120,7 @@
             this.CBLoaiSP.Name = "CBLoaiSP";
             this.CBLoaiSP.Size = new System.Drawing.Size(215, 24);
             this.CBLoaiSP.TabIndex = 8;
+            this.CBLoaiSP.DropDown += new System.EventHandler(this.CBLoaiSP_DropDown);
             this.CBLoaiSP.SelectedIndexChanged += new System.EventHandler(this.CBLoaiSP_SelectedIndexChanged);
             // 
             // label6
@@ -218,6 +219,7 @@
             this.CBSanPham.Name = "CBSanPham";
             this.CBSanPham.Size = new System.Drawing.Size(215, 24);
             this.CBSanPham.TabIndex = 20;
+            this.CBSanPham.DropDown += new System.EventHandler(this.CBSanPham_DropDown);
             this.CBSanPham.SelectedIndexChanged += new System.EventHandler(this.CBSanPham_SelectedIndexChanged);
             // 
             // label8
