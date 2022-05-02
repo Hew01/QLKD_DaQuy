@@ -15,6 +15,7 @@ namespace NewProject
         public static List<BHList> bHLists = new List<BHList>();
         public static DataGridView dgv;
         public int value, selection;
+        DB_QLKDEntities db = new DB_QLKDEntities();
         public FormMuaHang()
         {
             InitializeComponent();
@@ -25,6 +26,29 @@ namespace NewProject
             BtnEdit.Enabled = false;
             BtnDelete.Enabled = false;
             value = 0;
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            var result = from lsp in db.LOAISPs
+                         join sp in db.SANPHAMs on lsp.MaLoaiSP equals sp.MaLoaiSP
+                         join ctpmh in db.CT_PMH on sp.MaSP equals ctpmh.MaSP
+                         join pmh in db.PHIEUMUAHANGs on ctpmh.MaPMH equals pmh.MaPMH
+                         join ncc in db.NHACUNGCAPs on pmh.MaNCC equals ncc.MaNCC
+                         select new
+                         {
+                             MaPhieuMuaHang=pmh.MaPMH,
+                             LoaiSanPham=lsp.MaLoaiSP,
+                             SanPham=sp.TenSP,
+                             NhaCungCap=ncc.TenNCC,
+                             Soluong=ctpmh.SoLuongMuaVao,
+                             DonViTinh=lsp.DONVITINH.LoaiDVT,
+                             DonGia=ctpmh.DonGiaMuaVao,
+                             ThanhTien=ctpmh.ThanhTien
+                         };
+            dataGridView1.DataSource = result.ToList();
+            dataGridView1.AutoResizeColumns();
         }
         private bool IsEmptyCell(DataGridViewRow row)
         {
@@ -214,6 +238,28 @@ namespace NewProject
                 BtnDelete.Enabled = true;
             }
         }
+
+        private void CBLoaiSP_DropDown(object sender, EventArgs e)
+        {
+            var lsp = from c in db.LOAISPs
+                      select c.MaLoaiSP;
+            CBLoaiSP.DataSource = lsp.ToList();
+        }
+
+        private void CBSanPham_DropDown(object sender, EventArgs e)
+        {
+            var sp = from c in db.SANPHAMs
+                      select c.TenSP;
+            CBSanPham.DataSource = sp.ToList();
+        }
+
+        private void CBNhaCungCap_DropDown(object sender, EventArgs e)
+        {
+            var ncc = from c in db.NHACUNGCAPs
+                      select c.TenNCC;
+            cbNhaCungCap.DataSource = ncc.ToList();
+        }
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             EditItem();

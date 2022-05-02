@@ -20,8 +20,8 @@ namespace NewProject
         {
             InitializeComponent();
             dgv = dataGridView1;
-            TB_IDPhieu.Select();
-            TB_IDPhieu.Focus();
+            TB_IDPBH.Select();
+            TB_IDPBH.Focus();
             BtnAdd.Enabled = false;
             BtnEdit.Enabled = false;
             BtnDelete.Enabled = false;
@@ -188,20 +188,6 @@ namespace NewProject
                 BtnEdit.Enabled = false;
 
             }
-        }
-
-        private void CBLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //BtnAdd_Visible();
-            //var loaisp = from c in db.LOAISPs
-            //             select c.MaLoaiSP;
-            //CBLoaiSP.DataSource = loaisp.ToList();
-            
-        }
-
-        private void CBSanPham_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //BtnAdd_Visible();
         }
 
         private void TBSoLuong_TextChanged(object sender, EventArgs e)

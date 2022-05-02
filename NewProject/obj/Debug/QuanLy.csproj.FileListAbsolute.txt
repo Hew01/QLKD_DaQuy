@@ -38,5 +38,4 @@ E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy
 E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
 E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.exe
 E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.pdb
-E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.TestFormBanHang.resources
 E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csprojAssemblyReference.cache

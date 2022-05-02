@@ -37,17 +37,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBSoLuong = new System.Windows.Forms.TextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
-            this.TB_NameKH = new System.Windows.Forms.TextBox();
+            this.TB_TenKH = new System.Windows.Forms.TextBox();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.CBSanPham = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.TBDate = new System.Windows.Forms.TextBox();
+            this.TB_NgayLapPhieu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TB_IDPhieu = new System.Windows.Forms.TextBox();
+            this.TB_IDPBH = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.LbSumMoney = new System.Windows.Forms.Label();
@@ -121,7 +121,6 @@
             this.CBLoaiSP.Size = new System.Drawing.Size(215, 24);
             this.CBLoaiSP.TabIndex = 8;
             this.CBLoaiSP.DropDown += new System.EventHandler(this.CBLoaiSP_DropDown);
-            this.CBLoaiSP.SelectedIndexChanged += new System.EventHandler(this.CBLoaiSP_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -155,14 +154,14 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // TB_NameKH
+            // TB_TenKH
             // 
-            this.TB_NameKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_NameKH.Location = new System.Drawing.Point(146, 99);
-            this.TB_NameKH.Margin = new System.Windows.Forms.Padding(2);
-            this.TB_NameKH.Name = "TB_NameKH";
-            this.TB_NameKH.Size = new System.Drawing.Size(215, 23);
-            this.TB_NameKH.TabIndex = 13;
+            this.TB_TenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_TenKH.Location = new System.Drawing.Point(146, 99);
+            this.TB_TenKH.Margin = new System.Windows.Forms.Padding(2);
+            this.TB_TenKH.Name = "TB_TenKH";
+            this.TB_TenKH.Size = new System.Drawing.Size(215, 23);
+            this.TB_TenKH.TabIndex = 13;
             // 
             // BtnDelete
             // 
@@ -220,7 +219,6 @@
             this.CBSanPham.Size = new System.Drawing.Size(215, 24);
             this.CBSanPham.TabIndex = 20;
             this.CBSanPham.DropDown += new System.EventHandler(this.CBSanPham_DropDown);
-            this.CBSanPham.SelectedIndexChanged += new System.EventHandler(this.CBSanPham_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -233,14 +231,14 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Sản phẩm:";
             // 
-            // TBDate
+            // TB_NgayLapPhieu
             // 
-            this.TBDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDate.Location = new System.Drawing.Point(146, 128);
-            this.TBDate.Margin = new System.Windows.Forms.Padding(2);
-            this.TBDate.Name = "TBDate";
-            this.TBDate.Size = new System.Drawing.Size(215, 23);
-            this.TBDate.TabIndex = 21;
+            this.TB_NgayLapPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_NgayLapPhieu.Location = new System.Drawing.Point(146, 128);
+            this.TB_NgayLapPhieu.Margin = new System.Windows.Forms.Padding(2);
+            this.TB_NgayLapPhieu.Name = "TB_NgayLapPhieu";
+            this.TB_NgayLapPhieu.Size = new System.Drawing.Size(215, 23);
+            this.TB_NgayLapPhieu.TabIndex = 21;
             // 
             // label9
             // 
@@ -264,14 +262,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Số phiếu xuất:";
             // 
-            // TB_IDPhieu
+            // TB_IDPBH
             // 
-            this.TB_IDPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_IDPhieu.Location = new System.Drawing.Point(146, 71);
-            this.TB_IDPhieu.Margin = new System.Windows.Forms.Padding(2);
-            this.TB_IDPhieu.Name = "TB_IDPhieu";
-            this.TB_IDPhieu.Size = new System.Drawing.Size(215, 23);
-            this.TB_IDPhieu.TabIndex = 13;
+            this.TB_IDPBH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_IDPBH.Location = new System.Drawing.Point(146, 71);
+            this.TB_IDPBH.Margin = new System.Windows.Forms.Padding(2);
+            this.TB_IDPBH.Name = "TB_IDPBH";
+            this.TB_IDPBH.Size = new System.Drawing.Size(215, 23);
+            this.TB_IDPBH.TabIndex = 13;
             // 
             // label10
             // 
@@ -323,15 +321,15 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.TBDate);
+            this.Controls.Add(this.TB_NgayLapPhieu);
             this.Controls.Add(this.CBSanPham);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnDelete);
-            this.Controls.Add(this.TB_IDPhieu);
-            this.Controls.Add(this.TB_NameKH);
+            this.Controls.Add(this.TB_IDPBH);
+            this.Controls.Add(this.TB_TenKH);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.TBSoLuong);
             this.Controls.Add(this.label6);
@@ -362,17 +360,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TBSoLuong;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.TextBox TB_NameKH;
+        private System.Windows.Forms.TextBox TB_TenKH;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CBSanPham;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TBDate;
+        private System.Windows.Forms.TextBox TB_NgayLapPhieu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TB_IDPhieu;
+        private System.Windows.Forms.TextBox TB_IDPBH;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LbSumMoney;
