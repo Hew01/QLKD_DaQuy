@@ -23,8 +23,8 @@ namespace NewProject
             TB_IDPBH.Select();
             TB_IDPBH.Focus();
             BtnAdd.Enabled = false;
-            BtnEdit.Enabled = false;
-            BtnDelete.Enabled = false;
+            //BtnEdit.Enabled = false;
+            //BtnDelete.Enabled = false;
             value = 0;
             LoadData(); // Xuất data vào grid view
         }
@@ -36,15 +36,15 @@ namespace NewProject
                          join t in db.SANPHAMs on c.MaSP equals t.MaSP
                          join k in db.LOAISPs on t.MaLoaiSP equals k.MaLoaiSP
                          join q in db.DONVITINHs on k.MaDVT equals q.MaDVT
-                         select new
+                         select new CT_PhieuBanHang
                          {
-                             MaPBH = c.MaPBH,
-                             LoaiSP = k.MaLoaiSP,
-                             SanPham=t.TenSP,
-                             SoLuong=c.SoLuong,
-                             DonViTinh= q.LoaiDVT,
-                             DonGia=c.DonGiaBan,
-                             ThanhTien=c.ThanhTien
+                             Mã_Phiếu_Bán_Hàng = e.MaPBH,
+                             Mã_Loại_Sản_Phẩm = k.MaLoaiSP,
+                             Sản_Phẩm=t.TenSP,
+                             Số_Lượng=c.SoLuong.Value,
+                             Đơn_Vị_Tính= q.LoaiDVT,
+                             Đơn_Giá=c.DonGiaBan.Value,
+                             Thành_Tiền=c.ThanhTien.Value
                          };
             dgv.DataSource = result.ToList();
         }
@@ -114,6 +114,7 @@ namespace NewProject
         }
         private void DeleteItem()
         {
+
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
                 if (!(IsEmptyCell(row)))
@@ -171,21 +172,53 @@ namespace NewProject
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            
+            string maPBH = TB_IDPBH.Text;
+            string tenKH = TB_TenKH.Text;
+            string ngayLapPhieu = TB_NgayLapPhieu.Text;
+            int loaiSP = Convert.ToInt32(CBLoaiSP.Text);
+            var msp = from c in db.SANPHAMs
+                       where c.TenSP == CBSanPham.Text
+                       select c.MaSP;
+            int masp = Convert.ToInt32(msp.First());
+            int soluong = Convert.ToInt32(TBSoLuong.Text);
+
+            var donGiaMuaVao = from c in db.SANPHAMs
+                               where c.MaSP==masp
+                               select c.DonGiaMuaVao;
+            var loiNhuan = from c in db.LOAISPs
+                           where c.MaLoaiSP == loaiSP
+                           select c.PhanTramLoiNhuan;
+
+            double profit = Convert.ToDouble(loiNhuan.First().ToString()) / 100;
+            int donGiaMua = Convert.ToInt32(donGiaMuaVao.First().ToString());
+            int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
+
+
+            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, ngayLapPhieu);
+            db.SaveChanges();
+            LoadData();
+            MessageBox.Show("Thêm thành công","Thông Báo");
         }
+
+
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+               
             if (dataGridView1.Rows.Count == 0)
                 MessageBox.Show("Bạn vẫn chưa điền thông tin!");
             else
             {
-                DeleteItem();
+                BtnDelete.Enabled = true;
+                int maPBH = Convert.ToInt32(dataGridView1.SelectedCells[0].OwningRow.Cells["Mã_Phiếu_Bán_Hàng"].Value.ToString());
+                //DeleteItem();
+                DB_QLKD.Delete_CTPBH(maPBH);
+                LoadData();
                 MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK);
-                ResetInputBH();
-                dgv.ClearSelection();
-                BtnDelete.Enabled = false;
-                BtnEdit.Enabled = false;
+                //ResetInputBH();
+                //dgv.ClearSelection();
+                //BtnDelete.Enabled = false;
+                //BtnEdit.Enabled = false;
 
             }
         }
@@ -234,12 +267,33 @@ namespace NewProject
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            EditItem();
+            int maPBH = Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Mã_Phiếu_Bán_Hàng"].Value.ToString());
+            string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
+            int maLoaiSP= Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Mã_Loại_Sản_Phẩm"].Value.ToString());
+            int soLuong= Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Số_Lượng"].Value.ToString());
+            var msp = from c in db.SANPHAMs
+                      where c.TenSP == tenSP
+                      select c.MaSP;
+            int masp = Convert.ToInt32(msp.First());
+            var donGiaMuaVao = from c in db.SANPHAMs
+                               where c.MaSP == masp
+                               select c.DonGiaMuaVao;
+            var loiNhuan = from c in db.LOAISPs
+                           where c.MaLoaiSP == maLoaiSP
+                           select c.PhanTramLoiNhuan;
+
+            double profit = Convert.ToDouble(loiNhuan.First().ToString()) / 100;
+            int donGiaMua = Convert.ToInt32(donGiaMuaVao.First().ToString());
+            int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
+            int thanhTien = soLuong * donGiaBan;
+            DB_QLKD.Edit_CTPBH(maPBH, masp, soLuong, donGiaBan, thanhTien);
+            LoadData();
+            //EditItem();
             MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
-            ResetInputBH();
-            dgv.ClearSelection();
-            BtnEdit.Enabled = false;
-            BtnDelete.Enabled = false;
+            //ResetInputBH();
+            //dgv.ClearSelection();
+            //BtnEdit.Enabled = false;
+            //BtnDelete.Enabled = false;
 
         }
     }

@@ -87,6 +87,7 @@
     <Compile Include="CT_PMH.cs">
       <DependentUpon>DB_QLKDModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB_QLKD.cs" />
     <Compile Include="DB_QLKDModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
