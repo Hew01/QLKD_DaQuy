@@ -204,15 +204,7 @@ namespace NewProject
             }
         }
 
-        private void CBLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BtnAdd_Visible();
-        }
-
-        private void CBSanPham_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BtnAdd_Visible();
-        }
+        
 
         private void TBSoLuong_TextChanged(object sender, EventArgs e)
         {
@@ -241,6 +233,7 @@ namespace NewProject
 
         private void CBLoaiSP_DropDown(object sender, EventArgs e)
         {
+            BtnAdd_Visible();
             var lsp = from c in db.LOAISPs
                       select c.MaLoaiSP;
             CBLoaiSP.DataSource = lsp.ToList();
@@ -248,6 +241,7 @@ namespace NewProject
 
         private void CBSanPham_DropDown(object sender, EventArgs e)
         {
+            BtnAdd_Visible();
             var sp = from c in db.SANPHAMs
                       select c.TenSP;
             CBSanPham.DataSource = sp.ToList();
@@ -255,6 +249,7 @@ namespace NewProject
 
         private void CBNhaCungCap_DropDown(object sender, EventArgs e)
         {
+            BtnAdd_Visible();
             var ncc = from c in db.NHACUNGCAPs
                       select c.TenNCC;
             cbNhaCungCap.DataSource = ncc.ToList();
