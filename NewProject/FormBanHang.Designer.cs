@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.LbSumMoney = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -312,11 +313,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(708, 191);
             this.dataGridView1.TabIndex = 25;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(615, 211);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(54, 25);
+            this.btnLoad.TabIndex = 26;
+            this.btnLoad.Text = "Xem";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // FormBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 566);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LbSumMoney);
             this.Controls.Add(this.label11);
@@ -376,5 +388,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LbSumMoney;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
