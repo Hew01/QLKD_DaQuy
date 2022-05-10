@@ -39,18 +39,15 @@ namespace NewProject
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 int thanhTien = soluong * donGiaBan;
-
-                if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH))==null)
+                if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH)) == null)
                 {
                     PHIEUBANHANG pbh = new PHIEUBANHANG
                     {
                         MaPBH = Convert.ToInt32(maPBH),
-                        NgayLapPBH = Convert.ToDateTime(ngaylapphieu) ,
+                        NgayLapPBH = Convert.ToDateTime(ngaylapphieu),
                         TongTien = thanhTien,
-
                     };
                     db.PHIEUBANHANGs.Add(pbh);
-
                     CT_PBH ctpbh = new CT_PBH
                     {
                         MaPBH = Convert.ToInt32(maPBH),
@@ -65,10 +62,10 @@ namespace NewProject
                 {
                     int mapbh = Convert.ToInt32(maPBH);
                     PHIEUBANHANG p = db.PHIEUBANHANGs.Where(c => c.MaPBH == mapbh).First();
-                    
+
                     CT_PBH ctpbh = new CT_PBH
                     {
-                        MaPBH = Convert.ToInt32(maPBH),
+                        MaPBH = mapbh,
                         MaSP = maSP,
                         SoLuong = soluong,
                         DonGiaBan = donGiaBan,
@@ -77,8 +74,7 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
-
-                //SAVE CHANGES
+                    //SAVE CHANGES
                 db.SaveChanges();
             }
         }
@@ -101,14 +97,13 @@ namespace NewProject
         {
             using (DB_QLKDEntities db= new DB_QLKDEntities())
             {
-                CT_PBH ctPBH = db.CT_PBH.Where(c => c.MaPBH == maPBH).First();
+                CT_PBH ctPBH = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP == maSP).First();
                 PHIEUBANHANG pbh = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
-
-                ctPBH.MaSP = maSP;
                 ctPBH.SoLuong = soluong;
                 ctPBH.DonGiaBan = donGiaBan;
+                pbh.TongTien -= ctPBH.ThanhTien;
                 ctPBH.ThanhTien = thanhTien;
-                pbh.TongTien = thanhTien;
+                pbh.TongTien += thanhTien;
 
                 db.SaveChanges();
             }
@@ -119,7 +114,7 @@ namespace NewProject
         {
             using(DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                if(db.PHIEUMUAHANGs.Find(maPMH)==null)
+                if (db.PHIEUMUAHANGs.Find(maPMH) == null)
                 {
                     PHIEUMUAHANG pmh = new PHIEUMUAHANG
                     {
@@ -129,17 +124,16 @@ namespace NewProject
                     };
                     db.PHIEUMUAHANGs.Add(pmh);
                 }
+                    CT_PMH ctPMH = new CT_PMH
+                    {
+                        MaPMH = maPMH,
+                        MaSP = maSP,
+                        SoLuongMuaVao = soLuongMua,
+                        DonGiaMuaVao = donGiaMua,
+                        ThanhTien = thanhTien
+                    };
+                    db.CT_PMH.Add(ctPMH);
                 
-
-                CT_PMH ctPMH = new CT_PMH
-                {
-                    MaPMH=maPMH,
-                    MaSP=maSP,
-                    SoLuongMuaVao=soLuongMua,
-                    DonGiaMuaVao=donGiaMua,
-                    ThanhTien=thanhTien
-                };
-                db.CT_PMH.Add(ctPMH);
 
                 db.SaveChanges();
             }
@@ -150,8 +144,7 @@ namespace NewProject
             using (DB_QLKDEntities db=new DB_QLKDEntities())
             {
                 CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH && c.MaSP==masp).First();
-                //PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
-                
+                PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
                 db.CT_PMH.Remove(ctPMH);
                 //db.PHIEUMUAHANGs.Remove(pmh);
 
@@ -169,7 +162,6 @@ namespace NewProject
                 //pmh.MaPMH = maPMH;
                 pmh.MaNCC = maNCC;
                 //ctPMH.MaPMH = maPMH;
-                ctPMH.MaSP = masp;
                 ctPMH.SoLuongMuaVao = soLuong;
                 ctPMH.DonGiaMuaVao = donGia;
                 ctPMH.ThanhTien = thanhTien;
