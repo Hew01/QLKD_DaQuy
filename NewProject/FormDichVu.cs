@@ -250,7 +250,7 @@ namespace NewProject
                                             where c.LoaiDV == CBLoaiDV.Text
                                             select c.DonGiaDV).First().ToString());
                 long thanhTien = donGia * soLuong;
-                long conLai = thanhTien - traTruoc;
+                long conLai = (thanhTien - traTruoc) < 0 ? 0 : (thanhTien - traTruoc);
                 DB_QLKD.Add_CTPhieuDichVu(maPDV, maDV, soLuong, donGia, thanhTien, traTruoc, conLai, ngayGiao, ngayLapPhieu, tenKH, sdt);
                 LoadData();
                 MessageBox.Show("Thêm thành công!", "Thông Báo");
