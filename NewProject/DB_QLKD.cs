@@ -31,6 +31,19 @@ namespace NewProject
         public long Đơn_Giá { get; set; }
         public long Thành_Tiền { get; set; }
     }
+
+    public class PhieuDichVu
+    {
+        public string Loại_Dịch_Vụ { get; set; }
+        public long Đơn_Giá_Dịch_Vụ { get; set; }
+        public long Đơn_Giá_Được_Tính { get; set; }
+        public int Số_Lượng { get; set; }
+        public long Thành_Tiền { get; set; }
+        public long Trả_Trước { get; set; }
+        public long Còn_Lại { get; set; }
+        public DateTime Ngày_Giao { get; set; }
+        public string Tình_Trạng { get; set; }
+    }
     public class DB_QLKD
     {
         //FormBanHang
@@ -129,8 +142,8 @@ namespace NewProject
                     };
                     db.PHIEUMUAHANGs.Add(pmh);
                 }
-                
 
+                
                 CT_PMH ctPMH = new CT_PMH
                 {
                     MaPMH=maPMH,
@@ -174,6 +187,114 @@ namespace NewProject
                 ctPMH.DonGiaMuaVao = donGia;
                 ctPMH.ThanhTien = thanhTien;
 
+                db.SaveChanges();
+            }
+        }
+
+        public static void Add_CTPhieuDichVu(int maPDV, int maDV, int soLuong, long donGia, long thanhTien, long traTuoc, long conLai, DateTime ngayGiao, DateTime ngayLapPhieu, string tenKH, int sdt)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                if (db.PHIEUDVs.Find(maPDV) == null)
+                {
+                    PHIEUDV pdv = new PHIEUDV
+                    {
+                        MaPDV = maPDV,
+                        TenKH = tenKH,
+                        NgayLapPDV = ngayLapPhieu,
+                        SDTKH = sdt,
+                        TongTien = 0,
+                        TongTienConLai = 0,
+                        TongTienTraTruoc = 0,
+                    };
+                    db.PHIEUDVs.Add(pdv);
+                    db.SaveChanges();
+                }
+                long donGiaTinh = donGia;
+                CT_PDV ctpdv = new CT_PDV
+                {
+                    MaPDV = maPDV,
+                    MaDV = maDV,
+                    SoLuongDV = soLuong,
+                    DonGiaDV = donGia,
+                    ChiPhiRiengDV = 0,
+                    DonGiaDuocTinh = donGiaTinh,
+                    ThanhTien = thanhTien,
+                    MaTT = 0,
+                    NgayGiao = ngayGiao,
+                    TraTruoc = traTuoc,
+                    ConLai = conLai,
+                    TinhTrang = "Chưa Giao",
+                };
+                db.CT_PDV.Add(ctpdv);
+                PHIEUDV a = db.PHIEUDVs.Where(c => c.MaPDV == maPDV).First();
+                a.TongTien += thanhTien;
+                db.SaveChanges();
+            }
+        }
+        public static void Delete_CTPDV(int maPDV, int maDV)
+        {
+            using (DB_QLKDEntities db=new DB_QLKDEntities())
+            {
+                CT_PDV ct = db.CT_PDV.Where(c => c.MaDV == maDV && c.MaPDV == maPDV).First();
+                db.CT_PDV.Remove(ct);
+                db.SaveChanges();
+            }
+        }
+
+        public static void Edit_CTPDV(int maPDV, int maDV, int soLuong, int traTruoc, DateTime ngayGiao, string tinhTrang)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                PHIEUDV pdv = db.PHIEUDVs.Where(c => c.MaPDV == maPDV).First();
+                CT_PDV ctpdv = db.CT_PDV.Where(c => c.MaPDV == maPDV && c.MaDV == maDV).First();
+                int donGia = Convert.ToInt32((from d in db.DICHVUs
+                                              where d.MaDV == maDV
+                                              select d.DonGiaDV).First().ToString());
+                long thanhTien = soLuong * donGia;
+                int maTT = 0;
+                if (tinhTrang == "Đã Giao")
+                {
+                    maTT = 1;
+                }
+                else maTT = 0;
+
+                ctpdv.SoLuongDV = soLuong;
+                
+                ctpdv.MaTT = maTT;
+                ctpdv.TinhTrang = tinhTrang;
+                ctpdv.NgayGiao = ngayGiao;
+                long tong = Convert.ToInt64((from c in db.PHIEUDVs
+                                                where c.MaPDV == maPDV
+                                                select c.TongTien).First().ToString());
+                long tongTien = tong - ctpdv.ThanhTien.Value;
+                tongTien += thanhTien;
+                ctpdv.ThanhTien = thanhTien;
+                pdv.TongTien = tongTien;
+
+                long sum = Convert.ToInt64((from c in db.PHIEUDVs
+                                             where c.MaPDV == maPDV
+                                             select c.TongTienTraTruoc).First().ToString());
+                long tongTienTraTruoc = sum - ctpdv.TraTruoc.Value;
+                tongTienTraTruoc += traTruoc;
+                ctpdv.TraTruoc = traTruoc;
+                pdv.TongTienTraTruoc = tongTienTraTruoc;
+
+                long tongCL = Convert.ToInt64((from c in db.PHIEUDVs
+                                             where c.MaPDV == maPDV
+                                             select c.TongTienConLai).First().ToString());
+                long tongTienConLai = tong - ctpdv.ConLai.Value;
+                if(tinhTrang=="Đã Giao")
+                {
+                    ctpdv.ConLai = 0;
+                    tongTienConLai = tongTien;
+                }
+                else if(tinhTrang=="Chưa Giao")
+                {
+                    ctpdv.ConLai = thanhTien - traTruoc;
+                    tongTienConLai = tongTien - tongTienTraTruoc;
+                }
+                pdv.TongTienConLai = tongTienConLai;
                 db.SaveChanges();
             }
         }

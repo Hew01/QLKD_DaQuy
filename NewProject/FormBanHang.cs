@@ -310,7 +310,7 @@ namespace NewProject
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            int maPBH = Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Mã_Phiếu_Bán_Hàng"].Value.ToString());
+            int maPBH = Convert.ToInt32(TB_IDPBH.Text);
             string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
             int maLoaiSP= Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Mã_Loại_Sản_Phẩm"].Value.ToString());
             int soLuong= Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Số_Lượng"].Value.ToString());
