@@ -22,41 +22,61 @@ namespace NewProject
             Application.Exit();
         }
 
+        private Form CurrentChildFrom;
+        private void OpenChildForm(Form ChildForm)
+        {
+            if(CurrentChildFrom != null)
+            {
+                CurrentChildFrom.Close();
+            }
+            CurrentChildFrom = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            PanelBody.Controls.Add(ChildForm);
+            PanelBody.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
+
         private void btnLapPhieuBanHang_Click(object sender, EventArgs e)
         {
-            FormBanHang f= new FormBanHang();
-            f.ShowDialog();
+            OpenChildForm(new FormBanHang());
 
         }
 
         private void btnLapPhieuMuaHang_Click(object sender, EventArgs e)
         {
-            FormMuaHang f= new FormMuaHang();
-            f.ShowDialog();
+            OpenChildForm(new FormMuaHang());
         }
 
         private void btnLapPhieuDichVu_Click(object sender, EventArgs e)
         {
-            FormDichVu f= new FormDichVu();
-            f.ShowDialog();
+            OpenChildForm(new FormDichVu());
         }
 
         private void btnBaoCaoTonKho_Click(object sender, EventArgs e)
         {
-            FormBaoCaoTonKho f=new FormBaoCaoTonKho();
-            f.ShowDialog();
+            OpenChildForm(new FormBaoCaoTonKho());
         }
 
         private void btnDanhSachPhieuDichVu_Click(object sender, EventArgs e)
         {
-            FormDanhSachPhieuDichVu f=new FormDanhSachPhieuDichVu();
-            f.ShowDialog();
+            OpenChildForm(new FormDanhSachPhieuDichVu());
         }
 
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormThongTinTaiKhoan f=new FormThongTinTaiKhoan();
             f.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (CurrentChildFrom!=null)
+            {
+                CurrentChildFrom.Close();
+            }
         }
     }
 }

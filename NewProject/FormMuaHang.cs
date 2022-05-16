@@ -214,6 +214,7 @@ namespace NewProject
                 BtnDelete.Enabled = true;
             }
         }
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             EditItem();

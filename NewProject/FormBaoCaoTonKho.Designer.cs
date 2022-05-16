@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 30);
+            this.label1.Location = new System.Drawing.Point(397, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 45);
             this.label1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(140, 102);
+            this.textBox1.Location = new System.Drawing.Point(174, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 27);
             this.textBox1.TabIndex = 9;
@@ -65,7 +65,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(80, 110);
+            this.label5.Location = new System.Drawing.Point(114, 103);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 8;
@@ -82,11 +82,11 @@
             this.SoLuongBanRa,
             this.TonCuoi,
             this.DonViTinh});
-            this.dataGridView1.Location = new System.Drawing.Point(110, 154);
+            this.dataGridView1.Location = new System.Drawing.Point(128, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(746, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(934, 288);
             this.dataGridView1.TabIndex = 10;
             // 
             // STT
@@ -140,7 +140,7 @@
             // 
             // btnInBaoCaoTonKho
             // 
-            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(754, 461);
+            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(925, 459);
             this.btnInBaoCaoTonKho.Name = "btnInBaoCaoTonKho";
             this.btnInBaoCaoTonKho.Size = new System.Drawing.Size(101, 28);
             this.btnInBaoCaoTonKho.TabIndex = 11;
@@ -151,7 +151,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 505);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1168, 562);
             this.Controls.Add(this.btnInBaoCaoTonKho);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
