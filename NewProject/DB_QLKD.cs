@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace NewProject
 {
@@ -19,7 +20,7 @@ namespace NewProject
         public long Thành_Tiền { get; set; }
 
     }
-
+    
     public class CT_PhieuMuaHang
     {
         
@@ -44,15 +45,62 @@ namespace NewProject
         public DateTime Ngày_Giao { get; set; }
         public string Tình_Trạng { get; set; }
     }
+
+
     public class DB_QLKD
     {
+        public static bool checkSoLuong(int sl, int masp)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                var soluong = from c in db.SANPHAMs
+                              where c.MaSP == masp
+                              select c.SoLuongTon;
+                if (sl > soluong.First().Value)
+                {
+                    MessageBox.Show("Không đủ số lượng trong kho", "Thông báo");
+                    return false;
+                }
+                else return true;
+            }
+        }
+
+        public static void ChangeQuantity(int sl, int masp)
+        {
+            using (DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                var sanpham = db.SANPHAMs.Where(c => c.MaSP == masp).First();
+                sanpham.SoLuongTon += sl;
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeStored_SLBanRa(int sl, int masp, DateTime date)
+        {
+            using (DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                bc.SLBanRa += sl;
+                db.SaveChanges();
+            }
+        }
+
+        public static void ChangeStored_SLMuaVao(int sl, int masp, DateTime date)
+        {
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
+            {
+                var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                bc.SLMuaVao += sl;
+                db.SaveChanges();
+            }
+        }
         //FormBanHang
         public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, string ngaylapphieu)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 int thanhTien = soluong * donGiaBan;
-
+                if (!checkSoLuong(soluong, maSP)) return;
                 if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH))==null)
                 {
                     PHIEUBANHANG pbh = new PHIEUBANHANG
@@ -90,7 +138,9 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
-
+                ChangeStored_SLBanRa(soluong, maSP, Convert.ToDateTime(ngaylapphieu));
+                ChangeQuantity(-soluong, maSP);
+                MessageBox.Show("Thêm thành công", "Thông Báo");
                 //SAVE CHANGES
                 db.SaveChanges();
             }
@@ -132,7 +182,8 @@ namespace NewProject
         {
             using(DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                if(db.PHIEUMUAHANGs.Find(maPMH)==null)
+                
+                if (db.PHIEUMUAHANGs.Find(maPMH)==null)
                 {
                     PHIEUMUAHANG pmh = new PHIEUMUAHANG
                     {
@@ -154,6 +205,8 @@ namespace NewProject
                 };
                 db.CT_PMH.Add(ctPMH);
 
+                ChangeStored_SLMuaVao(soLuongMua, maSP, ngayLapPhieu);
+                ChangeQuantity(soLuongMua, maSP);
                 db.SaveChanges();
             }
         }

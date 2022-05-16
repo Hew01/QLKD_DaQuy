@@ -211,9 +211,6 @@
             // 
             this.CBSanPham.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBSanPham.FormattingEnabled = true;
-            this.CBSanPham.Items.AddRange(new object[] {
-            "a",
-            "b"});
             this.CBSanPham.Location = new System.Drawing.Point(146, 206);
             this.CBSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.CBSanPham.Name = "CBSanPham";

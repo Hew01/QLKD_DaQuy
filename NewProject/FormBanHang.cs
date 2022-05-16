@@ -202,7 +202,7 @@ namespace NewProject
             DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, ngayLapPhieu);
             db.SaveChanges();
             LoadData();
-            MessageBox.Show("Thêm thành công","Thông Báo");
+            
         }
 
 
