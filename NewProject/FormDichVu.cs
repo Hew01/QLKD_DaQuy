@@ -28,69 +28,6 @@ namespace NewProject
             valuePaid = 0;
             valueRemain = 0;
         }
-
-        private void FormDichVu_Load(object sender, EventArgs e)
-        {
-            //dataGridView properties:
-            this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridView1.ColumnHeadersHeight = this.dataGridView1.ColumnHeadersHeight * 2;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
-            this.dataGridView1.CellPainting += new DataGridViewCellPaintingEventHandler(dataGridView1_CellPainting);
-            this.dataGridView1.Paint += new PaintEventHandler(dataGridView1_Paint);
-            this.dataGridView1.Scroll += new ScrollEventHandler(dataGridView1_Scroll);
-            this.dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
-        }
-        //Khởi tạo dgv để có merge cells
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
-        {
-            //gắn 2 ô header lại với nhau
-            Rectangle r1 = dataGridView1.GetCellDisplayRectangle(6, -1, true);
-            int w2 = dataGridView1.GetCellDisplayRectangle(7, -1, true).Width;
-
-            r1.X += 1;
-            r1.Y += 1;
-            r1.Width = r1.Width + w2 - 2;
-            r1.Height = r1.Height / 2 - 2;
-            e.Graphics.FillRectangle(new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
-
-            //format cho header mới merged
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
-            format.LineAlignment = StringAlignment.Center;
-            e.Graphics.DrawString("Thanh toán", dataGridView1.ColumnHeadersDefaultCellStyle.Font,
-                new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor), r1, format);
-
-        }
-
-        //Các thuộc tính cho dgv để thuận tiện cho việc merge:
-
-        private void dataGridView1_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {
-            Rectangle rtHeader = dataGridView1.DisplayRectangle;
-            rtHeader.Height = dataGridView1.ColumnHeadersHeight / 2;
-            dataGridView1.Invalidate(rtHeader);
-        }
-
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex == -1 && e.ColumnIndex > -1)
-            {
-                Rectangle r2 = e.CellBounds;
-                r2.Y += e.CellBounds.Height / 2;
-                r2.Height = e.CellBounds.Height / 2;
-                e.PaintBackground(r2, true);
-                e.PaintContent(r2);
-                e.Handled = true;
-            }
-        }
-
-        private void dataGridView1_Scroll(object sender, ScrollEventArgs e)
-        {
-            Rectangle rtHeader = dataGridView1.DisplayRectangle;
-            rtHeader.Height = dataGridView1.ColumnHeadersHeight / 2;
-            dataGridView1.Invalidate(rtHeader);
-        }
-
         //Xử lí dgv
         private bool IsEmptyCell(DataGridViewRow row)
         {

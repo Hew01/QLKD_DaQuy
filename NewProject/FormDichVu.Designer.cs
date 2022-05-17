@@ -505,7 +505,6 @@
             this.Name = "FormDichVu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDichVu";
-            this.Load += new System.EventHandler(this.FormDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

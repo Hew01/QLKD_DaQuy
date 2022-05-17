@@ -162,7 +162,7 @@
             this.label1.Location = new System.Drawing.Point(25, 410);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Liên hệ: 0352498496";
             // 
@@ -230,6 +230,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "FormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Cửa Hàng Vàng Bạc Đá Quý";

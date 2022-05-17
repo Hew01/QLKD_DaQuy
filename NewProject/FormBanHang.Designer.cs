@@ -312,7 +312,7 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(424, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(344, 42);
+            this.label9.Size = new System.Drawing.Size(354, 43);
             this.label9.TabIndex = 22;
             this.label9.Text = "PHIẾU BÁN HÀNG";
             // 
@@ -359,7 +359,7 @@
             this.LbSumMoney.AutoSize = true;
             this.LbSumMoney.Location = new System.Drawing.Point(831, 538);
             this.LbSumMoney.Name = "LbSumMoney";
-            this.LbSumMoney.Size = new System.Drawing.Size(48, 16);
+            this.LbSumMoney.Size = new System.Drawing.Size(52, 17);
             this.LbSumMoney.TabIndex = 24;
             this.LbSumMoney.Text = "0 đồng";
             // 
