@@ -77,7 +77,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(321, 0);
+            this.label9.Location = new System.Drawing.Point(429, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(353, 49);
             this.label9.TabIndex = 23;
@@ -87,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 44);
+            this.label2.Location = new System.Drawing.Point(6, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 23);
             this.label2.TabIndex = 32;
@@ -97,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 90);
+            this.label3.Location = new System.Drawing.Point(53, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 33;
@@ -107,7 +107,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 126);
+            this.label4.Location = new System.Drawing.Point(34, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 34;
@@ -117,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 165);
+            this.label5.Location = new System.Drawing.Point(45, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 35;
@@ -126,7 +126,7 @@
             // tbSoPhieu
             // 
             this.tbSoPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSoPhieu.Location = new System.Drawing.Point(132, 86);
+            this.tbSoPhieu.Location = new System.Drawing.Point(132, 64);
             this.tbSoPhieu.Name = "tbSoPhieu";
             this.tbSoPhieu.Size = new System.Drawing.Size(283, 27);
             this.tbSoPhieu.TabIndex = 36;
@@ -135,7 +135,7 @@
             // 
             this.tbTongTien.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTongTien.Location = new System.Drawing.Point(132, 161);
+            this.tbTongTien.Location = new System.Drawing.Point(132, 139);
             this.tbTongTien.Name = "tbTongTien";
             this.tbTongTien.ReadOnly = true;
             this.tbTongTien.Size = new System.Drawing.Size(165, 27);
@@ -145,7 +145,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(515, 90);
+            this.label6.Location = new System.Drawing.Point(515, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 39;
@@ -156,7 +156,7 @@
             this.DateTime.CustomFormat = "dd/MM/yyyy";
             this.DateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTime.Location = new System.Drawing.Point(594, 90);
+            this.DateTime.Location = new System.Drawing.Point(594, 68);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(274, 27);
             this.DateTime.TabIndex = 40;
@@ -165,7 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 191);
+            this.label7.Location = new System.Drawing.Point(6, 169);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 23);
             this.label7.TabIndex = 41;
@@ -175,7 +175,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 229);
+            this.label10.Location = new System.Drawing.Point(34, 207);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 20);
             this.label10.TabIndex = 42;
@@ -185,7 +185,7 @@
             // 
             this.CBLoaiDV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBLoaiDV.FormattingEnabled = true;
-            this.CBLoaiDV.Location = new System.Drawing.Point(132, 226);
+            this.CBLoaiDV.Location = new System.Drawing.Point(132, 204);
             this.CBLoaiDV.Name = "CBLoaiDV";
             this.CBLoaiDV.Size = new System.Drawing.Size(285, 27);
             this.CBLoaiDV.TabIndex = 43;
@@ -195,7 +195,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 271);
+            this.label1.Location = new System.Drawing.Point(53, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 44;
@@ -204,7 +204,7 @@
             // TBSoLuong
             // 
             this.TBSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBSoLuong.Location = new System.Drawing.Point(133, 268);
+            this.TBSoLuong.Location = new System.Drawing.Point(133, 246);
             this.TBSoLuong.Name = "TBSoLuong";
             this.TBSoLuong.Size = new System.Drawing.Size(69, 27);
             this.TBSoLuong.TabIndex = 45;
@@ -212,7 +212,7 @@
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(217, 268);
+            this.BtnAdd.Location = new System.Drawing.Point(217, 246);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(62, 31);
             this.BtnAdd.TabIndex = 46;
@@ -222,7 +222,7 @@
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(285, 268);
+            this.BtnDelete.Location = new System.Drawing.Point(285, 246);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(62, 31);
             this.BtnDelete.TabIndex = 47;
@@ -232,7 +232,7 @@
             // 
             // BtnEdit
             // 
-            this.BtnEdit.Location = new System.Drawing.Point(355, 267);
+            this.BtnEdit.Location = new System.Drawing.Point(355, 245);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(62, 31);
             this.BtnEdit.TabIndex = 48;
@@ -244,7 +244,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(481, 230);
+            this.label8.Location = new System.Drawing.Point(481, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.TabIndex = 49;
@@ -254,7 +254,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(487, 126);
+            this.label11.Location = new System.Drawing.Point(487, 104);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 20);
             this.label11.TabIndex = 51;
@@ -263,7 +263,7 @@
             // tbSoDienThoai
             // 
             this.tbSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSoDienThoai.Location = new System.Drawing.Point(594, 126);
+            this.tbSoDienThoai.Location = new System.Drawing.Point(594, 104);
             this.tbSoDienThoai.Name = "tbSoDienThoai";
             this.tbSoDienThoai.Size = new System.Drawing.Size(274, 27);
             this.tbSoDienThoai.TabIndex = 52;
@@ -271,7 +271,7 @@
             // tbKhachHang
             // 
             this.tbKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKhachHang.Location = new System.Drawing.Point(132, 125);
+            this.tbKhachHang.Location = new System.Drawing.Point(132, 103);
             this.tbKhachHang.Name = "tbKhachHang";
             this.tbKhachHang.Size = new System.Drawing.Size(283, 27);
             this.tbKhachHang.TabIndex = 53;
@@ -280,7 +280,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(326, 164);
+            this.label12.Location = new System.Drawing.Point(326, 142);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 20);
             this.label12.TabIndex = 54;
@@ -290,7 +290,7 @@
             // 
             this.tbTongTraTruoc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbTongTraTruoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTongTraTruoc.Location = new System.Drawing.Point(468, 161);
+            this.tbTongTraTruoc.Location = new System.Drawing.Point(468, 139);
             this.tbTongTraTruoc.Name = "tbTongTraTruoc";
             this.tbTongTraTruoc.ReadOnly = true;
             this.tbTongTraTruoc.Size = new System.Drawing.Size(165, 27);
@@ -300,7 +300,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(666, 164);
+            this.label13.Location = new System.Drawing.Point(666, 142);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(126, 20);
             this.label13.TabIndex = 56;
@@ -310,7 +310,7 @@
             // 
             this.tbTongConLai.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbTongConLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTongConLai.Location = new System.Drawing.Point(798, 161);
+            this.tbTongConLai.Location = new System.Drawing.Point(798, 139);
             this.tbTongConLai.Name = "tbTongConLai";
             this.tbTongConLai.ReadOnly = true;
             this.tbTongConLai.Size = new System.Drawing.Size(165, 27);
@@ -320,7 +320,7 @@
             // 
             this.TBTraTruoc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.TBTraTruoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTraTruoc.Location = new System.Drawing.Point(563, 229);
+            this.TBTraTruoc.Location = new System.Drawing.Point(563, 207);
             this.TBTraTruoc.Name = "TBTraTruoc";
             this.TBTraTruoc.ReadOnly = true;
             this.TBTraTruoc.Size = new System.Drawing.Size(285, 27);
@@ -331,7 +331,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(471, 269);
+            this.label14.Location = new System.Drawing.Point(471, 247);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(81, 20);
             this.label14.TabIndex = 58;
@@ -342,14 +342,14 @@
             this.dtNgayGiao.CustomFormat = "dd/MM/yyyy";
             this.dtNgayGiao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayGiao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayGiao.Location = new System.Drawing.Point(563, 267);
+            this.dtNgayGiao.Location = new System.Drawing.Point(563, 245);
             this.dtNgayGiao.Name = "dtNgayGiao";
             this.dtNgayGiao.Size = new System.Drawing.Size(285, 27);
             this.dtNgayGiao.TabIndex = 59;
             // 
             // btnInPhieuDichVu
             // 
-            this.btnInPhieuDichVu.Location = new System.Drawing.Point(1043, 571);
+            this.btnInPhieuDichVu.Location = new System.Drawing.Point(1041, 533);
             this.btnInPhieuDichVu.Name = "btnInPhieuDichVu";
             this.btnInPhieuDichVu.Size = new System.Drawing.Size(70, 26);
             this.btnInPhieuDichVu.TabIndex = 61;
@@ -370,12 +370,12 @@
             this.ConLai,
             this.NgayGiao,
             this.TinhTrang});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 308);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 286);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1154, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(1154, 239);
             this.dataGridView1.TabIndex = 60;
             // 
             // Stt
@@ -460,9 +460,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.Controls.Add(this.btnInPhieuDichVu);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.dtNgayGiao);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.TBTraTruoc);
@@ -491,16 +491,17 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(6, 11);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 609);
+            this.panel1.Size = new System.Drawing.Size(1168, 562);
             this.panel1.TabIndex = 62;
             // 
             // FormDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 624);
+            this.ClientSize = new System.Drawing.Size(1168, 562);
             this.Controls.Add(this.panel1);
             this.Name = "FormDichVu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
