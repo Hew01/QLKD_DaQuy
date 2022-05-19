@@ -22,21 +22,31 @@ namespace NewProject
             Application.Exit();
         }
 
+        DB_QLKDEntities dbcontext = new DB_QLKDEntities();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
-            //if (ListAccount.Instance.IsValidAccount(username, password))
+            try
             {
-                MessageBox.Show("Successfully logged in!");
-                this.Hide();
-                FormManager formManager = new FormManager();
-                formManager.FormClosed += (s, args) => this.Close();
-                formManager.ShowDialog();
+                if (dbcontext.LOGINs.Where(r => r.USERNAME == txtUsername.Text
+                && r.PASSWORD == txtPassword.Text).Count() > 0)
+                {
+                    MessageBox.Show("Đăng nhập thành công");
+                    this.Hide();
+                    FormManager formManager = new FormManager();
+                    formManager.FormClosed += (s, args) => this.Close();
+                    formManager.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại");
+                }
             }
-            //else
-            MessageBox.Show("Wrong username or password");
+            catch (Exception ert)
+            {
+
+            }
         }
+       
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -49,13 +59,18 @@ namespace NewProject
         private void tbUsername_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                tbPassword.Focus();
+                txtPassword.Focus();
         }
 
         private void tbPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnLogin_Click(sender, e);
+        }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

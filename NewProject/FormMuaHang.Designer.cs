@@ -37,7 +37,7 @@
             this.cbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.tbSodienthoai = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.DateTime = new System.Windows.Forms.DateTimePicker();
+            this.pmh_DateTime = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.CBSanPham = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -172,16 +172,16 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Ngày lập:";
             // 
-            // DateTime
+            // pmh_DateTime
             // 
-            this.DateTime.CustomFormat = "dd/MM/yyyy";
-            this.DateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTime.Location = new System.Drawing.Point(588, 82);
-            this.DateTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DateTime.Name = "DateTime";
-            this.DateTime.Size = new System.Drawing.Size(246, 27);
-            this.DateTime.TabIndex = 9;
+            this.pmh_DateTime.CustomFormat = "dd/MM/yyyy";
+            this.pmh_DateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pmh_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pmh_DateTime.Location = new System.Drawing.Point(588, 82);
+            this.pmh_DateTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pmh_DateTime.Name = "pmh_DateTime";
+            this.pmh_DateTime.Size = new System.Drawing.Size(246, 27);
+            this.pmh_DateTime.TabIndex = 9;
             // 
             // label7
             // 
@@ -205,7 +205,6 @@
             this.CBSanPham.Name = "CBSanPham";
             this.CBSanPham.Size = new System.Drawing.Size(285, 27);
             this.CBSanPham.TabIndex = 29;
-            this.CBSanPham.SelectedIndexChanged += new System.EventHandler(this.CBSanPham_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -341,7 +340,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(805, 199);
             this.dataGridView1.TabIndex = 32;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // stt
             // 
@@ -448,7 +446,7 @@
             this.panel1.Controls.Add(this.CBLoaiSP);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.DateTime);
+            this.panel1.Controls.Add(this.pmh_DateTime);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbSodienthoai);
             this.panel1.Controls.Add(this.cbNhaCungCap);
@@ -496,7 +494,7 @@
         private System.Windows.Forms.ComboBox cbNhaCungCap;
         private System.Windows.Forms.TextBox tbSodienthoai;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker DateTime;
+        private System.Windows.Forms.DateTimePicker pmh_DateTime;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CBSanPham;
         private System.Windows.Forms.Label label8;

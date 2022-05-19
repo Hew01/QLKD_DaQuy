@@ -39,27 +39,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBSoLuong = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAdd = new System.Windows.Forms.Button();
-            this.TB_NameKH = new System.Windows.Forms.TextBox();
-            this.TB_IDPhieu = new System.Windows.Forms.TextBox();
+            this.TB_TenKH = new System.Windows.Forms.TextBox();
+            this.TB_IDPBH = new System.Windows.Forms.TextBox();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.CBSanPham = new System.Windows.Forms.ComboBox();
-            this.TBDate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.LbSumMoney = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbh_DateTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -181,47 +181,14 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(817, 221);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // ThanhTien
+            // stt
             // 
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.MinimumWidth = 6;
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            this.ThanhTien.Width = 125;
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            this.DonGia.Width = 125;
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.MinimumWidth = 6;
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.ReadOnly = true;
-            this.DonViTinh.Width = 75;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            this.SoLuong.Width = 75;
-            // 
-            // SanPham
-            // 
-            this.SanPham.HeaderText = "Sản Phẩm";
-            this.SanPham.MinimumWidth = 6;
-            this.SanPham.Name = "SanPham";
-            this.SanPham.ReadOnly = true;
-            this.SanPham.Width = 150;
+            this.stt.HeaderText = "STT";
+            this.stt.MinimumWidth = 6;
+            this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
+            this.stt.Width = 50;
             // 
             // LoaiSanPham
             // 
@@ -231,13 +198,45 @@
             this.LoaiSanPham.ReadOnly = true;
             this.LoaiSanPham.Width = 150;
             // 
-            // stt
+            // SanPham
             // 
-            this.stt.HeaderText = "STT";
-            this.stt.MinimumWidth = 6;
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            this.stt.Width = 50;
+            this.SanPham.HeaderText = "Sản Phẩm";
+            this.SanPham.MinimumWidth = 6;
+            this.SanPham.Name = "SanPham";
+            this.SanPham.ReadOnly = true;
+            this.SanPham.Width = 150;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 75;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.MinimumWidth = 6;
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            this.DonViTinh.Width = 75;
+            // 
+            // DonGia
+            // 
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.MinimumWidth = 6;
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            this.DonGia.Width = 125;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.MinimumWidth = 6;
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            this.ThanhTien.Width = 125;
             // 
             // BtnAdd
             // 
@@ -249,21 +248,21 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // TB_NameKH
+            // TB_TenKH
             // 
-            this.TB_NameKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_NameKH.Location = new System.Drawing.Point(284, 110);
-            this.TB_NameKH.Name = "TB_NameKH";
-            this.TB_NameKH.Size = new System.Drawing.Size(285, 27);
-            this.TB_NameKH.TabIndex = 13;
+            this.TB_TenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_TenKH.Location = new System.Drawing.Point(284, 110);
+            this.TB_TenKH.Name = "TB_TenKH";
+            this.TB_TenKH.Size = new System.Drawing.Size(285, 27);
+            this.TB_TenKH.TabIndex = 13;
             // 
-            // TB_IDPhieu
+            // TB_IDPBH
             // 
-            this.TB_IDPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_IDPhieu.Location = new System.Drawing.Point(284, 75);
-            this.TB_IDPhieu.Name = "TB_IDPhieu";
-            this.TB_IDPhieu.Size = new System.Drawing.Size(285, 27);
-            this.TB_IDPhieu.TabIndex = 13;
+            this.TB_IDPBH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_IDPBH.Location = new System.Drawing.Point(284, 75);
+            this.TB_IDPBH.Name = "TB_IDPBH";
+            this.TB_IDPBH.Size = new System.Drawing.Size(285, 27);
+            this.TB_IDPBH.TabIndex = 13;
             // 
             // BtnDelete
             // 
@@ -316,15 +315,6 @@
             this.CBSanPham.Name = "CBSanPham";
             this.CBSanPham.Size = new System.Drawing.Size(285, 27);
             this.CBSanPham.TabIndex = 20;
-            this.CBSanPham.SelectedIndexChanged += new System.EventHandler(this.CBSanPham_SelectedIndexChanged);
-            // 
-            // TBDate
-            // 
-            this.TBDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDate.Location = new System.Drawing.Point(284, 146);
-            this.TBDate.Name = "TBDate";
-            this.TBDate.Size = new System.Drawing.Size(285, 27);
-            this.TBDate.TabIndex = 21;
             // 
             // label9
             // 
@@ -368,19 +358,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.pbh_DateTime);
             this.panel1.Controls.Add(this.btnIn);
             this.panel1.Controls.Add(this.LbSumMoney);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.TBDate);
             this.panel1.Controls.Add(this.CBSanPham);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.BtnEdit);
             this.panel1.Controls.Add(this.BtnDelete);
-            this.panel1.Controls.Add(this.TB_IDPhieu);
-            this.panel1.Controls.Add(this.TB_NameKH);
+            this.panel1.Controls.Add(this.TB_IDPBH);
+            this.panel1.Controls.Add(this.TB_TenKH);
             this.panel1.Controls.Add(this.BtnAdd);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.TBSoLuong);
@@ -397,6 +387,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1168, 563);
             this.panel1.TabIndex = 25;
+            // 
+            // pbh_DateTime
+            // 
+            this.pbh_DateTime.CustomFormat = "dd/MM/yyyy";
+            this.pbh_DateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbh_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.pbh_DateTime.Location = new System.Drawing.Point(284, 146);
+            this.pbh_DateTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbh_DateTime.Name = "pbh_DateTime";
+            this.pbh_DateTime.Size = new System.Drawing.Size(246, 27);
+            this.pbh_DateTime.TabIndex = 25;
             // 
             // FormBanHang
             // 
@@ -436,18 +437,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.TextBox TB_NameKH;
-        private System.Windows.Forms.TextBox TB_IDPhieu;
+        private System.Windows.Forms.TextBox TB_TenKH;
+        private System.Windows.Forms.TextBox TB_IDPBH;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CBSanPham;
-        private System.Windows.Forms.TextBox TBDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LbSumMoney;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker pbh_DateTime;
     }
 }
