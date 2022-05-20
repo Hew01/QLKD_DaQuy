@@ -14,11 +14,11 @@
           <Property Name="Thang" Type="int" Nullable="false" />
           <Property Name="Nam" Type="int" Nullable="false" />
           <Property Name="MaSP" Type="int" Nullable="false" />
-          <Property Name="TonDau" Type="int" />
-          <Property Name="TonCuoi" Type="int" />
           <Property Name="SLMuaVao" Type="int" />
           <Property Name="SLBanRa" Type="int" />
           <Property Name="MaDVT" Type="int" Nullable="false" />
+          <Property Name="TonDau" Type="int" />
+          <Property Name="TonCuoi" Type="int" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="CT_PBH">
           <Key>

@@ -17,14 +17,14 @@ namespace NewProject
             InitializeComponent();
         }
 
-        public void LoadData(int thang)
+        public void LoadData(int thang, int year)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 var bc = from c in db.BAOCAOTONs
                          from d in db.SANPHAMs
                          from e in db.LOAISPs
-                         where c.MaSP == d.MaSP && d.MaLoaiSP == e.MaLoaiSP && c.Thang==thang
+                         where c.MaSP == d.MaSP && d.MaLoaiSP == e.MaLoaiSP && c.Thang==thang && c.Nam==year
                          select new
                          {
                              Sản_Phẩm = d.TenSP,
@@ -38,12 +38,13 @@ namespace NewProject
             }
         }
 
-        private void TxtThang_TextChanged(object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             try
             {
-                int thang = Convert.ToInt32(txtThang.Text);
-                LoadData(thang);
+                int month = dateTimePicker1.Value.Month;
+                int year = dateTimePicker1.Value.Year;
+                LoadData(month, year);
             }
             catch (Exception except)
             {
