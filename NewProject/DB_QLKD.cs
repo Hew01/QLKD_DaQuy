@@ -10,20 +10,16 @@ namespace NewProject
 {
     public class CT_PhieuBanHang
     {
-        //public int Mã_Phiếu_Bán_Hàng { get; set; }
         public string Sản_Phẩm { get; set; }
         public int Mã_Loại_Sản_Phẩm { get; set; }
-        
         public int Số_Lượng { get; set; }
         public string Đơn_Vị_Tính { get; set; }
         public long Đơn_Giá { get; set; }
         public long Thành_Tiền { get; set; }
-
     }
     
     public class CT_PhieuMuaHang
     {
-        
         public string Sản_Phẩm { get; set; }
         public int Loại_Sản_Phẩm { get; set; }
         public string Nhà_Cung_Cấp { get; set; }
@@ -49,7 +45,7 @@ namespace NewProject
 
     public class DB_QLKD
     {
-        public static bool checkSoLuong(int sl, int masp)
+        public static bool CheckSoLuong(int sl, int masp)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -79,8 +75,28 @@ namespace NewProject
         {
             using (DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
-                bc.SLBanRa += sl;
+                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
+                {
+                    var dvt = from c in db.LOAISPs
+                              join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
+                              where d.MaSP == masp
+                              select c.MaDVT;
+                    int madvt = Convert.ToInt32(dvt.First().ToString());
+                    BAOCAOTON a = new BAOCAOTON
+                    {
+                        Thang = date.Month,
+                        Nam = date.Year,
+                        SLBanRa = sl,
+                        MaSP = masp,
+                        MaDVT = madvt,
+                    };
+                }
+                else
+                {
+                    var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                    bc.SLBanRa += sl;
+                    
+                }
                 db.SaveChanges();
             }
         }
@@ -89,8 +105,28 @@ namespace NewProject
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
-                var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
-                bc.SLMuaVao += sl;
+                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
+                {
+                    var dvt = from c in db.LOAISPs
+                              join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
+                              where d.MaSP == masp
+                              select c.MaDVT;
+                    int madvt = Convert.ToInt32(dvt.First().ToString());
+                    BAOCAOTON a = new BAOCAOTON
+                    {
+                        Thang = date.Month,
+                        Nam = date.Year,
+                        SLMuaVao = sl,
+                        MaSP = masp,
+                        MaDVT=madvt,
+                    };
+                }
+                else
+                {
+                    var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
+                    bc.SLMuaVao += sl;
+                    
+                }
                 db.SaveChanges();
             }
         }
@@ -100,7 +136,7 @@ namespace NewProject
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 int thanhTien = soluong * donGiaBan;
-                if (!checkSoLuong(soluong, maSP)) return;
+                if (!CheckSoLuong(soluong, maSP)) return;
                 if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH))==null)
                 {
                     PHIEUBANHANG pbh = new PHIEUBANHANG

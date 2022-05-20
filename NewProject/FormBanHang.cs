@@ -47,7 +47,6 @@ namespace NewProject
                              Đơn_Vị_Tính = q.LoaiDVT,
                              Đơn_Giá = c.DonGiaBan.Value,
                              Thành_Tiền = c.ThanhTien.Value
-
                          };
 
 
