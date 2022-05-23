@@ -75,7 +75,7 @@ namespace NewProject
         {
             using (DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
+                if (db.BAOCAOTONs.Find(date.Month,date.Year,masp)==null)
                 {
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
@@ -90,6 +90,7 @@ namespace NewProject
                         MaSP = masp,
                         MaDVT = madvt,
                     };
+                    db.BAOCAOTONs.Add(a);
                 }
                 else
                 {
@@ -105,7 +106,7 @@ namespace NewProject
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
-                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
+                if (db.BAOCAOTONs.Find(date.Month, date.Year, masp) == null)
                 {
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
@@ -120,6 +121,7 @@ namespace NewProject
                         MaSP = masp,
                         MaDVT=madvt,
                     };
+                    db.BAOCAOTONs.Add(a);
                 }
                 else
                 {
@@ -131,7 +133,7 @@ namespace NewProject
             }
         }
         //FormBanHang
-        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, string ngaylapphieu)
+        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, DateTime ngaylapphieu)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -174,7 +176,7 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
-                ChangeStored_SLBanRa(soluong, maSP, Convert.ToDateTime(ngaylapphieu));
+                ChangeStored_SLBanRa(soluong, maSP, ngaylapphieu);
                 ChangeQuantity(-soluong, maSP);
                 MessageBox.Show("Thêm thành công", "Thông Báo");
                 //SAVE CHANGES

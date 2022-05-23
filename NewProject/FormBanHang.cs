@@ -178,8 +178,8 @@ namespace NewProject
         {
             string maPBH = TB_IDPBH.Text;
             string tenKH = TB_TenKH.Text;
-            string ngayLapPhieu = TB_NgayLapPhieu.Text;
             int loaiSP = Convert.ToInt32(CBLoaiSP.Text);
+            DateTime ngay = ngayLapPhieu.Value;
             var msp = from c in db.SANPHAMs
                        where c.TenSP == CBSanPham.Text
                        select c.MaSP;
@@ -198,7 +198,7 @@ namespace NewProject
             int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
 
 
-            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, ngayLapPhieu);
+            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, ngay);
             db.SaveChanges();
             LoadData();
             
