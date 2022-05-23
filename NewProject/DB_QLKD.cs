@@ -77,11 +77,24 @@ namespace NewProject
             {
                 if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
                 {
+                    int Month;
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
                               where d.MaSP == masp
                               select c.MaDVT;
+                    if ((date.Month) - 1 == 0)
+                    {
+                        Month = 12;
+                    }
+                    else
+                    {
+                        Month = (date.Month) - 1;
+                    }
                     int madvt = Convert.ToInt32(dvt.First().ToString());
+                    var td = from e in db.BAOCAOTONs
+                                 where e.Thang == Month
+                                 select e.TonCuoi;
+                    int tondau = Convert.ToInt32(td);
                     BAOCAOTON a = new BAOCAOTON
                     {
                         Thang = date.Month,
@@ -89,6 +102,7 @@ namespace NewProject
                         SLBanRa = sl,
                         MaSP = masp,
                         MaDVT = madvt,
+                        TonDau = tondau,
                     };
                 }
                 else
@@ -107,11 +121,24 @@ namespace NewProject
             {
                 if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
                 {
+                    int Month;
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
                               where d.MaSP == masp
                               select c.MaDVT;
+                    if ((date.Month) - 1 == 0)
+                    {
+                        Month = 12;
+                    }
+                    else
+                    {
+                        Month = (date.Month) - 1;
+                    }
                     int madvt = Convert.ToInt32(dvt.First().ToString());
+                    var td = from e in db.BAOCAOTONs
+                             where e.Thang == Month
+                             select e.TonCuoi;
+                    int tondau = Convert.ToInt32(td);
                     BAOCAOTON a = new BAOCAOTON
                     {
                         Thang = date.Month,
@@ -119,6 +146,7 @@ namespace NewProject
                         SLMuaVao = sl,
                         MaSP = masp,
                         MaDVT=madvt,
+                        TonDau=tondau,
                     };
                 }
                 else

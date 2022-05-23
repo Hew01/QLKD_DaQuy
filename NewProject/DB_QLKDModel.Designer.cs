@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\DB_QLKDModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\DB_QLKDModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
