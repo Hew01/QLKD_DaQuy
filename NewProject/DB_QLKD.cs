@@ -75,13 +75,26 @@ namespace NewProject
         {
             using (DB_QLKDEntities db =new DB_QLKDEntities())
             {
-                if (db.BAOCAOTONs.Find(date.Month,date.Year,masp)==null)
+                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
                 {
+                    int Month;
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
                               where d.MaSP == masp
                               select c.MaDVT;
+                    if ((date.Month) - 1 == 0)
+                    {
+                        Month = 12;
+                    }
+                    else
+                    {
+                        Month = (date.Month) - 1;
+                    }
                     int madvt = Convert.ToInt32(dvt.First().ToString());
+                    var td = from e in db.BAOCAOTONs
+                             where e.Thang == Month
+                             select e.TonCuoi;
+                    int tondau = Convert.ToInt32(td);
                     BAOCAOTON a = new BAOCAOTON
                     {
                         Thang = date.Month,
@@ -89,6 +102,7 @@ namespace NewProject
                         SLBanRa = sl,
                         MaSP = masp,
                         MaDVT = madvt,
+                        TonDau = tondau,
                     };
                     db.BAOCAOTONs.Add(a);
                 }
@@ -96,7 +110,7 @@ namespace NewProject
                 {
                     var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
                     bc.SLBanRa += sl;
-                    
+
                 }
                 db.SaveChanges();
             }
@@ -106,20 +120,34 @@ namespace NewProject
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
-                if (db.BAOCAOTONs.Find(date.Month, date.Year, masp) == null)
+                if (db.BAOCAOTONs.Find(date.Month) == null && db.BAOCAOTONs.Find(date.Year) == null && db.BAOCAOTONs.Find(masp) == null)
                 {
+                    int Month;
                     var dvt = from c in db.LOAISPs
                               join d in db.SANPHAMs on c.MaLoaiSP equals d.MaLoaiSP
                               where d.MaSP == masp
                               select c.MaDVT;
+                    if ((date.Month) - 1 == 0)
+                    {
+                        Month = 12;
+                    }
+                    else
+                    {
+                        Month = (date.Month) - 1;
+                    }
                     int madvt = Convert.ToInt32(dvt.First().ToString());
+                    var td = from e in db.BAOCAOTONs
+                             where e.Thang == Month
+                             select e.TonCuoi;
+                    int tondau = Convert.ToInt32(td);
                     BAOCAOTON a = new BAOCAOTON
                     {
                         Thang = date.Month,
                         Nam = date.Year,
                         SLMuaVao = sl,
                         MaSP = masp,
-                        MaDVT=madvt,
+                        MaDVT = madvt,
+                        TonDau = tondau,
                     };
                     db.BAOCAOTONs.Add(a);
                 }
@@ -127,7 +155,7 @@ namespace NewProject
                 {
                     var bc = db.BAOCAOTONs.Where(c => c.MaSP == masp && c.Thang == date.Month && c.Nam == date.Year).First();
                     bc.SLMuaVao += sl;
-                    
+
                 }
                 db.SaveChanges();
             }
