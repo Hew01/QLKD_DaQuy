@@ -40,14 +40,16 @@
             this.TonCuoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInBaoCaoTonKho = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 21);
+            this.label1.Location = new System.Drawing.Point(369, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 45);
             this.label1.TabIndex = 1;
@@ -56,7 +58,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(174, 95);
+            this.textBox1.Location = new System.Drawing.Point(146, 87);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 27);
             this.textBox1.TabIndex = 9;
@@ -65,7 +67,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(114, 103);
+            this.label5.Location = new System.Drawing.Point(86, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 8;
@@ -82,7 +84,7 @@
             this.SoLuongBanRa,
             this.TonCuoi,
             this.DonViTinh});
-            this.dataGridView1.Location = new System.Drawing.Point(128, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(100, 134);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -140,30 +142,40 @@
             // 
             // btnInBaoCaoTonKho
             // 
-            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(925, 459);
+            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(897, 451);
             this.btnInBaoCaoTonKho.Name = "btnInBaoCaoTonKho";
             this.btnInBaoCaoTonKho.Size = new System.Drawing.Size(101, 28);
             this.btnInBaoCaoTonKho.TabIndex = 11;
             this.btnInBaoCaoTonKho.Text = "In";
             this.btnInBaoCaoTonKho.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnInBaoCaoTonKho);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1168, 562);
+            this.panel1.TabIndex = 12;
+            // 
             // FormBaoCaoTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1168, 562);
-            this.Controls.Add(this.btnInBaoCaoTonKho);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "FormBaoCaoTonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo Cáo Tồn Kho";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -181,5 +193,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TonCuoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.Button btnInBaoCaoTonKho;
+        private System.Windows.Forms.Panel panel1;
     }
 }
