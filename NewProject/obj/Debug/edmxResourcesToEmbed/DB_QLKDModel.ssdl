@@ -78,14 +78,6 @@
     <Property Name="MaDVT" Type="int" Nullable="false" />
     <Property Name="PhanTramLoiNhuan" Type="int" />
   </EntityType>
-  <EntityType Name="LOGIN">
-    <Key>
-      <PropertyRef Name="AUTOID" />
-    </Key>
-    <Property Name="AUTOID" Type="bigint" Nullable="false" />
-    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>
       <PropertyRef Name="MaNCC" />
@@ -274,7 +266,6 @@
     <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONVITINH" EntityType="Self.DONVITINH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISP" EntityType="Self.LOAISP" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUBANHANG" EntityType="Self.PHIEUBANHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUDV" EntityType="Self.PHIEUDV" Schema="dbo" store:Type="Tables" />

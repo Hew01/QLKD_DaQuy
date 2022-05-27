@@ -111,3 +111,10 @@ C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debu
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.exe
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
