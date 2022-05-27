@@ -83,6 +83,14 @@
           <Property Name="MaDVT" Type="int" Nullable="false" />
           <Property Name="PhanTramLoiNhuan" Type="int" />
         </EntityType>
+		<EntityType Name="LOGIN">
+			<Key>
+				<PropertyRef Name="AUTOID" />
+			</Key>
+			<Property Name="AUTOID" Type="bigint" Nullable="false" />
+			<Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+			<Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+		</EntityType>
         <EntityType Name="NHACUNGCAP">
           <Key>
             <PropertyRef Name="MaNCC" />
@@ -271,6 +279,7 @@
           <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONVITINH" EntityType="Self.DONVITINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAISP" EntityType="Self.LOAISP" Schema="dbo" store:Type="Tables" />
+		  <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUBANHANG" EntityType="Self.PHIEUBANHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUDV" EntityType="Self.PHIEUDV" Schema="dbo" store:Type="Tables" />
@@ -382,6 +391,7 @@
             <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
             <End Role="PHIEUMUAHANG" EntitySet="PHIEUMUAHANGs" />
           </AssociationSet>
+	      <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
         </EntityContainer>
         <EntityType Name="BAOCAOTON">
           <Key>
@@ -663,6 +673,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+		<EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="AUTOID" />
+          </Key>
+          <Property Name="AUTOID" Type="Int64" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>  
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -799,6 +817,15 @@
                 <ScalarProperty Name="DonGiaBan" ColumnName="DonGiaBan" />
                 <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+		  <EntitySetMapping Name="LOGINs">
+            <EntityTypeMapping TypeName="DB_QLKDModel.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="AUTOID" ColumnName="AUTOID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

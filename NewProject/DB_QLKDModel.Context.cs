@@ -37,5 +37,6 @@ namespace NewProject
         public virtual DbSet<PHIEUDV> PHIEUDVs { get; set; }
         public virtual DbSet<PHIEUMUAHANG> PHIEUMUAHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<LOGIN> LOGINs { get; set; }
     }
 }

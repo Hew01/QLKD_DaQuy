@@ -57,6 +57,7 @@
       <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
       <End Role="PHIEUMUAHANG" EntitySet="PHIEUMUAHANGs" />
     </AssociationSet>
+    <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
   </EntityContainer>
   <EntityType Name="BAOCAOTON">
     <Key>
@@ -338,4 +339,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="AUTOID" />
+    </Key>
+    <Property Name="AUTOID" Type="Int64" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -28,6 +28,7 @@
         <AssociationConnector Association="DB_QLKDModel.fk_LOAISP" />
         <AssociationConnector Association="DB_QLKDModel.fk_SANPHAM" />
         <AssociationConnector Association="DB_QLKDModel.fk_PMH" />
+		<EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="2.375" PointY="1.125" />  
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
