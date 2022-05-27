@@ -25,7 +25,7 @@ namespace QuanLy
 
 //AI LÀM SQL THÌ LO PHẦN NÀY
 
- /*       private string sqlAddress;
+ /*     private string sqlAddress;
         private SqlConnection sqlConnect;
         public ListAccount()
         {
