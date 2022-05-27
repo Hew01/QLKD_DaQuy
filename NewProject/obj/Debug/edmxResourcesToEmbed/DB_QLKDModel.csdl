@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_QLKDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_QLKDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BAOCAOTONs" EntityType="DB_QLKDModel.BAOCAOTON" />
+    <EntitySet Name="CT_PBH" EntityType="DB_QLKDModel.CT_PBH" />
+    <EntitySet Name="CT_PDV" EntityType="DB_QLKDModel.CT_PDV" />
+    <EntitySet Name="CT_PMH" EntityType="DB_QLKDModel.CT_PMH" />
+    <EntitySet Name="DICHVUs" EntityType="DB_QLKDModel.DICHVU" />
+    <EntitySet Name="DONVITINHs" EntityType="DB_QLKDModel.DONVITINH" />
+    <EntitySet Name="LOAISPs" EntityType="DB_QLKDModel.LOAISP" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="DB_QLKDModel.NHACUNGCAP" />
+    <EntitySet Name="PHIEUBANHANGs" EntityType="DB_QLKDModel.PHIEUBANHANG" />
+    <EntitySet Name="PHIEUDVs" EntityType="DB_QLKDModel.PHIEUDV" />
+    <EntitySet Name="PHIEUMUAHANGs" EntityType="DB_QLKDModel.PHIEUMUAHANG" />
+    <EntitySet Name="SANPHAMs" EntityType="DB_QLKDModel.SANPHAM" />
+    <AssociationSet Name="fk01_BAOCAOTON" Association="DB_QLKDModel.fk01_BAOCAOTON">
+      <End Role="DONVITINH" EntitySet="DONVITINHs" />
+      <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk02_BAOCAOTON" Association="DB_QLKDModel.fk02_BAOCAOTON">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CTPBH" Association="DB_QLKDModel.fk_CTPBH">
+      <End Role="PHIEUBANHANG" EntitySet="PHIEUBANHANGs" />
+      <End Role="CT_PBH" EntitySet="CT_PBH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CTPBH2" Association="DB_QLKDModel.fk_CTPBH2">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CT_PBH" EntitySet="CT_PBH" />
+    </AssociationSet>
+    <AssociationSet Name="fk01_CTPDV" Association="DB_QLKDModel.fk01_CTPDV">
+      <End Role="PHIEUDV" EntitySet="PHIEUDVs" />
+      <End Role="CT_PDV" EntitySet="CT_PDV" />
+    </AssociationSet>
+    <AssociationSet Name="fk02_CTPDV" Association="DB_QLKDModel.fk02_CTPDV">
+      <End Role="DICHVU" EntitySet="DICHVUs" />
+      <End Role="CT_PDV" EntitySet="CT_PDV" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CTPMH" Association="DB_QLKDModel.fk_CTPMH">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CT_PMH" EntitySet="CT_PMH" />
+    </AssociationSet>
+    <AssociationSet Name="fk02_CTPMH" Association="DB_QLKDModel.fk02_CTPMH">
+      <End Role="PHIEUMUAHANG" EntitySet="PHIEUMUAHANGs" />
+      <End Role="CT_PMH" EntitySet="CT_PMH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_LOAISP" Association="DB_QLKDModel.fk_LOAISP">
+      <End Role="DONVITINH" EntitySet="DONVITINHs" />
+      <End Role="LOAISP" EntitySet="LOAISPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SANPHAM" Association="DB_QLKDModel.fk_SANPHAM">
+      <End Role="LOAISP" EntitySet="LOAISPs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PMH" Association="DB_QLKDModel.fk_PMH">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="PHIEUMUAHANG" EntitySet="PHIEUMUAHANGs" />
+    </AssociationSet>
+    <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
+  </EntityContainer>
+  <EntityType Name="BAOCAOTON">
+    <Key>
+      <PropertyRef Name="Thang" />
+      <PropertyRef Name="Nam" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="Thang" Type="Int32" Nullable="false" />
+    <Property Name="Nam" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="TonDau" Type="Int32" />
+    <Property Name="TonCuoi" Type="Int32" />
+    <Property Name="SLMuaVao" Type="Int32" />
+    <Property Name="SLBanRa" Type="Int32" />
+    <Property Name="MaDVT" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DONVITINH" Relationship="DB_QLKDModel.fk01_BAOCAOTON" FromRole="BAOCAOTON" ToRole="DONVITINH" />
+    <NavigationProperty Name="SANPHAM" Relationship="DB_QLKDModel.fk02_BAOCAOTON" FromRole="BAOCAOTON" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="CT_PBH">
+    <Key>
+      <PropertyRef Name="MaPBH" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaPBH" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGiaBan" Type="Int64" />
+    <Property Name="ThanhTien" Type="Int64" />
+    <NavigationProperty Name="PHIEUBANHANG" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="CT_PBH" ToRole="PHIEUBANHANG" />
+    <NavigationProperty Name="SANPHAM" Relationship="DB_QLKDModel.fk_CTPBH2" FromRole="CT_PBH" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="CT_PDV">
+    <Key>
+      <PropertyRef Name="MaPDV" />
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaPDV" Type="Int32" Nullable="false" />
+    <Property Name="MaDV" Type="Int32" Nullable="false" />
+    <Property Name="DonGiaDV" Type="Int64" />
+    <Property Name="DonGiaDuocTinh" Type="Int64" />
+    <Property Name="SoLuongDV" Type="Int32" />
+    <Property Name="ThanhTien" Type="Int64" />
+    <Property Name="MaTT" Type="Int32" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="TinhTrang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TraTruoc" Type="Int64" />
+    <Property Name="ConLai" Type="Int64" />
+    <Property Name="ChiPhiRiengDV" Type="Int64" />
+    <NavigationProperty Name="PHIEUDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="CT_PDV" ToRole="PHIEUDV" />
+    <NavigationProperty Name="DICHVU" Relationship="DB_QLKDModel.fk02_CTPDV" FromRole="CT_PDV" ToRole="DICHVU" />
+  </EntityType>
+  <EntityType Name="CT_PMH">
+    <Key>
+      <PropertyRef Name="MaPMH" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaPMH" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongMuaVao" Type="Int32" />
+    <Property Name="DonGiaMuaVao" Type="Int64" />
+    <Property Name="ThanhTien" Type="Int64" />
+    <NavigationProperty Name="SANPHAM" Relationship="DB_QLKDModel.fk_CTPMH" FromRole="CT_PMH" ToRole="SANPHAM" />
+    <NavigationProperty Name="PHIEUMUAHANG" Relationship="DB_QLKDModel.fk02_CTPMH" FromRole="CT_PMH" ToRole="PHIEUMUAHANG" />
+  </EntityType>
+  <EntityType Name="DICHVU">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="Int32" Nullable="false" />
+    <Property Name="LoaiDV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DonGiaDV" Type="Int64" />
+    <NavigationProperty Name="CT_PDV" Relationship="DB_QLKDModel.fk02_CTPDV" FromRole="DICHVU" ToRole="CT_PDV" />
+  </EntityType>
+  <EntityType Name="DONVITINH">
+    <Key>
+      <PropertyRef Name="MaDVT" />
+    </Key>
+    <Property Name="MaDVT" Type="Int32" Nullable="false" />
+    <Property Name="LoaiDVT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BAOCAOTONs" Relationship="DB_QLKDModel.fk01_BAOCAOTON" FromRole="DONVITINH" ToRole="BAOCAOTON" />
+    <NavigationProperty Name="LOAISPs" Relationship="DB_QLKDModel.fk_LOAISP" FromRole="DONVITINH" ToRole="LOAISP" />
+  </EntityType>
+  <EntityType Name="LOAISP">
+    <Key>
+      <PropertyRef Name="MaLoaiSP" />
+    </Key>
+    <Property Name="MaLoaiSP" Type="Int32" Nullable="false" />
+    <Property Name="MaDVT" Type="Int32" Nullable="false" />
+    <Property Name="PhanTramLoiNhuan" Type="Int32" />
+    <NavigationProperty Name="DONVITINH" Relationship="DB_QLKDModel.fk_LOAISP" FromRole="LOAISP" ToRole="DONVITINH" />
+    <NavigationProperty Name="SANPHAMs" Relationship="DB_QLKDModel.fk_SANPHAM" FromRole="LOAISP" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="Int32" Nullable="false" />
+    <Property Name="DiaChiNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SDTNCC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHIEUMUAHANGs" Relationship="DB_QLKDModel.fk_PMH" FromRole="NHACUNGCAP" ToRole="PHIEUMUAHANG" />
+  </EntityType>
+  <EntityType Name="PHIEUBANHANG">
+    <Key>
+      <PropertyRef Name="MaPBH" />
+    </Key>
+    <Property Name="MaPBH" Type="Int32" Nullable="false" />
+    <Property Name="NgayLapPBH" Type="DateTime" Precision="0" />
+    <Property Name="TongTien" Type="Int64" />
+    <NavigationProperty Name="CT_PBH" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="PHIEUBANHANG" ToRole="CT_PBH" />
+  </EntityType>
+  <EntityType Name="PHIEUDV">
+    <Key>
+      <PropertyRef Name="MaPDV" />
+    </Key>
+    <Property Name="MaPDV" Type="Int32" Nullable="false" />
+    <Property Name="NgayLapPDV" Type="DateTime" Precision="0" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="Int32" />
+    <Property Name="TongTien" Type="Int64" />
+    <Property Name="TongTienTraTruoc" Type="Int64" />
+    <Property Name="TongTienConLai" Type="Int64" />
+    <NavigationProperty Name="CT_PDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="PHIEUDV" ToRole="CT_PDV" />
+  </EntityType>
+  <EntityType Name="PHIEUMUAHANG">
+    <Key>
+      <PropertyRef Name="MaPMH" />
+    </Key>
+    <Property Name="MaPMH" Type="Int32" Nullable="false" />
+    <Property Name="NgLapPMH" Type="DateTime" Precision="0" />
+    <Property Name="MaNCC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CT_PMH" Relationship="DB_QLKDModel.fk02_CTPMH" FromRole="PHIEUMUAHANG" ToRole="CT_PMH" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="DB_QLKDModel.fk_PMH" FromRole="PHIEUMUAHANG" ToRole="NHACUNGCAP" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="MaLoaiSP" Type="Int32" Nullable="false" />
+    <Property Name="DonGiaBan" Type="Int64" />
+    <Property Name="DonGiaMuaVao" Type="Int64" />
+    <Property Name="SoLuongTon" Type="Int32" />
+    <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BAOCAOTONs" Relationship="DB_QLKDModel.fk02_BAOCAOTON" FromRole="SANPHAM" ToRole="BAOCAOTON" />
+    <NavigationProperty Name="CT_PBH" Relationship="DB_QLKDModel.fk_CTPBH2" FromRole="SANPHAM" ToRole="CT_PBH" />
+    <NavigationProperty Name="CT_PMH" Relationship="DB_QLKDModel.fk_CTPMH" FromRole="SANPHAM" ToRole="CT_PMH" />
+    <NavigationProperty Name="LOAISP" Relationship="DB_QLKDModel.fk_SANPHAM" FromRole="SANPHAM" ToRole="LOAISP" />
+  </EntityType>
+  <Association Name="fk01_BAOCAOTON">
+    <End Type="DB_QLKDModel.DONVITINH" Role="DONVITINH" Multiplicity="1" />
+    <End Type="DB_QLKDModel.BAOCAOTON" Role="BAOCAOTON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONVITINH">
+        <PropertyRef Name="MaDVT" />
+      </Principal>
+      <Dependent Role="BAOCAOTON">
+        <PropertyRef Name="MaDVT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk02_BAOCAOTON">
+    <End Type="DB_QLKDModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="DB_QLKDModel.BAOCAOTON" Role="BAOCAOTON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="BAOCAOTON">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CTPBH">
+    <End Type="DB_QLKDModel.PHIEUBANHANG" Role="PHIEUBANHANG" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PBH" Role="CT_PBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUBANHANG">
+        <PropertyRef Name="MaPBH" />
+      </Principal>
+      <Dependent Role="CT_PBH">
+        <PropertyRef Name="MaPBH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CTPBH2">
+    <End Type="DB_QLKDModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PBH" Role="CT_PBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CT_PBH">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk01_CTPDV">
+    <End Type="DB_QLKDModel.PHIEUDV" Role="PHIEUDV" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PDV" Role="CT_PDV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUDV">
+        <PropertyRef Name="MaPDV" />
+      </Principal>
+      <Dependent Role="CT_PDV">
+        <PropertyRef Name="MaPDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk02_CTPDV">
+    <End Type="DB_QLKDModel.DICHVU" Role="DICHVU" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PDV" Role="CT_PDV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DICHVU">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="CT_PDV">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CTPMH">
+    <End Type="DB_QLKDModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PMH" Role="CT_PMH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CT_PMH">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk02_CTPMH">
+    <End Type="DB_QLKDModel.PHIEUMUAHANG" Role="PHIEUMUAHANG" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PMH" Role="CT_PMH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUMUAHANG">
+        <PropertyRef Name="MaPMH" />
+      </Principal>
+      <Dependent Role="CT_PMH">
+        <PropertyRef Name="MaPMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_LOAISP">
+    <End Type="DB_QLKDModel.DONVITINH" Role="DONVITINH" Multiplicity="1" />
+    <End Type="DB_QLKDModel.LOAISP" Role="LOAISP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONVITINH">
+        <PropertyRef Name="MaDVT" />
+      </Principal>
+      <Dependent Role="LOAISP">
+        <PropertyRef Name="MaDVT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SANPHAM">
+    <End Type="DB_QLKDModel.LOAISP" Role="LOAISP" Multiplicity="1" />
+    <End Type="DB_QLKDModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISP">
+        <PropertyRef Name="MaLoaiSP" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MaLoaiSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PMH">
+    <End Type="DB_QLKDModel.NHACUNGCAP" Role="NHACUNGCAP" Multiplicity="1" />
+    <End Type="DB_QLKDModel.PHIEUMUAHANG" Role="PHIEUMUAHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="PHIEUMUAHANG">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="AUTOID" />
+    </Key>
+    <Property Name="AUTOID" Type="Int64" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
