@@ -400,7 +400,6 @@ namespace NewProject
                       where c.TenSP == tenSP
                       select c.MaSP;
             int masp = Convert.ToInt32(msp.First());
-
             var donGiaMuaVao = from c in db.SANPHAMs
                                where c.MaSP == masp
                                select c.DonGiaMuaVao;
