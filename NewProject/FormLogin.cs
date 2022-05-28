@@ -22,28 +22,38 @@ namespace NewProject
             Application.Exit();
         }
 
-        DB_QLKDEntities dbcontext = new DB_QLKDEntities();
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dbcontext.LOGINs.Where(r => r.USERNAME == txtUsername.Text
-                && r.PASSWORD == txtPassword.Text).Count() > 0)
+                using (DB_QLKDEntities db = new DB_QLKDEntities())
                 {
-                    MessageBox.Show("Đăng nhập thành công");
-                    this.Hide();
-                    FormManager formManager = new FormManager();
-                    formManager.FormClosed += (s, args) => this.Close();
-                    formManager.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thất bại");
+                    string username = txtUsername.Text;
+                    string pass = txtPassword.Text;
+                    if (db.LOGINs.Find(username)==null)
+                    {
+                        MessageBox.Show("Tên đăng nhập không chính xác !","Thông báo");
+                    }
+                    else
+                    {
+                        if (db.LOGINs.Where(c=>c.USERNAME==username && c.PWD==pass).Count()!=0)
+                        {
+                            MessageBox.Show("Đăng nhập thành công !","Thông báo");
+                            this.Hide();
+                            FormManager formManager = new FormManager();
+                            formManager.FormClosed += (s, args) => this.Close();
+                            formManager.ShowDialog(); 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mật khẩu không chính xác !", "Thông báo");
+                        }
+                    } 
                 }
             }
             catch (Exception ert)
             {
-
+                throw;
             }
         }
        

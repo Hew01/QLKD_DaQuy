@@ -70,7 +70,7 @@ namespace NewProject
         }
         private void BtnAdd_Visible()
         {
-            if (IsSPMuaValid() && (IsCustomerInfoValid()))
+            if (/*IsSPMuaValid() &&*/ (IsCustomerInfoValid()))
                 BtnAdd.Enabled = true;
             else BtnAdd.Enabled = false;
         }

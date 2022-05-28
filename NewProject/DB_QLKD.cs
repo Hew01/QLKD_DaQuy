@@ -200,17 +200,18 @@ namespace NewProject
             }
         }
         //FormBanHang
-        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, string ngaylapphieu)
+        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, DateTime ngaylapphieu)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
+                if (!CheckSoLuong(soluong, maSP)) return;
                 int thanhTien = soluong * donGiaBan;
                 if (db.PHIEUBANHANGs.Find(Convert.ToInt32(maPBH)) == null)
                 {
                     PHIEUBANHANG pbh = new PHIEUBANHANG
                     {
                         MaPBH = Convert.ToInt32(maPBH),
-                        NgayLapPBH = Convert.ToDateTime(ngaylapphieu),
+                        NgayLapPBH = ngaylapphieu,
                         TongTien = thanhTien,
                     };
                     db.PHIEUBANHANGs.Add(pbh);
@@ -240,6 +241,8 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
+                ChangeQuantity(-soluong, maSP);
+                ChangeStored_SLBanRa(soluong, maSP, ngaylapphieu);
                     //SAVE CHANGES
                 db.SaveChanges();
             }
@@ -252,9 +255,8 @@ namespace NewProject
                 PHIEUBANHANG p = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
                 CT_PBH ct = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP == maSP).First();
                 p.TongTien -= ct.ThanhTien;
+                ChangeStored_SLBanRa(-ct.SoLuong.Value, maSP, p.NgayLapPBH.Value);
                 db.CT_PBH.Remove(ct);
-
-                //db.PHIEUBANHANGs.Remove(db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First());
                 db.SaveChanges();
             }
         }
