@@ -341,10 +341,9 @@
   </Association>
   <EntityType Name="LOGIN">
     <Key>
-      <PropertyRef Name="AUTOID" />
+      <PropertyRef Name="USERNAME" />
     </Key>
-    <Property Name="AUTOID" Type="Int64" Nullable="false" />
-    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PWD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

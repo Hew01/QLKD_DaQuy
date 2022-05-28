@@ -18,11 +18,9 @@ using System;
 public partial class LOGIN
 {
 
-    public long AUTOID { get; set; }
-
     public string USERNAME { get; set; }
 
-    public string PASSWORD { get; set; }
+    public string PWD { get; set; }
 
 }
 

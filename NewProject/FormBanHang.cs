@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Odbc;
+using Office_12 = Microsoft.Office.Core;
+using Excel_12 = Microsoft.Office.Interop.Excel;
 
 namespace NewProject
 {
@@ -37,7 +41,6 @@ namespace NewProject
                          where c.MaPBH == mapbh
                          select new CT_PhieuBanHang
                          {
-                             //Mã_Phiếu_Bán_Hàng = e.MaPBH,
                              Sản_Phẩm = t.TenSP,
                              Mã_Loại_Sản_Phẩm = k.MaLoaiSP,
                              Số_Lượng = c.SoLuong.Value,
@@ -87,7 +90,6 @@ namespace NewProject
         {
             string maPBH = TB_IDPBH.Text;
             string tenKH = TB_TenKH.Text;
-            string ngayLapPhieu = pbh_DateTime.Text;
             int loaiSP = Convert.ToInt32(CBLoaiSP.Text);
             var msp = from c in db.SANPHAMs
                 where c.TenSP == CBSanPham.Text
@@ -104,7 +106,7 @@ namespace NewProject
             int donGiaMua = Convert.ToInt32(donGiaMuaVao.First().ToString());
             int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
             
-            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, ngayLapPhieu);
+            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, pbh_DateTime.Value);
             db.SaveChanges();
             LoadData();
             MessageBox.Show("Thêm thành công", "Thông Báo");
@@ -184,6 +186,206 @@ namespace NewProject
         private void TB_IDPBH_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void ExportDataGridViewTo_Excel12(DataGridView myDataGridViewQuantity)
+        {
+
+            Excel_12.Application oExcel_12 = null; //Excel_12 Application 
+
+            Excel_12.Workbook oBook = null; // Excel_12 Workbook 
+
+            Excel_12.Sheets oSheetsColl = null; // Excel_12 Worksheets collection 
+
+            Excel_12.Worksheet oSheet = null; // Excel_12 Worksheet 
+
+            Excel_12.Range oRange = null; // Cell or Range in worksheet 
+
+            Object oMissing = System.Reflection.Missing.Value;
+
+
+            // Create an instance of Excel_12. 
+
+            oExcel_12 = new Excel_12.Application();
+
+
+            // Make Excel_12 visible to the user. 
+
+            oExcel_12.Visible = true;
+
+
+            // Set the UserControl property so Excel_12 won't shut down. 
+
+            oExcel_12.UserControl = true;
+
+            // System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en-US"); 
+
+            //object file = File_Name;
+
+            //object missing = System.Reflection.Missing.Value;
+
+
+
+            // Add a workbook. 
+
+            oBook = oExcel_12.Workbooks.Add(oMissing);
+
+            // Get worksheets collection 
+
+            oSheetsColl = oExcel_12.Worksheets;
+
+            // Get Worksheet "Sheet1" 
+
+            oSheet = (Excel_12.Worksheet)oSheetsColl.get_Item("Sheet1");
+            oSheet.Name = "PhieuBanHang";
+
+            //Tạo tiêu đề
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("D1", "F1");
+
+            head.MergeCells = true;
+
+            head.Value2 = "Phiếu Bán Hàng";
+
+            head.Font.Bold = true;
+
+            head.Font.Name = "Time New Roman";
+
+            head.Font.Size = "18";
+
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Export titles 
+
+            for (int j = 0; j < myDataGridViewQuantity.Columns.Count; j++)
+            {
+
+                oRange = (Excel_12.Range)oSheet.Cells[4, j + 1];
+                oRange.Font.Size = "12";
+                oRange.Font.Name = "Time New Roman";
+                if (j >= 0) oRange.ColumnWidth = 13.5;
+                if (j == 1) oRange.ColumnWidth = 22;
+                oRange.Value2 = myDataGridViewQuantity.Columns[j].HeaderText;
+
+            }
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A4", "F4");
+
+            rowHead.Font.Bold = true;
+
+            // Kẻ viền
+
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // Thiết lập màu nền
+
+            rowHead.Interior.ColorIndex = 15;
+
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Ô bắt đầu điền dữ liệu
+
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[5, 1];
+
+            // Export data 
+
+            for (int i = 0; i < myDataGridViewQuantity.Rows.Count; i++)
+            {
+
+                for (int j = 0; j < myDataGridViewQuantity.Columns.Count; j++)
+                {
+                    oRange = (Excel_12.Range)oSheet.Cells[i + 5, j + 1];
+                    oRange.Value2 = myDataGridViewQuantity[j, i].Value;
+                    oRange.Font.Size = "12";
+                    oRange.Font.Name = "Time New Roman";
+
+                }
+
+            }
+
+            // Ô kết thúc điền dữ liệu
+
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[4 + myDataGridViewQuantity.Rows.Count, myDataGridViewQuantity.Columns.Count];
+
+            // Lấy về vùng điền dữ liệu
+
+            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
+
+            // Kẻ viền
+
+            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // Căn giữa cột STT
+
+            Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[5 + myDataGridViewQuantity.Rows.Count, 2];
+
+            Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
+
+            oSheet.get_Range(c3, c4).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Tổng tiền
+
+            Microsoft.Office.Interop.Excel.Range TongTien = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[6 + myDataGridViewQuantity.Rows.Count, 2];
+            TongTien.MergeCells = true;
+
+            TongTien.Value2 = "TỔNG TIỀN:";
+
+            TongTien.Font.Bold = true;
+
+            TongTien.Font.Name = "Time New Roman";
+
+            TongTien.Font.Size = "13";
+
+            TongTien.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            Microsoft.Office.Interop.Excel.Range TongTienText = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[6 + myDataGridViewQuantity.Rows.Count, 3];
+            TongTienText.Value2 = LbSumMoney.Text;
+            TongTienText.Font.Bold = true;
+            TongTienText.Font.Name = "Time New Roman";
+            TongTienText.Font.Size = "13";
+
+            // Ngày
+            Microsoft.Office.Interop.Excel.Range Ngay = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[2, 1];
+            Ngay.Value2 = "Ngày :";
+            Ngay.Font.Bold = true;
+            Ngay.Font.Name = "Time New Roman";
+            Ngay.Font.Size = "13";
+
+            Microsoft.Office.Interop.Excel.Range NgayText = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[2, 2];
+            NgayText.Value2 = pbh_DateTime.Text;
+            NgayText.Font.Bold = true;
+            NgayText.Font.Name = "Time New Roman";
+            NgayText.Font.Size = "13";
+
+            // Tên khách hàng
+
+            Microsoft.Office.Interop.Excel.Range Ten = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[1, 1];
+            Ten.Value2 = "Tên KH :";
+            Ten.Font.Bold = true;
+            Ten.Font.Name = "Time New Roman";
+            Ten.Font.Size = "13";
+
+            Microsoft.Office.Interop.Excel.Range TenText = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[1, 2];
+            TenText.Value2 = TB_TenKH.Text;
+            TenText.Font.Bold = true;
+            TenText.Font.Name = "Time New Roman";
+            TenText.Font.Size = "13";
+
+            oBook = null;
+            oExcel_12.Quit();
+            oExcel_12 = null;
+            GC.Collect();
+        }
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportDataGridViewTo_Excel12(dataGridView1);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)

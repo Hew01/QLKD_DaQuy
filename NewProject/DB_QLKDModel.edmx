@@ -14,11 +14,11 @@
           <Property Name="Thang" Type="int" Nullable="false" />
           <Property Name="Nam" Type="int" Nullable="false" />
           <Property Name="MaSP" Type="int" Nullable="false" />
-          <Property Name="TonDau" Type="int" />
-          <Property Name="TonCuoi" Type="int" />
           <Property Name="SLMuaVao" Type="int" />
           <Property Name="SLBanRa" Type="int" />
           <Property Name="MaDVT" Type="int" Nullable="false" />
+          <Property Name="TonDau" Type="int" />
+          <Property Name="TonCuoi" Type="int" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="CT_PBH">
           <Key>
@@ -83,14 +83,13 @@
           <Property Name="MaDVT" Type="int" Nullable="false" />
           <Property Name="PhanTramLoiNhuan" Type="int" />
         </EntityType>
-		<EntityType Name="LOGIN">
-			<Key>
-				<PropertyRef Name="AUTOID" />
-			</Key>
-			<Property Name="AUTOID" Type="bigint" Nullable="false" />
-			<Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
-			<Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
-		</EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PWD" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="NHACUNGCAP">
           <Key>
             <PropertyRef Name="MaNCC" />
@@ -279,7 +278,7 @@
           <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONVITINH" EntityType="Self.DONVITINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAISP" EntityType="Self.LOAISP" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUBANHANG" EntityType="Self.PHIEUBANHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUDV" EntityType="Self.PHIEUDV" Schema="dbo" store:Type="Tables" />
@@ -391,7 +390,7 @@
             <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
             <End Role="PHIEUMUAHANG" EntitySet="PHIEUMUAHANGs" />
           </AssociationSet>
-	      <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
+          <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
         </EntityContainer>
         <EntityType Name="BAOCAOTON">
           <Key>
@@ -673,13 +672,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-		<EntityType Name="LOGIN">
+        <EntityType Name="LOGIN">
           <Key>
-            <PropertyRef Name="AUTOID" />
+            <PropertyRef Name="USERNAME" />
           </Key>
-          <Property Name="AUTOID" Type="Int64" Nullable="false" />
-          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PWD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>  
       </Schema>
     </edmx:ConceptualModels>
@@ -820,12 +818,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-		  <EntitySetMapping Name="LOGINs">
+          <EntitySetMapping Name="LOGINs">
             <EntityTypeMapping TypeName="DB_QLKDModel.LOGIN">
               <MappingFragment StoreEntitySet="LOGIN">
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="AUTOID" ColumnName="AUTOID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

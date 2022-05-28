@@ -80,11 +80,10 @@
   </EntityType>
   <EntityType Name="LOGIN">
     <Key>
-      <PropertyRef Name="AUTOID" />
+      <PropertyRef Name="USERNAME" />
     </Key>
-    <Property Name="AUTOID" Type="bigint" Nullable="false" />
-    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PWD" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>
