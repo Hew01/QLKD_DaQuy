@@ -137,9 +137,8 @@
     <EntitySetMapping Name="LOGINs">
       <EntityTypeMapping TypeName="DB_QLKDModel.LOGIN">
         <MappingFragment StoreEntitySet="LOGIN">
-          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-          <ScalarProperty Name="AUTOID" ColumnName="AUTOID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
