@@ -96,7 +96,6 @@ C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debu
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.xml
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBanHang.resources
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
 C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
@@ -135,3 +134,4 @@ C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewP
 C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
 C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.exe
 C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache

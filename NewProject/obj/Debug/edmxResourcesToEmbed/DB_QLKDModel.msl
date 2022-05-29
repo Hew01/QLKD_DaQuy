@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DB_QLKDModelStoreContainer" CdmEntityContainer="DB_QLKDEntities">
-    <EntitySetMapping Name="BAOCAOTONs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.BAOCAOTON">
-        <MappingFragment StoreEntitySet="BAOCAOTON">
-          <ScalarProperty Name="MaDVT" ColumnName="MaDVT" />
-          <ScalarProperty Name="SLBanRa" ColumnName="SLBanRa" />
-          <ScalarProperty Name="SLMuaVao" ColumnName="SLMuaVao" />
-          <ScalarProperty Name="TonCuoi" ColumnName="TonCuoi" />
-          <ScalarProperty Name="TonDau" ColumnName="TonDau" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="Nam" ColumnName="Nam" />
-          <ScalarProperty Name="Thang" ColumnName="Thang" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CT_PBH">
       <EntityTypeMapping TypeName="DB_QLKDModel.CT_PBH">
         <MappingFragment StoreEntitySet="CT_PBH">
@@ -134,9 +120,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BAOCAOTONs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.BAOCAOTON">
+        <MappingFragment StoreEntitySet="BAOCAOTON">
+          <ScalarProperty Name="TonCuoi" ColumnName="TonCuoi" />
+          <ScalarProperty Name="MaDVT" ColumnName="MaDVT" />
+          <ScalarProperty Name="SLBanRa" ColumnName="SLBanRa" />
+          <ScalarProperty Name="SLMuaVao" ColumnName="SLMuaVao" />
+          <ScalarProperty Name="TonDau" ColumnName="TonDau" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="LOGINs">
       <EntityTypeMapping TypeName="DB_QLKDModel.LOGIN">
         <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
           <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
         </MappingFragment>

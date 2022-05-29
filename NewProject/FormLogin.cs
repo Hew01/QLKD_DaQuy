@@ -39,6 +39,7 @@ namespace NewProject
                         if (db.LOGINs.Where(c=>c.USERNAME==username && c.PWD==pass).Count()!=0)
                         {
                             MessageBox.Show("Đăng nhập thành công !","Thông báo");
+                            DB_QLKD.currentUser = username;
                             this.Hide();
                             FormManager formManager = new FormManager();
                             formManager.FormClosed += (s, args) => this.Close();
@@ -51,7 +52,7 @@ namespace NewProject
                     } 
                 }
             }
-            catch (Exception ert)
+            catch (Exception )
             {
                 throw;
             }

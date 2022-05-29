@@ -285,7 +285,7 @@
             // LbSumMoney
             // 
             this.LbSumMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbSumMoney.Location = new System.Drawing.Point(750, 631);
+            this.LbSumMoney.Location = new System.Drawing.Point(726, 636);
             this.LbSumMoney.Name = "LbSumMoney";
             this.LbSumMoney.Size = new System.Drawing.Size(114, 25);
             this.LbSumMoney.TabIndex = 35;
@@ -295,7 +295,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(654, 629);
+            this.label12.Location = new System.Drawing.Point(630, 634);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 23);
             this.label12.TabIndex = 34;
