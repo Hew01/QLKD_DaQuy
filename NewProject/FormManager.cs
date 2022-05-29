@@ -19,7 +19,10 @@ namespace NewProject
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.FormClosed += (s, args) => this.Close();
+            formLogin.ShowDialog();
         }
 
         private Form CurrentChildFrom;

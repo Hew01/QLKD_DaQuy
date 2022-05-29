@@ -107,7 +107,7 @@ namespace NewProject
             DB_QLKD.addCT_PMH(maPMH, maSP, soLuong, donGiaMua, thanhTien, ngayLapPhieu, maNCC);
             db.SaveChanges();
             LoadData();
-            MessageBox.Show("Thêm thành công", "Thông Báo");
+            
             value += thanhTien;
             LbSumMoney.Text = $"{value} đồng";
             ResetInputBH();

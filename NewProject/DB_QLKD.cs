@@ -46,6 +46,7 @@ namespace NewProject
     }
     public class DB_QLKD
     {
+        public static string currentUser = "";
         public static int TonDau(int masp, DateTime date)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
@@ -244,8 +245,10 @@ namespace NewProject
                 //Thay đổi số lượng trong kho và báo cáo tồn
                 ChangeQuantity(-soluong, maSP);
                 ChangeStored_SLBanRa(soluong, maSP, ngaylapphieu);
+
                     //SAVE CHANGES
                 db.SaveChanges();
+                MessageBox.Show("Thêm thành công", "Thông Báo");
             }
         }
 
@@ -284,6 +287,7 @@ namespace NewProject
                 pbh.TongTien += thanhTien;
 
                 db.SaveChanges();
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
             }
         }
 
@@ -317,6 +321,7 @@ namespace NewProject
                 ChangeQuantity(soLuongMua, maSP);
 
                 db.SaveChanges();
+                MessageBox.Show("Thêm thành công", "Thông Báo");
             }
         }
 
@@ -458,6 +463,15 @@ namespace NewProject
                     tongTienConLai = tongTien - tongTienTraTruoc;
                 }
                 pdv.TongTienConLai = tongTienConLai;
+                db.SaveChanges();
+            }
+        }
+        public static void ChangeUserPassword(string user,string newpass)
+        {
+            using(DB_QLKDEntities db =new DB_QLKDEntities())
+            {
+                var u = db.LOGINs.Where(c => c.USERNAME == user).First();
+                u.PWD = newpass;
                 db.SaveChanges();
             }
         }

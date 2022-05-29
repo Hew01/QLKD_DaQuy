@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5a876d73c114429e9931545950ef88da" Name="Diagram1" ZoomLevel="60">
-        <EntityTypeShape EntityType="DB_QLKDModel.BAOCAOTON" Width="1.5" PointX="7.5" PointY="6.5" />
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PBH" Width="1.5" PointX="7.5" PointY="10.375" />
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PDV" Width="1.5" PointX="16" PointY="3.75" />
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PMH" Width="1.5" PointX="10.5" PointY="8.375" />
@@ -17,8 +16,6 @@
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUDV" Width="1.5" PointX="13.5" PointY="6.5" />
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUMUAHANG" Width="1.5" PointX="8.25" PointY="3.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.SANPHAM" Width="1.5" PointX="5.25" PointY="8.125" />
-        <AssociationConnector Association="DB_QLKDModel.fk01_BAOCAOTON" />
-        <AssociationConnector Association="DB_QLKDModel.fk02_BAOCAOTON" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPBH" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPBH2" />
         <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" />
@@ -28,7 +25,10 @@
         <AssociationConnector Association="DB_QLKDModel.fk_LOAISP" />
         <AssociationConnector Association="DB_QLKDModel.fk_SANPHAM" />
         <AssociationConnector Association="DB_QLKDModel.fk_PMH" />
-        <EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="3.625" PointY="2" />  
+        <EntityTypeShape EntityType="DB_QLKDModel.BAOCAOTON" Width="1.5" PointX="7.5" PointY="6.625" />
+        <AssociationConnector Association="DB_QLKDModel.fk01_BAOCAOTON" />
+        <AssociationConnector Association="DB_QLKDModel.fk02_BAOCAOTON" />
+        <EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="4" PointY="2.375" />  
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

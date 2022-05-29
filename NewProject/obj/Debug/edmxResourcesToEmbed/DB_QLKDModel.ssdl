@@ -10,10 +10,10 @@
     <Property Name="Nam" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="int" Nullable="false" />
     <Property Name="TonDau" Type="int" />
-    <Property Name="TonCuoi" Type="int" />
     <Property Name="SLMuaVao" Type="int" />
     <Property Name="SLBanRa" Type="int" />
     <Property Name="MaDVT" Type="int" Nullable="false" />
+    <Property Name="TonCuoi" Type="int" StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="CT_PBH">
     <Key>
@@ -84,6 +84,7 @@
     </Key>
     <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PWD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>

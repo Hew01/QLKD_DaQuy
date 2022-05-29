@@ -347,6 +347,7 @@
             this.btnInPhieuDichVu.TabIndex = 61;
             this.btnInPhieuDichVu.Text = "In";
             this.btnInPhieuDichVu.UseVisualStyleBackColor = true;
+            this.btnInPhieuDichVu.Click += new System.EventHandler(this.btnInPhieuDichVu_Click);
             // 
             // TBTraTruoc
             // 

@@ -49,6 +49,7 @@ namespace NewProject
                              Thành_Tiền = c.ThanhTien.Value
 
                          };
+            AdjustSumMoney(mapbh);
             dgv.DataSource = result.ToList();
         }
         private bool IsSPMuaValid()
@@ -109,7 +110,6 @@ namespace NewProject
             DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, pbh_DateTime.Value);
             db.SaveChanges();
             LoadData();
-            MessageBox.Show("Thêm thành công", "Thông Báo");
             AdjustSumMoney(Convert.ToInt32(maPBH));
             ResetInputBH();
         }
@@ -412,7 +412,6 @@ namespace NewProject
             int thanhTien = soLuong * donGiaBan;
             DB_QLKD.Edit_CTPBH(maPBH, masp, soLuong, donGiaBan, thanhTien);
             LoadData();
-            MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
             ResetInputBH();
             AdjustSumMoney(maPBH);
         }

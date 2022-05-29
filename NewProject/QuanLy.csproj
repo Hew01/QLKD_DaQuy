@@ -247,7 +247,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB_QLKD.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DB_QLKDModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -261,7 +261,7 @@
     </Content>
     <Content Include="DB_QLKD_log.ldf">
       <DependentUpon>DB_QLKD.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355-removebg-preview.png" />
     <None Include="Resources\pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355.png" />

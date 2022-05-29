@@ -18,10 +18,10 @@ namespace NewProject
         public int Nam { get; set; }
         public int MaSP { get; set; }
         public Nullable<int> TonDau { get; set; }
-        public Nullable<int> TonCuoi { get; set; }
         public Nullable<int> SLMuaVao { get; set; }
         public Nullable<int> SLBanRa { get; set; }
         public int MaDVT { get; set; }
+        public Nullable<int> TonCuoi { get; set; }
     
         public virtual DONVITINH DONVITINH { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }

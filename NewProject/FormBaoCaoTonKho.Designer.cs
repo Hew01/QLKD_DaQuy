@@ -77,6 +77,7 @@
             this.btnInBaoCaoTonKho.TabIndex = 11;
             this.btnInBaoCaoTonKho.Text = "In";
             this.btnInBaoCaoTonKho.UseVisualStyleBackColor = true;
+            this.btnInBaoCaoTonKho.Click += new System.EventHandler(this.btnInBaoCaoTonKho_Click);
             // 
             // dateTimePicker1
             // 
