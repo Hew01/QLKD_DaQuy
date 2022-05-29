@@ -412,7 +412,6 @@ namespace NewProject
             int thanhTien = soLuong * donGiaBan;
             DB_QLKD.Edit_CTPBH(maPBH, masp, soLuong, donGiaBan, thanhTien);
             LoadData();
-            //EditItem();
             MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
             ResetInputBH();
             AdjustSumMoney(maPBH);
