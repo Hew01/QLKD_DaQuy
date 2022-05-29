@@ -19,7 +19,7 @@ namespace NewProject.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -76,6 +76,47 @@ namespace NewProject.Properties {
         internal static System.Drawing.Bitmap img_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("img-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vintage_gemstone_logo_with_foliage_ornament_design_png_image_4373355 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vintage_gemstone_logo_with_foliage_ornament_design_png_image_4373355_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355-remo" +
+                        "vebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stone_gem_gemstone_logo_icon_vector_34574225 {
+            get {
+                object obj = ResourceManager.GetObject("stone-gem-gemstone-logo-icon-vector-34574225", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stone_gem_gemstone_logo_icon_vector_34574225_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("stone-gem-gemstone-logo-icon-vector-34574225-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

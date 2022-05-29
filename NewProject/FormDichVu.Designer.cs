@@ -340,7 +340,7 @@
             // 
             // btnInPhieuDichVu
             // 
-            this.btnInPhieuDichVu.Location = new System.Drawing.Point(1011, 609);
+            this.btnInPhieuDichVu.Location = new System.Drawing.Point(978, 610);
             this.btnInPhieuDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInPhieuDichVu.Name = "btnInPhieuDichVu";
             this.btnInPhieuDichVu.Size = new System.Drawing.Size(69, 26);
@@ -362,7 +362,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(366, 329);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(77, 31);
             this.btnLoad.TabIndex = 62;
@@ -374,18 +374,18 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 378);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1065, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(1032, 213);
             this.dataGridView1.TabIndex = 63;
             // 
             // FormDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1095, 659);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(1074, 648);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnInPhieuDichVu);

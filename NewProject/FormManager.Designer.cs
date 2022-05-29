@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManager));
             this.btnLapPhieuBanHang = new System.Windows.Forms.Button();
             this.btnLapPhieuMuaHang = new System.Windows.Forms.Button();
             this.btnBaoCaoTonKho = new System.Windows.Forms.Button();
@@ -52,9 +53,10 @@
             // 
             // btnLapPhieuBanHang
             // 
-            this.btnLapPhieuBanHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLapPhieuBanHang.BackColor = System.Drawing.Color.MintCream;
+            this.btnLapPhieuBanHang.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapPhieuBanHang.ForeColor = System.Drawing.Color.Black;
-            this.btnLapPhieuBanHang.Location = new System.Drawing.Point(0, 97);
+            this.btnLapPhieuBanHang.Location = new System.Drawing.Point(3, 282);
             this.btnLapPhieuBanHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLapPhieuBanHang.Name = "btnLapPhieuBanHang";
             this.btnLapPhieuBanHang.Size = new System.Drawing.Size(221, 53);
@@ -65,9 +67,10 @@
             // 
             // btnLapPhieuMuaHang
             // 
-            this.btnLapPhieuMuaHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLapPhieuMuaHang.BackColor = System.Drawing.Color.MintCream;
+            this.btnLapPhieuMuaHang.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapPhieuMuaHang.ForeColor = System.Drawing.Color.Black;
-            this.btnLapPhieuMuaHang.Location = new System.Drawing.Point(0, 155);
+            this.btnLapPhieuMuaHang.Location = new System.Drawing.Point(3, 340);
             this.btnLapPhieuMuaHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLapPhieuMuaHang.Name = "btnLapPhieuMuaHang";
             this.btnLapPhieuMuaHang.Size = new System.Drawing.Size(221, 53);
@@ -78,8 +81,9 @@
             // 
             // btnBaoCaoTonKho
             // 
-            this.btnBaoCaoTonKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnBaoCaoTonKho.Location = new System.Drawing.Point(0, 329);
+            this.btnBaoCaoTonKho.BackColor = System.Drawing.Color.MintCream;
+            this.btnBaoCaoTonKho.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoTonKho.Location = new System.Drawing.Point(3, 514);
             this.btnBaoCaoTonKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBaoCaoTonKho.Name = "btnBaoCaoTonKho";
             this.btnBaoCaoTonKho.Size = new System.Drawing.Size(221, 53);
@@ -90,8 +94,9 @@
             // 
             // btnLapPhieuDichVu
             // 
-            this.btnLapPhieuDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLapPhieuDichVu.Location = new System.Drawing.Point(0, 213);
+            this.btnLapPhieuDichVu.BackColor = System.Drawing.Color.MintCream;
+            this.btnLapPhieuDichVu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapPhieuDichVu.Location = new System.Drawing.Point(3, 398);
             this.btnLapPhieuDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLapPhieuDichVu.Name = "btnLapPhieuDichVu";
             this.btnLapPhieuDichVu.Size = new System.Drawing.Size(221, 53);
@@ -102,8 +107,9 @@
             // 
             // btnDanhSachPhieuDichVu
             // 
-            this.btnDanhSachPhieuDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDanhSachPhieuDichVu.Location = new System.Drawing.Point(0, 271);
+            this.btnDanhSachPhieuDichVu.BackColor = System.Drawing.Color.MintCream;
+            this.btnDanhSachPhieuDichVu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhSachPhieuDichVu.Location = new System.Drawing.Point(3, 456);
             this.btnDanhSachPhieuDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDanhSachPhieuDichVu.Name = "btnDanhSachPhieuDichVu";
             this.btnDanhSachPhieuDichVu.Size = new System.Drawing.Size(221, 53);
@@ -114,7 +120,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.Turquoise;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tàiKhoảnToolStripMenuItem,
@@ -122,21 +128,21 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1434, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1232, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tàiKhoảnToolStripMenuItem
             // 
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
             this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(93, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -144,7 +150,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.Turquoise;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnBaoCaoTonKho);
             this.panel1.Controls.Add(this.btnLapPhieuMuaHang);
@@ -154,7 +160,7 @@
             this.panel1.Location = new System.Drawing.Point(16, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 676);
+            this.panel1.Size = new System.Drawing.Size(248, 755);
             this.panel1.TabIndex = 8;
             // 
             // panel2
@@ -162,23 +168,23 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.BackColor = System.Drawing.Color.Azure;
             this.panel2.Controls.Add(this.LabelManager);
             this.panel2.Location = new System.Drawing.Point(237, 33);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1186, 310);
+            this.panel2.Size = new System.Drawing.Size(984, 389);
             this.panel2.TabIndex = 9;
             // 
             // LabelManager
             // 
             this.LabelManager.AutoSize = true;
-            this.LabelManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelManager.ForeColor = System.Drawing.Color.Red;
-            this.LabelManager.Location = new System.Drawing.Point(159, 18);
+            this.LabelManager.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelManager.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LabelManager.Location = new System.Drawing.Point(140, 8);
             this.LabelManager.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelManager.Name = "LabelManager";
-            this.LabelManager.Size = new System.Drawing.Size(569, 24);
+            this.LabelManager.Size = new System.Drawing.Size(765, 38);
             this.LabelManager.TabIndex = 0;
             this.LabelManager.Text = "CHƯƠNG TRÌNH QUẢN LÝ CỬA HÀNG VÀNG BẠC ĐÁ QUÝ";
             // 
@@ -187,56 +193,51 @@
             this.PanelBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelBody.BackColor = System.Drawing.Color.SkyBlue;
+            this.PanelBody.BackColor = System.Drawing.Color.Azure;
             this.PanelBody.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PanelBody.Controls.Add(this.pictureBox2);
             this.PanelBody.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.PanelBody.Location = new System.Drawing.Point(237, 93);
             this.PanelBody.Margin = new System.Windows.Forms.Padding(4);
             this.PanelBody.Name = "PanelBody";
-            this.PanelBody.Size = new System.Drawing.Size(1186, 617);
+            this.PanelBody.Size = new System.Drawing.Size(984, 696);
             this.PanelBody.TabIndex = 10;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::NewProject.Properties.Resources.img_removebg_preview;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::NewProject.Properties.Resources.pngtree_vintage_gemstone_logo_with_foliage_ornament_design_png_image_4373355_removebg_preview;
             this.pictureBox2.InitialImage = global::NewProject.Properties.Resources.img_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(154, 76);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(648, 384);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.Size = new System.Drawing.Size(984, 696);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::NewProject.Properties.Resources.goldrmgb;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Image = global::NewProject.Properties.Resources.stone_gem_gemstone_logo_icon_vector_34574225;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 241);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1434, 724);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(1232, 803);
             this.Controls.Add(this.PanelBody);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManager";
@@ -266,10 +267,10 @@
         private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PanelBody;
         private System.Windows.Forms.Label LabelManager;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

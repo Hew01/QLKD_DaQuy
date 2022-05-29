@@ -263,6 +263,10 @@
       <DependentUpon>DB_QLKD.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355-removebg-preview.png" />
+    <None Include="Resources\pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355.png" />
+    <None Include="Resources\stone-gem-gemstone-logo-icon-vector-34574225.jpg" />
+    <None Include="Resources\stone-gem-gemstone-logo-icon-vector-34574225-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
