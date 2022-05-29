@@ -241,6 +241,7 @@ namespace NewProject
                     p.TongTien += thanhTien;
                     db.CT_PBH.Add(ctpbh);
                 }
+                //Thay đổi số lượng trong kho và báo cáo tồn
                 ChangeQuantity(-soluong, maSP);
                 ChangeStored_SLBanRa(soluong, maSP, ngaylapphieu);
                     //SAVE CHANGES
@@ -255,7 +256,10 @@ namespace NewProject
                 PHIEUBANHANG p = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
                 CT_PBH ct = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP == maSP).First();
                 p.TongTien -= ct.ThanhTien;
+
+                ChangeQuantity(ct.SoLuong.Value, maSP);
                 ChangeStored_SLBanRa(-ct.SoLuong.Value, maSP, p.NgayLapPBH.Value);
+
                 db.CT_PBH.Remove(ct);
                 db.SaveChanges();
             }
@@ -267,6 +271,12 @@ namespace NewProject
             {
                 CT_PBH ctPBH = db.CT_PBH.Where(c => c.MaPBH == maPBH && c.MaSP == maSP).First();
                 PHIEUBANHANG pbh = db.PHIEUBANHANGs.Where(c => c.MaPBH == maPBH).First();
+                if (CheckSoLuong(soluong - ctPBH.SoLuong.Value, maSP) == true)
+                {
+                    ChangeStored_SLBanRa(soluong - ctPBH.SoLuong.Value, maSP, pbh.NgayLapPBH.Value);
+                    ChangeQuantity(ctPBH.SoLuong.Value, maSP);
+                    ChangeQuantity(-soluong, maSP);
+                }
                 ctPBH.SoLuong = soluong;
                 ctPBH.DonGiaBan = donGiaBan;
                 pbh.TongTien -= ctPBH.ThanhTien;
@@ -292,16 +302,19 @@ namespace NewProject
                     };
                     db.PHIEUMUAHANGs.Add(pmh);
                 }
-                    CT_PMH ctPMH = new CT_PMH
-                    {
-                        MaPMH = maPMH,
-                        MaSP = maSP,
-                        SoLuongMuaVao = soLuongMua,
-                        DonGiaMuaVao = donGiaMua,
-                        ThanhTien = thanhTien
-                    };
-                    db.CT_PMH.Add(ctPMH);
-                
+
+                CT_PMH ctPMH = new CT_PMH
+                {
+                    MaPMH = maPMH,
+                    MaSP = maSP,
+                    SoLuongMuaVao = soLuongMua,
+                    DonGiaMuaVao = donGiaMua,
+                    ThanhTien = thanhTien
+                };
+                db.CT_PMH.Add(ctPMH);
+
+                ChangeStored_SLMuaVao(soLuongMua, maSP, ngayLapPhieu);
+                ChangeQuantity(soLuongMua, maSP);
 
                 db.SaveChanges();
             }
@@ -313,9 +326,11 @@ namespace NewProject
             {
                 CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH && c.MaSP==masp).First();
                 PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
-                db.CT_PMH.Remove(ctPMH);
-                //db.PHIEUMUAHANGs.Remove(pmh);
 
+                ChangeQuantity(-ctPMH.SoLuongMuaVao.Value, masp);
+                ChangeStored_SLMuaVao(-ctPMH.SoLuongMuaVao.Value, masp, pmh.NgLapPMH.Value);
+                
+                db.CT_PMH.Remove(ctPMH);
                 db.SaveChanges();
             }
         }
@@ -326,10 +341,10 @@ namespace NewProject
             {
                 PHIEUMUAHANG pmh = db.PHIEUMUAHANGs.Where(c => c.MaPMH == maPMH).First();
                 CT_PMH ctPMH = db.CT_PMH.Where(c => c.MaPMH == maPMH).First();
-
-                //pmh.MaPMH = maPMH;
+                ChangeStored_SLMuaVao(soLuong - ctPMH.SoLuongMuaVao.Value, masp, pmh.NgLapPMH.Value);
+                ChangeQuantity(-ctPMH.SoLuongMuaVao.Value, masp);
+                ChangeQuantity(soLuong, masp);
                 pmh.MaNCC = maNCC;
-                //ctPMH.MaPMH = maPMH;
                 ctPMH.SoLuongMuaVao = soLuong;
                 ctPMH.DonGiaMuaVao = donGia;
                 ctPMH.ThanhTien = thanhTien;
