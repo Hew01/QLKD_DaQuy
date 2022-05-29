@@ -41,10 +41,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(202, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(269, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 36);
+            this.label1.Size = new System.Drawing.Size(405, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "BÁO CÁO TỒN KHO";
             // 
@@ -52,30 +51,29 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(79, 89);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(105, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 16);
+            this.label5.Size = new System.Drawing.Size(85, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Tháng,Năm";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(82, 125);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(109, 154);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 229);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 282);
             this.dataGridView1.TabIndex = 10;
             // 
             // btnInBaoCaoTonKho
             // 
-            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(566, 375);
-            this.btnInBaoCaoTonKho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInBaoCaoTonKho.Location = new System.Drawing.Point(755, 462);
+            this.btnInBaoCaoTonKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInBaoCaoTonKho.Name = "btnInBaoCaoTonKho";
-            this.btnInBaoCaoTonKho.Size = new System.Drawing.Size(76, 23);
+            this.btnInBaoCaoTonKho.Size = new System.Drawing.Size(101, 28);
             this.btnInBaoCaoTonKho.TabIndex = 11;
             this.btnInBaoCaoTonKho.Text = "In";
             this.btnInBaoCaoTonKho.UseVisualStyleBackColor = true;
@@ -84,16 +82,18 @@
             // 
             this.dateTimePicker1.CustomFormat = "MM,yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(159, 89);
+            this.dateTimePicker1.Location = new System.Drawing.Point(212, 110);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(78, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(257, 89);
+            this.btnLoad.Location = new System.Drawing.Point(343, 110);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.Size = new System.Drawing.Size(100, 28);
             this.btnLoad.TabIndex = 13;
             this.btnLoad.Text = "Xem";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -101,16 +101,17 @@
             // 
             // FormBaoCaoTonKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 410);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(932, 505);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnInBaoCaoTonKho);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBaoCaoTonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo Cáo Tồn Kho";
