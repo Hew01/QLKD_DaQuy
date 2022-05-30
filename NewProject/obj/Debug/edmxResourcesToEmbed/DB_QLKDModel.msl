@@ -86,19 +86,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PHIEUDVs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUDV">
-        <MappingFragment StoreEntitySet="PHIEUDV">
-          <ScalarProperty Name="TongTienConLai" ColumnName="TongTienConLai" />
-          <ScalarProperty Name="TongTienTraTruoc" ColumnName="TongTienTraTruoc" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
-          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
-          <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
-          <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PHIEUMUAHANGs">
       <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUMUAHANG">
         <MappingFragment StoreEntitySet="PHIEUMUAHANG">
@@ -140,6 +127,19 @@
           <ScalarProperty Name="ROLE" ColumnName="ROLE" />
           <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUDVs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUDV">
+        <MappingFragment StoreEntitySet="PHIEUDV">
+          <ScalarProperty Name="TongTienConLai" ColumnName="TongTienConLai" />
+          <ScalarProperty Name="TongTienTraTruoc" ColumnName="TongTienTraTruoc" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
+          <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

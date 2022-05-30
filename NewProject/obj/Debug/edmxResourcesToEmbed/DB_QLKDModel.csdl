@@ -9,7 +9,6 @@
     <EntitySet Name="LOAISPs" EntityType="DB_QLKDModel.LOAISP" />
     <EntitySet Name="NHACUNGCAPs" EntityType="DB_QLKDModel.NHACUNGCAP" />
     <EntitySet Name="PHIEUBANHANGs" EntityType="DB_QLKDModel.PHIEUBANHANG" />
-    <EntitySet Name="PHIEUDVs" EntityType="DB_QLKDModel.PHIEUDV" />
     <EntitySet Name="PHIEUMUAHANGs" EntityType="DB_QLKDModel.PHIEUMUAHANG" />
     <EntitySet Name="SANPHAMs" EntityType="DB_QLKDModel.SANPHAM" />
     <AssociationSet Name="fk_CTPBH" Association="DB_QLKDModel.fk_CTPBH">
@@ -19,10 +18,6 @@
     <AssociationSet Name="fk_CTPBH2" Association="DB_QLKDModel.fk_CTPBH2">
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
       <End Role="CT_PBH" EntitySet="CT_PBH" />
-    </AssociationSet>
-    <AssociationSet Name="fk01_CTPDV" Association="DB_QLKDModel.fk01_CTPDV">
-      <End Role="PHIEUDV" EntitySet="PHIEUDVs" />
-      <End Role="CT_PDV" EntitySet="CT_PDV" />
     </AssociationSet>
     <AssociationSet Name="fk02_CTPDV" Association="DB_QLKDModel.fk02_CTPDV">
       <End Role="DICHVU" EntitySet="DICHVUs" />
@@ -58,6 +53,11 @@
       <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
     </AssociationSet>
     <EntitySet Name="LOGINs" EntityType="DB_QLKDModel.LOGIN" />
+    <EntitySet Name="PHIEUDVs" EntityType="DB_QLKDModel.PHIEUDV" />
+    <AssociationSet Name="fk01_CTPDV" Association="DB_QLKDModel.fk01_CTPDV">
+      <End Role="PHIEUDV" EntitySet="PHIEUDVs" />
+      <End Role="CT_PDV" EntitySet="CT_PDV" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="CT_PBH">
     <Key>
@@ -89,8 +89,8 @@
     <Property Name="TraTruoc" Type="Int64" />
     <Property Name="ConLai" Type="Int64" />
     <Property Name="ChiPhiRiengDV" Type="Int64" />
-    <NavigationProperty Name="PHIEUDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="CT_PDV" ToRole="PHIEUDV" />
     <NavigationProperty Name="DICHVU" Relationship="DB_QLKDModel.fk02_CTPDV" FromRole="CT_PDV" ToRole="DICHVU" />
+    <NavigationProperty Name="PHIEUDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="CT_PDV" ToRole="PHIEUDV" />
   </EntityType>
   <EntityType Name="CT_PMH">
     <Key>
@@ -152,19 +152,6 @@
     <Property Name="TongTien" Type="Int64" />
     <NavigationProperty Name="CT_PBH" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="PHIEUBANHANG" ToRole="CT_PBH" />
   </EntityType>
-  <EntityType Name="PHIEUDV">
-    <Key>
-      <PropertyRef Name="MaPDV" />
-    </Key>
-    <Property Name="MaPDV" Type="Int32" Nullable="false" />
-    <Property Name="NgayLapPDV" Type="DateTime" Precision="0" />
-    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SDTKH" Type="Int32" />
-    <Property Name="TongTien" Type="Int64" />
-    <Property Name="TongTienTraTruoc" Type="Int64" />
-    <Property Name="TongTienConLai" Type="Int64" />
-    <NavigationProperty Name="CT_PDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="PHIEUDV" ToRole="CT_PDV" />
-  </EntityType>
   <EntityType Name="PHIEUMUAHANG">
     <Key>
       <PropertyRef Name="MaPMH" />
@@ -211,18 +198,6 @@
       </Principal>
       <Dependent Role="CT_PBH">
         <PropertyRef Name="MaSP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk01_CTPDV">
-    <End Type="DB_QLKDModel.PHIEUDV" Role="PHIEUDV" Multiplicity="1" />
-    <End Type="DB_QLKDModel.CT_PDV" Role="CT_PDV" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PHIEUDV">
-        <PropertyRef Name="MaPDV" />
-      </Principal>
-      <Dependent Role="CT_PDV">
-        <PropertyRef Name="MaPDV" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -347,4 +322,29 @@
     <Property Name="PWD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="PHIEUDV">
+    <Key>
+      <PropertyRef Name="MaPDV" />
+    </Key>
+    <Property Name="MaPDV" Type="Int32" Nullable="false" />
+    <Property Name="NgayLapPDV" Type="DateTime" Precision="0" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="TongTien" Type="Int64" />
+    <Property Name="TongTienTraTruoc" Type="Int64" />
+    <Property Name="TongTienConLai" Type="Int64" />
+    <NavigationProperty Name="CT_PDV" Relationship="DB_QLKDModel.fk01_CTPDV" FromRole="PHIEUDV" ToRole="CT_PDV" />
+  </EntityType>
+  <Association Name="fk01_CTPDV">
+    <End Type="DB_QLKDModel.PHIEUDV" Role="PHIEUDV" Multiplicity="1" />
+    <End Type="DB_QLKDModel.CT_PDV" Role="CT_PDV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUDV">
+        <PropertyRef Name="MaPDV" />
+      </Principal>
+      <Dependent Role="CT_PDV">
+        <PropertyRef Name="MaPDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

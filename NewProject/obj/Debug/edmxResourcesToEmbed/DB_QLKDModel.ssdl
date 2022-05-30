@@ -110,7 +110,7 @@
     <Property Name="MaPDV" Type="int" Nullable="false" />
     <Property Name="NgayLapPDV" Type="date" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
-    <Property Name="SDTKH" Type="int" />
+    <Property Name="SDTKH" Type="nvarchar" MaxLength="12" />
     <Property Name="TongTien" Type="bigint" />
     <Property Name="TongTienTraTruoc" Type="bigint" />
     <Property Name="TongTienConLai" Type="bigint" />

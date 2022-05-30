@@ -13,12 +13,10 @@
         <EntityTypeShape EntityType="DB_QLKDModel.LOAISP" Width="1.5" PointX="3" PointY="8.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.NHACUNGCAP" Width="1.5" PointX="6" PointY="3.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUBANHANG" Width="1.5" PointX="5.25" PointY="12.625" />
-        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUDV" Width="1.5" PointX="13.5" PointY="6.5" />
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUMUAHANG" Width="1.5" PointX="8.25" PointY="3.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.SANPHAM" Width="1.5" PointX="5.25" PointY="8.125" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPBH" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPBH2" />
-        <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" />
         <AssociationConnector Association="DB_QLKDModel.fk02_CTPDV" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPMH" />
         <AssociationConnector Association="DB_QLKDModel.fk02_CTPMH" />
@@ -28,7 +26,9 @@
         <EntityTypeShape EntityType="DB_QLKDModel.BAOCAOTON" Width="1.5" PointX="7.5" PointY="6.625" />
         <AssociationConnector Association="DB_QLKDModel.fk01_BAOCAOTON" />
         <AssociationConnector Association="DB_QLKDModel.fk02_BAOCAOTON" />
-        <EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="4" PointY="2.375" />  
+        <EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="4" PointY="2.375" />
+        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUDV" Width="1.5" PointX="13.75" PointY="6.375" />
+        <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" />  
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -357,7 +357,7 @@ namespace NewProject
                 db.SaveChanges();
             }
         }
-        public static void Add_CTPhieuDichVu(int maPDV, int maDV, int soLuong, long donGia, long thanhTien, long traTruoc, long conLai, DateTime ngayGiao, DateTime ngayLapPhieu, string tenKH, int sdt)
+        public static void Add_CTPhieuDichVu(int maPDV, int maDV, int soLuong, long donGia, long thanhTien, long traTruoc, long conLai, DateTime ngayGiao, DateTime ngayLapPhieu, string tenKH, string sdt)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -410,10 +410,27 @@ namespace NewProject
             }
         }
 
+        public static bool CheckState(string tinhTrang)
+        {
+            if(tinhTrang=="Chưa Giao" || tinhTrang=="Đã Giao")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static void Edit_CTPDV(int maPDV, int maDV, int soLuong, long traTruoc, DateTime ngayGiao, string tinhTrang)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
+                if(!DB_QLKD.CheckState(tinhTrang))
+                {
+                    MessageBox.Show("Tình trạng chỉ có thể 'Đã Giao' hoặc 'Chưa Giao' !", "Thông báo");
+                    return;
+                }
                 PHIEUDV pdv = db.PHIEUDVs.Where(c => c.MaPDV == maPDV).First();
                 CT_PDV ctpdv = db.CT_PDV.Where(c => c.MaPDV == maPDV && c.MaDV == maDV).First();
                 long donGia = Convert.ToInt64((from d in db.DICHVUs
@@ -455,7 +472,7 @@ namespace NewProject
                 if (tinhTrang == "Đã Giao")
                 {
                     ctpdv.ConLai = 0;
-                    tongTienConLai = tongTien;
+                    tongTienConLai = tongTien-ctpdv.ThanhTien.Value;
                 }
                 else if (tinhTrang == "Chưa Giao")
                 {
@@ -463,6 +480,8 @@ namespace NewProject
                     tongTienConLai = tongTien - tongTienTraTruoc;
                 }
                 pdv.TongTienConLai = tongTienConLai;
+
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
                 db.SaveChanges();
             }
         }

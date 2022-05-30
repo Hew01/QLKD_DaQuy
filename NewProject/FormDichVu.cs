@@ -107,7 +107,12 @@ namespace NewProject
             {
                 int maPDV = Convert.ToInt32(tbSoPhieu.Text);
                 string tenKH = tbKhachHang.Text;
-                int sdt = Convert.ToInt32(tbSoDienThoai.Text);
+                if(String.IsNullOrEmpty(tenKH))
+                {
+                    MessageBox.Show("Bạn chưa nhập tên khách hàng !", "Thông báo");
+                    return;
+                }
+                string sdt = tbSoDienThoai.Text;
                 DateTime ngayLapPhieu = dtNgayLapPhieu.Value;
                 DateTime ngayGiao = dtNgayGiao.Value;
                 int soLuong = Convert.ToInt32(TBSoLuong.Text);
@@ -205,7 +210,7 @@ namespace NewProject
                                             select c.MaDV).First().ToString());
                 DB_QLKD.Edit_CTPDV(maPDV, maDV, soLuong, traTruoc, ngayGiao, tinhTrang);
                 LoadData();
-                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
+                
                 ResetInputBH();
             }
         }
