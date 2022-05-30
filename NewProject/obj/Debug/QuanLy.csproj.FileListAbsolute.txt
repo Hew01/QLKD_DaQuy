@@ -1,0 +1,161 @@
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.exe
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\obj\Debug\NewProject.pdb
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\bin\Debug\NewProject.exe
+C:\Users\nhokb\Downloads\NewProject\NewProject\NewProject\bin\Debug\NewProject.pdb
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD.mdf
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD_log.ldf
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe.config
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\NewProject.pdb
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.dll
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.xml
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBanHang.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDichVu.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormLogin.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormManager.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.exe
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\NewProject.pdb
+E:\Document\Quản lý cửa hàng bán đá quý\QLKD_DaQuy-database\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csprojAssemblyReference.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\NewProject.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.exe
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DTB\QLKD_DaQuy\NewProject\obj\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\NewProject.exe
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\NewProject.pdb
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.exe
+C:\Users\nhokb\OneDrive\Desktop\Git Project\DQGit\QLKD_DaQuy\NewProject\obj\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-database-PBH (1)\QLKD_DaQuy-database-PBH\NewProject\obj\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\DB_QLKD.mdf
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\DB_QLKD_log.ldf
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\NewProject.exe.config
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\NewProject.pdb
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\EntityFramework.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\EntityFramework.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\QuanLy.csproj.AssemblyReference.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormBanHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormBaoCaoTonKho.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormDanhSachPhieuDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormDichVu.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormLogin.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormManager.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormMuaHang.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.FormThongTinTaiKhoan.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.Properties.Resources.resources
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\QuanLy.csproj.GenerateResource.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\QuanLy.csproj.CopyComplete
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.exe
+C:\Users\DELL\Downloads\QLKD_DaQuy-main\NewProject\obj\Debug\NewProject.pdb
