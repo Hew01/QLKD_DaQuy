@@ -29,6 +29,7 @@ namespace NewProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachPMH));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,6 +64,7 @@ namespace NewProject
             this.ClientSize = new System.Drawing.Size(1009, 481);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDanhSachPMH";
             this.Text = "FormDanhSachPMH";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

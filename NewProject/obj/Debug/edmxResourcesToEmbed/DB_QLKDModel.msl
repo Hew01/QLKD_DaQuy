@@ -77,15 +77,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PHIEUBANHANGs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
-        <MappingFragment StoreEntitySet="PHIEUBANHANG">
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
-          <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PHIEUMUAHANGs">
       <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUMUAHANG">
         <MappingFragment StoreEntitySet="PHIEUMUAHANG">
@@ -140,6 +131,16 @@
           <ScalarProperty Name="TenKH" ColumnName="TenKH" />
           <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
           <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUBANHANGs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
+        <MappingFragment StoreEntitySet="PHIEUBANHANG">
+          <ScalarProperty Name="KhachHang" ColumnName="KhachHang" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
+          <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

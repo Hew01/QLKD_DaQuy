@@ -102,6 +102,7 @@
     <Property Name="MaPBH" Type="int" Nullable="false" />
     <Property Name="NgayLapPBH" Type="date" />
     <Property Name="TongTien" Type="bigint" />
+    <Property Name="KhachHang" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PHIEUDV">
     <Key>

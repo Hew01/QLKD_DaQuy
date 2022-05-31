@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5a876d73c114429e9931545950ef88da" Name="Diagram1" ZoomLevel="117">
+      <Diagram DiagramId="5a876d73c114429e9931545950ef88da" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PBH" Width="1.5" PointX="7.5" PointY="10.375" />
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PDV" Width="1.5" PointX="16" PointY="3.75" />
         <EntityTypeShape EntityType="DB_QLKDModel.CT_PMH" Width="1.5" PointX="10.5" PointY="8.375" />
@@ -12,10 +12,8 @@
         <EntityTypeShape EntityType="DB_QLKDModel.DONVITINH" Width="1.5" PointX="0.75" PointY="5" />
         <EntityTypeShape EntityType="DB_QLKDModel.LOAISP" Width="1.5" PointX="3" PointY="8.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.NHACUNGCAP" Width="1.5" PointX="6" PointY="3.625" />
-        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUBANHANG" Width="1.5" PointX="5.25" PointY="12.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUMUAHANG" Width="1.5" PointX="8.25" PointY="3.625" />
         <EntityTypeShape EntityType="DB_QLKDModel.SANPHAM" Width="1.5" PointX="5.25" PointY="8.125" />
-        <AssociationConnector Association="DB_QLKDModel.fk_CTPBH" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPBH2" />
         <AssociationConnector Association="DB_QLKDModel.fk02_CTPDV" />
         <AssociationConnector Association="DB_QLKDModel.fk_CTPMH" />
@@ -28,7 +26,9 @@
         <AssociationConnector Association="DB_QLKDModel.fk02_BAOCAOTON" />
         <EntityTypeShape EntityType="DB_QLKDModel.LOGIN" Width="1.5" PointX="4" PointY="2.375" />
         <EntityTypeShape EntityType="DB_QLKDModel.PHIEUDV" Width="1.5" PointX="13.75" PointY="6.375" />
-        <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" />  
+        <AssociationConnector Association="DB_QLKDModel.fk01_CTPDV" />
+        <EntityTypeShape EntityType="DB_QLKDModel.PHIEUBANHANG" Width="1.5" PointX="10.125" PointY="13.375" />
+        <AssociationConnector Association="DB_QLKDModel.fk_CTPBH" />  
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

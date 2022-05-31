@@ -23,6 +23,7 @@ namespace NewProject
         public int MaPBH { get; set; }
         public Nullable<System.DateTime> NgayLapPBH { get; set; }
         public Nullable<long> TongTien { get; set; }
+        public string KhachHang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PBH> CT_PBH { get; set; }

@@ -27,7 +27,7 @@ namespace NewProject
                          select new
                          {
                              Mã_Phiếu_Bán_Hàng = pbh.MaPBH,
-                             //Họ_Tên_Khách_Hàng = pbh.TenKH,
+                             Khách_Hàng = pbh.KhachHang,
                              Ngày_Lập_Phiếu=pbh.NgayLapPBH,
                              Tổng_Tiền = pbh.TongTien,
                          };

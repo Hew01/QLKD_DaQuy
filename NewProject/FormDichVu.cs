@@ -125,10 +125,15 @@ namespace NewProject
                                             select c.DonGiaDV).First().ToString());
                 long thanhTien = donGia * soLuong;
                 long conLai = (thanhTien - traTruoc) < 0 ? 0 : (thanhTien - traTruoc);
-                DB_QLKD.Add_CTPhieuDichVu(maPDV, maDV, soLuong, donGia, thanhTien, traTruoc, conLai, ngayGiao, ngayLapPhieu, tenKH, sdt);
-                LoadData();
-                MessageBox.Show("Thêm thành công!", "Thông Báo");
-                ResetInputBH();
+                if (traTruoc >= (thanhTien / 2))
+                {
+                    DB_QLKD.Add_CTPhieuDichVu(maPDV, maDV, soLuong, donGia, thanhTien, traTruoc, conLai, ngayGiao, ngayLapPhieu, tenKH, sdt);
+                    LoadData();
+                    MessageBox.Show("Thêm thành công!", "Thông Báo");
+                    ResetInputBH();
+                }
+                else
+                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");           
             }
             
         }
@@ -208,10 +213,15 @@ namespace NewProject
                 int maDV = Convert.ToInt32((from c in db.DICHVUs
                                             where c.LoaiDV == loaiDV
                                             select c.MaDV).First().ToString());
-                DB_QLKD.Edit_CTPDV(maPDV, maDV, soLuong, traTruoc, ngayGiao, tinhTrang);
-                LoadData();
+                if (traTruoc >= (thanhTien / 2))
+                {
+                    DB_QLKD.Edit_CTPDV(maPDV, maDV, soLuong, traTruoc, ngayGiao, tinhTrang);
+                    LoadData();
+                    ResetInputBH();
+                }
+                else
+                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");
                 
-                ResetInputBH();
             }
         }
 

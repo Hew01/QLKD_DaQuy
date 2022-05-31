@@ -24,10 +24,15 @@ namespace NewProject
             {
 
                 var bc = from sp in db.SANPHAMs
+                         from lsp in db.LOAISPs
+                         where lsp.MaLoaiSP == sp.MaLoaiSP
                          select new
                          {
+                             Mã_Sản_Phẩm = sp.MaSP,
                              Loại_Sản_Phẩm = sp.MaLoaiSP,
                              Sản_Phẩm = sp.TenSP,
+                             Đơn_Vị_Tính=lsp.DONVITINH.LoaiDVT,
+                             Đơn_Giá_Bán=sp.DonGiaBan,
                          };
                 dataGridView1.DataSource = bc.ToList();
             }

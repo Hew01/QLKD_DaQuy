@@ -107,6 +107,7 @@
           <Property Name="MaPBH" Type="int" Nullable="false" />
           <Property Name="NgayLapPBH" Type="date" />
           <Property Name="TongTien" Type="bigint" />
+          <Property Name="KhachHang" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PHIEUDV">
           <Key>
@@ -342,13 +343,8 @@
           <EntitySet Name="DONVITINHs" EntityType="DB_QLKDModel.DONVITINH" />
           <EntitySet Name="LOAISPs" EntityType="DB_QLKDModel.LOAISP" />
           <EntitySet Name="NHACUNGCAPs" EntityType="DB_QLKDModel.NHACUNGCAP" />
-          <EntitySet Name="PHIEUBANHANGs" EntityType="DB_QLKDModel.PHIEUBANHANG" />
           <EntitySet Name="PHIEUMUAHANGs" EntityType="DB_QLKDModel.PHIEUMUAHANG" />
           <EntitySet Name="SANPHAMs" EntityType="DB_QLKDModel.SANPHAM" />
-          <AssociationSet Name="fk_CTPBH" Association="DB_QLKDModel.fk_CTPBH">
-            <End Role="PHIEUBANHANG" EntitySet="PHIEUBANHANGs" />
-            <End Role="CT_PBH" EntitySet="CT_PBH" />
-          </AssociationSet>
           <AssociationSet Name="fk_CTPBH2" Association="DB_QLKDModel.fk_CTPBH2">
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
             <End Role="CT_PBH" EntitySet="CT_PBH" />
@@ -392,6 +388,11 @@
             <End Role="PHIEUDV" EntitySet="PHIEUDVs" />
             <End Role="CT_PDV" EntitySet="CT_PDV" />
           </AssociationSet>
+          <EntitySet Name="PHIEUBANHANGs" EntityType="DB_QLKDModel.PHIEUBANHANG" />
+          <AssociationSet Name="fk_CTPBH" Association="DB_QLKDModel.fk_CTPBH">
+            <End Role="PHIEUBANHANG" EntitySet="PHIEUBANHANGs" />
+            <End Role="CT_PBH" EntitySet="CT_PBH" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CT_PBH">
           <Key>
@@ -403,8 +404,8 @@
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGiaBan" Type="Int64" />
           <Property Name="ThanhTien" Type="Int64" />
-          <NavigationProperty Name="PHIEUBANHANG" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="CT_PBH" ToRole="PHIEUBANHANG" />
           <NavigationProperty Name="SANPHAM" Relationship="DB_QLKDModel.fk_CTPBH2" FromRole="CT_PBH" ToRole="SANPHAM" />
+          <NavigationProperty Name="PHIEUBANHANG" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="CT_PBH" ToRole="PHIEUBANHANG" />
         </EntityType>
         <EntityType Name="CT_PDV">
           <Key>
@@ -477,15 +478,6 @@
           <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PHIEUMUAHANGs" Relationship="DB_QLKDModel.fk_PMH" FromRole="NHACUNGCAP" ToRole="PHIEUMUAHANG" />
         </EntityType>
-        <EntityType Name="PHIEUBANHANG">
-          <Key>
-            <PropertyRef Name="MaPBH" />
-          </Key>
-          <Property Name="MaPBH" Type="Int32" Nullable="false" />
-          <Property Name="NgayLapPBH" Type="DateTime" Precision="0" />
-          <Property Name="TongTien" Type="Int64" />
-          <NavigationProperty Name="CT_PBH" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="PHIEUBANHANG" ToRole="CT_PBH" />
-        </EntityType>
         <EntityType Name="PHIEUMUAHANG">
           <Key>
             <PropertyRef Name="MaPMH" />
@@ -511,18 +503,6 @@
           <NavigationProperty Name="LOAISP" Relationship="DB_QLKDModel.fk_SANPHAM" FromRole="SANPHAM" ToRole="LOAISP" />
           <NavigationProperty Name="BAOCAOTONs" Relationship="DB_QLKDModel.fk02_BAOCAOTON" FromRole="SANPHAM" ToRole="BAOCAOTON" />
         </EntityType>
-        <Association Name="fk_CTPBH">
-          <End Type="DB_QLKDModel.PHIEUBANHANG" Role="PHIEUBANHANG" Multiplicity="1" />
-          <End Type="DB_QLKDModel.CT_PBH" Role="CT_PBH" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PHIEUBANHANG">
-              <PropertyRef Name="MaPBH" />
-            </Principal>
-            <Dependent Role="CT_PBH">
-              <PropertyRef Name="MaPBH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_CTPBH2">
           <End Type="DB_QLKDModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
           <End Type="DB_QLKDModel.CT_PBH" Role="CT_PBH" Multiplicity="*" />
@@ -680,6 +660,28 @@
               <PropertyRef Name="MaPDV" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PHIEUBANHANG">
+          <Key>
+            <PropertyRef Name="MaPBH" />
+          </Key>
+          <Property Name="MaPBH" Type="Int32" Nullable="false" />
+          <Property Name="NgayLapPBH" Type="DateTime" Precision="0" />
+          <Property Name="TongTien" Type="Int64" />
+          <Property Name="KhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CT_PBH" Relationship="DB_QLKDModel.fk_CTPBH" FromRole="PHIEUBANHANG" ToRole="CT_PBH" />
+        </EntityType>
+        <Association Name="fk_CTPBH">
+          <End Type="DB_QLKDModel.PHIEUBANHANG" Role="PHIEUBANHANG" Multiplicity="1" />
+          <End Type="DB_QLKDModel.CT_PBH" Role="CT_PBH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUBANHANG">
+              <PropertyRef Name="MaPBH" />
+            </Principal>
+            <Dependent Role="CT_PBH">
+              <PropertyRef Name="MaPBH" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>  
       </Schema>
     </edmx:ConceptualModels>
@@ -763,15 +765,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PHIEUBANHANGs">
-            <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
-              <MappingFragment StoreEntitySet="PHIEUBANHANG">
-                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-                <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
-                <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PHIEUMUAHANGs">
             <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUMUAHANG">
               <MappingFragment StoreEntitySet="PHIEUMUAHANG">
@@ -826,6 +819,16 @@
                 <ScalarProperty Name="TenKH" ColumnName="TenKH" />
                 <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
                 <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUBANHANGs">
+            <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
+              <MappingFragment StoreEntitySet="PHIEUBANHANG">
+                <ScalarProperty Name="KhachHang" ColumnName="KhachHang" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
+                <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

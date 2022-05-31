@@ -201,7 +201,7 @@ namespace NewProject
             }
         }
         //FormBanHang
-        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, DateTime ngaylapphieu)
+        public static void AddCT_PBH(string maPBH, int maSP, int soluong, int donGiaBan, DateTime ngaylapphieu, string tenkh)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -214,6 +214,7 @@ namespace NewProject
                         MaPBH = Convert.ToInt32(maPBH),
                         NgayLapPBH = ngaylapphieu,
                         TongTien = thanhTien,
+                        KhachHang=tenkh
                     };
                     db.PHIEUBANHANGs.Add(pbh);
                     CT_PBH ctpbh = new CT_PBH

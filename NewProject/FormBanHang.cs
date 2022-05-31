@@ -107,7 +107,7 @@ namespace NewProject
             int donGiaMua = Convert.ToInt32(donGiaMuaVao.First().ToString());
             int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
             
-            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, pbh_DateTime.Value);
+            DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, pbh_DateTime.Value, tenKH);
             db.SaveChanges();
             LoadData();
             AdjustSumMoney(Convert.ToInt32(maPBH));

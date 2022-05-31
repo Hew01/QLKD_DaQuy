@@ -41,7 +41,7 @@ namespace NewProject
                             MessageBox.Show("Đăng nhập thành công !","Thông báo");
                             DB_QLKD.currentUser = username;
                             this.Hide();
-                            FormManager formManager = new FormManager();
+                            FormManager formManager = new FormManager(username);
                             formManager.FormClosed += (s, args) => this.Close();
                             formManager.ShowDialog(); 
                         }
@@ -57,14 +57,26 @@ namespace NewProject
                 throw;
             }
         }
-       
 
+        //protected override void OnFormClosing(FormClosingEventArgs e)
+        //{
+        //    if (e.CloseReason == CloseReason.UserClosing)
+        //    {
+        //        if (MessageBox.Show("Bạn có muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+        //        {
+        //            Application.Exit(e);
+        //        }
+        //    }
+        //    base.OnFormClosing(e);
+        //}
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Do you want to exit?", "Notification!!!!!!!", MessageBoxButtons.OKCancel) != DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show("Bạn có muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            //{
+            //    Application.Exit(e);
+
+            //}
+            Application.Exit();
         }
 
         private void tbUsername_KeyDown(object sender, KeyEventArgs e)
