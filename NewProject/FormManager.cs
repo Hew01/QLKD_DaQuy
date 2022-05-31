@@ -81,5 +81,23 @@ namespace NewProject
                 CurrentChildFrom.Close();
             }
         }
+
+        private void phiếuBánHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDanhSachPBH f = new FormDanhSachPBH();
+            f.ShowDialog();
+        }
+
+        private void phiếuMuaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachPMH f = new FormDanhSachPMH();
+            f.ShowDialog();
+        }
+
+        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachSP f = new FormDanhSachSP();
+            f.ShowDialog();
+        }
     }
 }

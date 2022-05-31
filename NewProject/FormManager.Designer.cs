@@ -36,19 +36,25 @@
             this.btnDanhSachPhieuDichVu = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phiếuBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phiếuBánHàngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.phiếuMuaHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phiếuDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LabelManager = new System.Windows.Forms.Label();
             this.PanelBody = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.PanelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLapPhieuBanHang
@@ -134,17 +140,65 @@
             // 
             // tàiKhoảnToolStripMenuItem
             // 
+            this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thôngTinToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
-            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
+            // 
+            // thôngTinToolStripMenuItem
+            // 
+            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.thôngTinToolStripMenuItem.Text = "Thông tin";
+            this.thôngTinToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem1
+            // 
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(160, 26);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
+            this.đăngXuấtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.phiếuBánHàngToolStripMenuItem,
+            this.phiếuBánHàngToolStripMenuItem1,
+            this.phiếuMuaHàngToolStripMenuItem,
+            this.phiếuDịchVụToolStripMenuItem});
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Danh sách";
+            // 
+            // phiếuBánHàngToolStripMenuItem
+            // 
+            this.phiếuBánHàngToolStripMenuItem.Name = "phiếuBánHàngToolStripMenuItem";
+            this.phiếuBánHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phiếuBánHàngToolStripMenuItem.Text = "Sản phẩm";
+            this.phiếuBánHàngToolStripMenuItem.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem_Click);
+            // 
+            // phiếuBánHàngToolStripMenuItem1
+            // 
+            this.phiếuBánHàngToolStripMenuItem1.Name = "phiếuBánHàngToolStripMenuItem1";
+            this.phiếuBánHàngToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.phiếuBánHàngToolStripMenuItem1.Text = "Phiếu bán hàng";
+            this.phiếuBánHàngToolStripMenuItem1.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem1_Click);
+            // 
+            // phiếuMuaHàngToolStripMenuItem
+            // 
+            this.phiếuMuaHàngToolStripMenuItem.Name = "phiếuMuaHàngToolStripMenuItem";
+            this.phiếuMuaHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phiếuMuaHàngToolStripMenuItem.Text = "Phiếu mua hàng";
+            this.phiếuMuaHàngToolStripMenuItem.Click += new System.EventHandler(this.phiếuMuaHàngToolStripMenuItem_Click);
+            // 
+            // phiếuDịchVụToolStripMenuItem
+            // 
+            this.phiếuDịchVụToolStripMenuItem.Name = "phiếuDịchVụToolStripMenuItem";
+            this.phiếuDịchVụToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phiếuDịchVụToolStripMenuItem.Text = "Phiếu dịch vụ";
+            this.phiếuDịchVụToolStripMenuItem.Click += new System.EventHandler(this.btnLapPhieuDichVu_Click);
             // 
             // panel1
             // 
@@ -162,6 +216,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 755);
             this.panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NewProject.Properties.Resources.stone_gem_gemstone_logo_icon_vector_34574225;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(228, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -215,16 +279,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NewProject.Properties.Resources.stone_gem_gemstone_logo_icon_vector_34574225;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 241);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -246,11 +300,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.PanelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +326,11 @@
         private System.Windows.Forms.Label LabelManager;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem phiếuBánHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phiếuBánHàngToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem phiếuMuaHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phiếuDịchVụToolStripMenuItem;
     }
 }
