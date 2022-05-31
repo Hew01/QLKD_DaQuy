@@ -12,9 +12,14 @@ namespace NewProject
 {
     public partial class FormDanhSachSP : Form
     {
-        public FormDanhSachSP()
+        public static FormDanhSachSP instance;
+        public FormDanhSachSP(string username)
         {
             InitializeComponent();
+            instance = this;
+            if (username == "admin")
+                BtnAdd.Enabled = true;
+            else BtnAdd.Enabled = false;
             LoadData();
         }
 
@@ -36,6 +41,12 @@ namespace NewProject
                          };
                 dataGridView1.DataSource = bc.ToList();
             }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            FormThemSP f = new FormThemSP();
+            f.ShowDialog();
         }
     }
 }

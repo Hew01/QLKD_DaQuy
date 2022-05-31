@@ -105,7 +105,7 @@ namespace NewProject
 
         private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDanhSachSP f = new FormDanhSachSP();
+            FormDanhSachSP f = new FormDanhSachSP(MainUser);
             f.ShowDialog();
         }
 
@@ -118,6 +118,12 @@ namespace NewProject
         private void phiếuDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDanhSachPhieuDichVu f = new FormDanhSachPhieuDichVu();
+            f.ShowDialog();
+        }
+
+        private void dịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachDV f = new FormDanhSachDV(MainUser);
             f.ShowDialog();
         }
     }

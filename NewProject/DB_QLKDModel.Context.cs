@@ -33,10 +33,10 @@ namespace NewProject
         public virtual DbSet<LOAISP> LOAISPs { get; set; }
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
         public virtual DbSet<PHIEUMUAHANG> PHIEUMUAHANGs { get; set; }
-        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<BAOCAOTON> BAOCAOTONs { get; set; }
         public virtual DbSet<LOGIN> LOGINs { get; set; }
-        public virtual DbSet<PHIEUDV> PHIEUDVs { get; set; }
         public virtual DbSet<PHIEUBANHANG> PHIEUBANHANGs { get; set; }
+        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<PHIEUDV> PHIEUDVs { get; set; }
     }
 }

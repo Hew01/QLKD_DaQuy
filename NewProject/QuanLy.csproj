@@ -132,6 +132,12 @@
     <Compile Include="FormBaoCaoTonKho.Designer.cs">
       <DependentUpon>FormBaoCaoTonKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDanhSachDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachDV.Designer.cs">
+      <DependentUpon>FormDanhSachDV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhSachPBH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,18 @@
     <Compile Include="FormTaoTK.Designer.cs">
       <DependentUpon>FormTaoTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemDV.Designer.cs">
+      <DependentUpon>FormThemDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemSP.Designer.cs">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThongTinTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +240,9 @@
     <EmbeddedResource Include="FormBaoCaoTonKho.resx">
       <DependentUpon>FormBaoCaoTonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachDV.resx">
+      <DependentUpon>FormDanhSachDV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachPBH.resx">
       <DependentUpon>FormDanhSachPBH.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTK.resx">
       <DependentUpon>FormTaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemDV.resx">
+      <DependentUpon>FormThemDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemSP.resx">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongTinTaiKhoan.resx">
       <DependentUpon>FormThongTinTaiKhoan.cs</DependentUpon>

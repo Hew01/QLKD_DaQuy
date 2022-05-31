@@ -59,7 +59,7 @@
     <Key>
       <PropertyRef Name="MaDV" />
     </Key>
-    <Property Name="MaDV" Type="int" Nullable="false" />
+    <Property Name="MaDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LoaiDV" Type="nvarchar" MaxLength="100" />
     <Property Name="DonGiaDV" Type="bigint" />
   </EntityType>
@@ -128,7 +128,7 @@
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaLoaiSP" Type="int" Nullable="false" />
     <Property Name="DonGiaBan" Type="bigint" />
     <Property Name="DonGiaMuaVao" Type="bigint" />

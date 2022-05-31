@@ -54,7 +54,7 @@ namespace NewProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 113);
+            this.label2.Location = new System.Drawing.Point(58, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace NewProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 173);
+            this.label3.Location = new System.Drawing.Point(31, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 23);
             this.label3.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace NewProject
             // 
             // TbPassword
             // 
-            this.TbPassword.Location = new System.Drawing.Point(152, 113);
+            this.TbPassword.Location = new System.Drawing.Point(152, 94);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '•';
             this.TbPassword.Size = new System.Drawing.Size(279, 22);
@@ -89,7 +89,7 @@ namespace NewProject
             // 
             // TbRePass
             // 
-            this.TbRePass.Location = new System.Drawing.Point(152, 173);
+            this.TbRePass.Location = new System.Drawing.Point(152, 133);
             this.TbRePass.Name = "TbRePass";
             this.TbRePass.PasswordChar = '•';
             this.TbRePass.Size = new System.Drawing.Size(279, 22);
@@ -98,7 +98,7 @@ namespace NewProject
             // 
             // BtnOK
             // 
-            this.BtnOK.Location = new System.Drawing.Point(288, 239);
+            this.BtnOK.Location = new System.Drawing.Point(290, 193);
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.Size = new System.Drawing.Size(75, 31);
             this.BtnOK.TabIndex = 4;
@@ -108,7 +108,7 @@ namespace NewProject
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(392, 239);
+            this.BtnCancel.Location = new System.Drawing.Point(394, 193);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 31);
             this.BtnCancel.TabIndex = 5;
@@ -121,7 +121,7 @@ namespace NewProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(500, 293);
+            this.ClientSize = new System.Drawing.Size(493, 262);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.TbRePass);
@@ -132,6 +132,7 @@ namespace NewProject
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTaoTK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tạo tài khoản";
             this.ResumeLayout(false);
             this.PerformLayout();
