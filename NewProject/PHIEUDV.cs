@@ -23,7 +23,7 @@ namespace NewProject
         public int MaPDV { get; set; }
         public Nullable<System.DateTime> NgayLapPDV { get; set; }
         public string TenKH { get; set; }
-        public Nullable<int> SDTKH { get; set; }
+        public string SDTKH { get; set; }
         public Nullable<long> TongTien { get; set; }
         public Nullable<long> TongTienTraTruoc { get; set; }
         public Nullable<long> TongTienConLai { get; set; }

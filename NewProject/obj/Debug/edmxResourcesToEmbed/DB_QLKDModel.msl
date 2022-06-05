@@ -77,46 +77,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PHIEUBANHANGs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
-        <MappingFragment StoreEntitySet="PHIEUBANHANG">
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
-          <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PHIEUDVs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUDV">
-        <MappingFragment StoreEntitySet="PHIEUDV">
-          <ScalarProperty Name="TongTienConLai" ColumnName="TongTienConLai" />
-          <ScalarProperty Name="TongTienTraTruoc" ColumnName="TongTienTraTruoc" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
-          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
-          <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
-          <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PHIEUMUAHANGs">
       <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUMUAHANG">
         <MappingFragment StoreEntitySet="PHIEUMUAHANG">
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="NgLapPMH" ColumnName="NgLapPMH" />
           <ScalarProperty Name="MaPMH" ColumnName="MaPMH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SANPHAMs">
-      <EntityTypeMapping TypeName="DB_QLKDModel.SANPHAM">
-        <MappingFragment StoreEntitySet="SANPHAM">
-          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
-          <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
-          <ScalarProperty Name="DonGiaMuaVao" ColumnName="DonGiaMuaVao" />
-          <ScalarProperty Name="DonGiaBan" ColumnName="DonGiaBan" />
-          <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -140,6 +106,41 @@
           <ScalarProperty Name="ROLE" ColumnName="ROLE" />
           <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUBANHANGs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUBANHANG">
+        <MappingFragment StoreEntitySet="PHIEUBANHANG">
+          <ScalarProperty Name="KhachHang" ColumnName="KhachHang" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayLapPBH" ColumnName="NgayLapPBH" />
+          <ScalarProperty Name="MaPBH" ColumnName="MaPBH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANPHAMs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.SANPHAM">
+        <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
+          <ScalarProperty Name="DonGiaMuaVao" ColumnName="DonGiaMuaVao" />
+          <ScalarProperty Name="DonGiaBan" ColumnName="DonGiaBan" />
+          <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUDVs">
+      <EntityTypeMapping TypeName="DB_QLKDModel.PHIEUDV">
+        <MappingFragment StoreEntitySet="PHIEUDV">
+          <ScalarProperty Name="TongTienConLai" ColumnName="TongTienConLai" />
+          <ScalarProperty Name="TongTienTraTruoc" ColumnName="TongTienTraTruoc" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="NgayLapPDV" ColumnName="NgayLapPDV" />
+          <ScalarProperty Name="MaPDV" ColumnName="MaPDV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

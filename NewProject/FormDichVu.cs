@@ -107,7 +107,12 @@ namespace NewProject
             {
                 int maPDV = Convert.ToInt32(tbSoPhieu.Text);
                 string tenKH = tbKhachHang.Text;
-                int sdt = Convert.ToInt32(tbSoDienThoai.Text);
+                if(String.IsNullOrEmpty(tenKH))
+                {
+                    MessageBox.Show("Bạn chưa nhập tên khách hàng !", "Thông báo");
+                    return;
+                }
+                string sdt = tbSoDienThoai.Text;
                 DateTime ngayLapPhieu = dtNgayLapPhieu.Value;
                 DateTime ngayGiao = dtNgayGiao.Value;
                 int soLuong = Convert.ToInt32(TBSoLuong.Text);
@@ -120,10 +125,15 @@ namespace NewProject
                                             select c.DonGiaDV).First().ToString());
                 long thanhTien = donGia * soLuong;
                 long conLai = (thanhTien - traTruoc) < 0 ? 0 : (thanhTien - traTruoc);
-                DB_QLKD.Add_CTPhieuDichVu(maPDV, maDV, soLuong, donGia, thanhTien, traTruoc, conLai, ngayGiao, ngayLapPhieu, tenKH, sdt);
-                LoadData();
-                MessageBox.Show("Thêm thành công!", "Thông Báo");
-                ResetInputBH();
+                if (traTruoc >= (thanhTien / 2))
+                {
+                    DB_QLKD.Add_CTPhieuDichVu(maPDV, maDV, soLuong, donGia, thanhTien, traTruoc, conLai, ngayGiao, ngayLapPhieu, tenKH, sdt);
+                    LoadData();
+                    MessageBox.Show("Thêm thành công!", "Thông Báo");
+                    ResetInputBH();
+                }
+                else
+                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");           
             }
             
         }
@@ -203,10 +213,15 @@ namespace NewProject
                 int maDV = Convert.ToInt32((from c in db.DICHVUs
                                             where c.LoaiDV == loaiDV
                                             select c.MaDV).First().ToString());
-                DB_QLKD.Edit_CTPDV(maPDV, maDV, soLuong, traTruoc, ngayGiao, tinhTrang);
-                LoadData();
-                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
-                ResetInputBH();
+                if (traTruoc >= (thanhTien / 2))
+                {
+                    DB_QLKD.Edit_CTPDV(maPDV, maDV, soLuong, traTruoc, ngayGiao, tinhTrang);
+                    LoadData();
+                    ResetInputBH();
+                }
+                else
+                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");
+                
             }
         }
 

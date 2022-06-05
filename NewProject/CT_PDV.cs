@@ -27,7 +27,7 @@ namespace NewProject
         public Nullable<long> ConLai { get; set; }
         public Nullable<long> ChiPhiRiengDV { get; set; }
     
-        public virtual PHIEUDV PHIEUDV { get; set; }
         public virtual DICHVU DICHVU { get; set; }
+        public virtual PHIEUDV PHIEUDV { get; set; }
     }
 }

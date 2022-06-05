@@ -66,7 +66,9 @@
       <HintPath>..\packages\MicrosoftOfficeCore.15.0.0\lib\net35\Office.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -130,11 +132,35 @@
     <Compile Include="FormBaoCaoTonKho.Designer.cs">
       <DependentUpon>FormBaoCaoTonKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDanhSachDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachDV.Designer.cs">
+      <DependentUpon>FormDanhSachDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachPBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachPBH.Designer.cs">
+      <DependentUpon>FormDanhSachPBH.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhSachPhieuDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDanhSachPhieuDichVu.Designer.cs">
       <DependentUpon>FormDanhSachPhieuDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachPMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachPMH.Designer.cs">
+      <DependentUpon>FormDanhSachPMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachSP.Designer.cs">
+      <DependentUpon>FormDanhSachSP.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDichVu.cs">
       <SubType>Form</SubType>
@@ -159,6 +185,24 @@
     </Compile>
     <Compile Include="FormMuaHang.Designer.cs">
       <DependentUpon>FormMuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoTK.Designer.cs">
+      <DependentUpon>FormTaoTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemDV.Designer.cs">
+      <DependentUpon>FormThemDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemSP.Designer.cs">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThongTinTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -196,8 +240,20 @@
     <EmbeddedResource Include="FormBaoCaoTonKho.resx">
       <DependentUpon>FormBaoCaoTonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachDV.resx">
+      <DependentUpon>FormDanhSachDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachPBH.resx">
+      <DependentUpon>FormDanhSachPBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachPhieuDichVu.resx">
       <DependentUpon>FormDanhSachPhieuDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachPMH.resx">
+      <DependentUpon>FormDanhSachPMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachSP.resx">
+      <DependentUpon>FormDanhSachSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDichVu.resx">
       <DependentUpon>FormDichVu.cs</DependentUpon>
@@ -210,6 +266,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMuaHang.resx">
       <DependentUpon>FormMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoTK.resx">
+      <DependentUpon>FormTaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemDV.resx">
+      <DependentUpon>FormThemDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemSP.resx">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongTinTaiKhoan.resx">
       <DependentUpon>FormThongTinTaiKhoan.cs</DependentUpon>

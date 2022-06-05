@@ -59,7 +59,7 @@
     <Key>
       <PropertyRef Name="MaDV" />
     </Key>
-    <Property Name="MaDV" Type="int" Nullable="false" />
+    <Property Name="MaDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LoaiDV" Type="nvarchar" MaxLength="100" />
     <Property Name="DonGiaDV" Type="bigint" />
   </EntityType>
@@ -102,6 +102,7 @@
     <Property Name="MaPBH" Type="int" Nullable="false" />
     <Property Name="NgayLapPBH" Type="date" />
     <Property Name="TongTien" Type="bigint" />
+    <Property Name="KhachHang" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PHIEUDV">
     <Key>
@@ -110,7 +111,7 @@
     <Property Name="MaPDV" Type="int" Nullable="false" />
     <Property Name="NgayLapPDV" Type="date" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
-    <Property Name="SDTKH" Type="int" />
+    <Property Name="SDTKH" Type="nvarchar" MaxLength="12" />
     <Property Name="TongTien" Type="bigint" />
     <Property Name="TongTienTraTruoc" Type="bigint" />
     <Property Name="TongTienConLai" Type="bigint" />
@@ -127,7 +128,7 @@
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaLoaiSP" Type="int" Nullable="false" />
     <Property Name="DonGiaBan" Type="bigint" />
     <Property Name="DonGiaMuaVao" Type="bigint" />

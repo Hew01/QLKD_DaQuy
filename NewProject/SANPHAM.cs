@@ -17,9 +17,9 @@ namespace NewProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SANPHAM()
         {
+            this.BAOCAOTONs = new HashSet<BAOCAOTON>();
             this.CT_PBH = new HashSet<CT_PBH>();
             this.CT_PMH = new HashSet<CT_PMH>();
-            this.BAOCAOTONs = new HashSet<BAOCAOTON>();
         }
     
         public int MaSP { get; set; }
@@ -30,11 +30,11 @@ namespace NewProject
         public string TenSP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BAOCAOTON> BAOCAOTONs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PBH> CT_PBH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PMH> CT_PMH { get; set; }
         public virtual LOAISP LOAISP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BAOCAOTON> BAOCAOTONs { get; set; }
     }
 }

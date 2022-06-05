@@ -12,17 +12,31 @@ namespace NewProject
 {
     public partial class FormManager : Form
     {
-        public FormManager()
+        public string MainUser;
+        public static FormManager instance;
+        public FormManager(string username)
         {
             InitializeComponent();
+            instance = this;
+            LbUser.Text = username;
+            MainUser = username;
+            CheckUser();
         }
-
+        private void CheckUser()
+        {
+            if (MainUser!="admin")
+            {
+                btnLapPhieuMuaHang.Enabled = false;
+                tạoTàiKhoảnToolStripMenuItem1.Enabled = false;
+            }
+        }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLogin formLogin = new FormLogin();
-            formLogin.FormClosed += (s, args) => this.Close();
             formLogin.ShowDialog();
+            formLogin.FormClosed += (s, args) => this.Close();
+
         }
 
         private Form CurrentChildFrom;
@@ -63,11 +77,6 @@ namespace NewProject
             OpenChildForm(new FormBaoCaoTonKho());
         }
 
-        private void btnDanhSachPhieuDichVu_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormDanhSachPhieuDichVu());
-        }
-
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormThongTinTaiKhoan f=new FormThongTinTaiKhoan();
@@ -80,6 +89,42 @@ namespace NewProject
             {
                 CurrentChildFrom.Close();
             }
+        }
+
+        private void phiếuBánHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDanhSachPBH f = new FormDanhSachPBH();
+            f.ShowDialog();
+        }
+
+        private void phiếuMuaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachPMH f = new FormDanhSachPMH();
+            f.ShowDialog();
+        }
+
+        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachSP f = new FormDanhSachSP(MainUser);
+            f.ShowDialog();
+        }
+
+        private void tạoTàiKhoảnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormTaoTK f = new FormTaoTK();
+            f.ShowDialog();
+        }
+
+        private void phiếuDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachPhieuDichVu f = new FormDanhSachPhieuDichVu();
+            f.ShowDialog();
+        }
+
+        private void dịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDanhSachDV f = new FormDanhSachDV(MainUser);
+            f.ShowDialog();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace NewProject
         public Nullable<long> DonGiaMuaVao { get; set; }
         public Nullable<long> ThanhTien { get; set; }
     
-        public virtual SANPHAM SANPHAM { get; set; }
         public virtual PHIEUMUAHANG PHIEUMUAHANG { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }
