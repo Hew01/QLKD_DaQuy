@@ -22,7 +22,7 @@ namespace NewProject
             dgv = dataGridView1;
             tbSoPhieu.Select();
             tbSoPhieu.Focus();
-            BtnAdd.Enabled = false;
+            BtnThemPMH.Enabled = false;
             value = 0;
         }
 
@@ -71,8 +71,8 @@ namespace NewProject
         private void BtnAdd_Visible()
         {
             if (/*IsSPMuaValid() &&*/ (IsCustomerInfoValid()))
-                BtnAdd.Enabled = true;
-            else BtnAdd.Enabled = false;
+                BtnThemPMH.Enabled = true;
+            else BtnThemPMH.Enabled = false;
         }
         private void ResetInputBH()
         {
@@ -80,61 +80,23 @@ namespace NewProject
             CBSanPham.SelectedIndex = -1;
             TBSoLuong.Text = "";
         }
-        private void BtnAdd_Click(object sender, EventArgs e)
+
+        public bool CheckSoLuong_PMH(string input)
         {
-            int maPMH = Convert.ToInt32(tbSoPhieu.Text);
-            DateTime ngayLapPhieu= pmh_DateTime.Value;
-            string nhaCungCap = cbNhaCungCap.Text;
-            int maLoaiSP = Convert.ToInt32(CBLoaiSP.Text);
-            string tenSP = CBSanPham.Text;
-            int soLuong = Convert.ToInt32(TBSoLuong.Text);
-
-            var ncc = from c in db.NHACUNGCAPs
-                      where c.TenNCC == nhaCungCap
-                      select c.MaNCC;
-            var sp = from c in db.SANPHAMs
-                     where c.TenSP == tenSP
-                     select c.MaSP;
-            
-            int maSP = Convert.ToInt32(sp.First().ToString());
-            var donGia = from c in db.SANPHAMs
-                         where c.MaSP == maSP
-                         select c.DonGiaMuaVao;
-            int maNCC = Convert.ToInt32(ncc.First().ToString());
-            int donGiaMua = Convert.ToInt32(donGia.First().ToString());
-            int thanhTien = donGiaMua * soLuong;
-
-            DB_QLKD.addCT_PMH(maPMH, maSP, soLuong, donGiaMua, thanhTien, ngayLapPhieu, maNCC);
-            db.SaveChanges();
-            LoadData();
-            
-            value += thanhTien;
-            LbSumMoney.Text = $"{value} đồng";
-            ResetInputBH();
-        }
-
-        //Xóa sản phẩm trong phiếu
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count == 0)
-                MessageBox.Show("Bạn vẫn chưa điền thông tin!");
+            if (int.TryParse(input, out int amount) && amount > 0)
+                return true;
             else
-            {
-                //DeleteItem();
-                int maPBH = Convert.ToInt32(tbSoPhieu.Text);
-                string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
-                int ThanhTien = Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Thành_Tiền"].Value);
-                int masp=Convert.ToInt32((from c in db.SANPHAMs
-                                         where c.TenSP==tenSP
-                                         select c.MaSP).First().ToString());
-                DB_QLKD.Delete_CTPMH(maPBH, masp);
-                LoadData();
-                MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK);
-                ResetInputBH();
-                value -= ThanhTien;
-                LbSumMoney.Text = $"{value} đồng";
-            }
+                return false;
         }
+
+        public bool CheckSoPhieu_PMH(string input)
+        {
+            if (int.TryParse(input, out int cardId) && cardId >= 0)
+                return true;
+            else
+                return false;
+        }
+
         private void TBSoLuong_TextChanged(object sender, EventArgs e)
         {
             BtnAdd_Visible();
@@ -172,18 +134,6 @@ namespace NewProject
             cbNhaCungCap.DataSource = ncc.ToList();
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            if(tbSoPhieu.Text=="")
-            {
-                MessageBox.Show("Bạn chưa nhập số phiếu", "Thông Báo");
-            }
-            else
-            {
-                LoadData();
-            }
-        }
-
         private void tbSoPhieu_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);
@@ -194,7 +144,70 @@ namespace NewProject
             CBSanPham.SelectedIndex = -1;
             TBSoLuong.Text = "";
         }
-        private void BtnEdit_Click(object sender, EventArgs e)
+
+        private void BtnThemPMH_Click(object sender, EventArgs e)
+        {
+            if (CheckSoLuong_PMH(TBSoLuong.Text) && CheckSoPhieu_PMH(tbSoPhieu.Text))
+            {
+                MessageBox.Show("Lỗi", "Dữ liệu nhập vào không hợp lệ");
+                return;
+            }
+
+            int maPMH = Convert.ToInt32(tbSoPhieu.Text);
+            DateTime ngayLapPhieu = pmh_DateTime.Value;
+            string nhaCungCap = cbNhaCungCap.Text;
+            int maLoaiSP = Convert.ToInt32(CBLoaiSP.Text);
+            string tenSP = CBSanPham.Text;
+            int soLuong = Convert.ToInt32(TBSoLuong.Text);
+
+            var ncc = from c in db.NHACUNGCAPs
+                      where c.TenNCC == nhaCungCap
+                      select c.MaNCC;
+            var sp = from c in db.SANPHAMs
+                     where c.TenSP == tenSP
+                     select c.MaSP;
+
+            int maSP = Convert.ToInt32(sp.First().ToString());
+            var donGia = from c in db.SANPHAMs
+                         where c.MaSP == maSP
+                         select c.DonGiaMuaVao;
+            int maNCC = Convert.ToInt32(ncc.First().ToString());
+            int donGiaMua = Convert.ToInt32(donGia.First().ToString());
+            int thanhTien = donGiaMua * soLuong;
+
+            DB_QLKD.addCT_PMH(maPMH, maSP, soLuong, donGiaMua, thanhTien, ngayLapPhieu, maNCC);
+            db.SaveChanges();
+            LoadData();
+
+            value += thanhTien;
+            LbSumMoney.Text = $"{value} đồng";
+            ResetInputBH();
+        }
+
+        //Xóa sản phẩm trong phiếu
+        private void BtnXoaPMH_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+                MessageBox.Show("Bạn vẫn chưa điền thông tin!");
+            else
+            {
+                //DeleteItem();
+                int maPBH = Convert.ToInt32(tbSoPhieu.Text);
+                string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
+                int ThanhTien = Convert.ToInt32(dgv.SelectedCells[0].OwningRow.Cells["Thành_Tiền"].Value);
+                int masp = Convert.ToInt32((from c in db.SANPHAMs
+                                            where c.TenSP == tenSP
+                                            select c.MaSP).First().ToString());
+                DB_QLKD.Delete_CTPMH(maPBH, masp);
+                LoadData();
+                MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK);
+                ResetInputBH();
+                value -= ThanhTien;
+                LbSumMoney.Text = $"{value} đồng";
+            }
+        }
+
+        private void BtnSuaPMH_Click(object sender, EventArgs e)
         {
             int maPMH = Convert.ToInt32(tbSoPhieu.Text);
             string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
@@ -219,6 +232,18 @@ namespace NewProject
             MessageBox.Show("Sửa thành công", "Thông Báo");
             ResetInputBH();
             LbSumMoney.Text = $"{value} đồng";
+        }
+
+        private void BtnXemPMH_Click(object sender, EventArgs e)
+        {
+            if (tbSoPhieu.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập số phiếu", "Thông Báo");
+            }
+            else
+            {
+                LoadData();
+            }
         }
     }
 }

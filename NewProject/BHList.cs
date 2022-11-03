@@ -27,9 +27,7 @@ namespace NewProject
         }
         public bool IsValid()
         {
-            if ((string.IsNullOrEmpty(LoaiSP))
-                || (string.IsNullOrEmpty(SanPham))
-                || (string.IsNullOrEmpty(SoLuong)))
+            if (string.IsNullOrEmpty(LoaiSP) || string.IsNullOrEmpty(SanPham) || string.IsNullOrEmpty(SoLuong))
                 return false;
             else return true;
         }
