@@ -147,7 +147,7 @@ namespace NewProject
 
         private void BtnThemPMH_Click(object sender, EventArgs e)
         {
-            if (!CheckSoLuong_PMH(TBSoLuong.Text) && !CheckSoPhieu_PMH(tbSoPhieu.Text))
+            if (!CheckSoLuong_PMH(TBSoLuong.Text) || !CheckSoPhieu_PMH(tbSoPhieu.Text))
             {
                 MessageBox.Show("Dữ liệu nhập vào không hợp lệ", "Lỗi");
                 return;
