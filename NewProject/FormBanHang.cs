@@ -55,12 +55,7 @@ namespace NewProject
 
         public bool IsSPMuaValid(string productName, string productType, string amount)
         {
-            productName = CBSanPham.Text;
-            productType = CBLoaiSP.Text;
-            amount = TBSoLuong.Text;
-            if ((productName != "") &&
-                (productType != "") &&
-                (!string.IsNullOrEmpty(amount)))
+            if (!string.IsNullOrEmpty(productName) && !string.IsNullOrEmpty(productType) && !string.IsNullOrEmpty(amount))
                 return true;
             else return false;
         }

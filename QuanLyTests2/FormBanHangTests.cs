@@ -23,8 +23,11 @@ namespace NewProject.Tests
         public void IsCustomerInfoValidTest()
         {
             FormBanHang FBH = new FormBanHang();
-            Assert.IsTrue(FBH.IsCustomerInfoValid("John"));
-            Assert.IsFalse(FBH.IsCustomerInfoValid(""));
+            FBH.TB_TenKH.Text = "John";
+            Assert.IsTrue(FBH.IsCustomerInfoValid(FBH.TB_TenKH.Text));
+
+            FBH.TB_TenKH.Text = "";
+            Assert.IsFalse(FBH.IsCustomerInfoValid(FBH.TB_TenKH.Text));
         }
     }
 }
