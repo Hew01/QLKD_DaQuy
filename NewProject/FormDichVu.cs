@@ -25,7 +25,7 @@ namespace NewProject
             dgv = dataGridView1;
             tbSoPhieu.Select();
             tbSoPhieu.Focus();
-            BtnAdd.Enabled = false;
+            BtnAddPhieuDichVu.Enabled = false;
             //BtnEdit.Enabled = false;
             //BtnDelete.Enabled = false;
         }
@@ -91,8 +91,8 @@ namespace NewProject
         private void BtnAdd_Visible()
         {
             if (IsTBValid())
-                BtnAdd.Enabled = true;
-            else BtnAdd.Enabled = false;
+                BtnAddPhieuDichVu.Enabled = true;
+            else BtnAddPhieuDichVu.Enabled = false;
         }
         private void ResetInputBH()
         {
@@ -100,14 +100,14 @@ namespace NewProject
             TBTraTruoc.Text = "";
             TBSoLuong.Text = "";
         }
-       
-        private void BtnAdd_Click(object sender, EventArgs e)
+
+        private void BtnAddPhieuDichVu_Click(object sender, EventArgs e)
         {
-            using(DB_QLKDEntities db=new DB_QLKDEntities())
+            using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
                 int maPDV = Convert.ToInt32(tbSoPhieu.Text);
                 string tenKH = tbKhachHang.Text;
-                if(String.IsNullOrEmpty(tenKH))
+                if (String.IsNullOrEmpty(tenKH))
                 {
                     MessageBox.Show("Bạn chưa nhập tên khách hàng !", "Thông báo");
                     return;
@@ -120,9 +120,9 @@ namespace NewProject
                 int maDV = Convert.ToInt32((from c in db.DICHVUs
                                             where c.LoaiDV == CBLoaiDV.Text
                                             select c.MaDV).First().ToString());
-                long donGia= Convert.ToInt64((from c in db.DICHVUs
-                                            where c.LoaiDV == CBLoaiDV.Text
-                                            select c.DonGiaDV).First().ToString());
+                long donGia = Convert.ToInt64((from c in db.DICHVUs
+                                               where c.LoaiDV == CBLoaiDV.Text
+                                               select c.DonGiaDV).First().ToString());
                 long thanhTien = donGia * soLuong;
                 long conLai = (thanhTien - traTruoc) < 0 ? 0 : (thanhTien - traTruoc);
                 if (traTruoc >= (thanhTien / 2))
@@ -133,16 +133,15 @@ namespace NewProject
                     ResetInputBH();
                 }
                 else
-                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");           
+                    MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");
             }
-            
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void BtnDeletePhieuDichVu_Click(object sender, EventArgs e)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
-                if (tbSoPhieu.Text=="" || dgv.RowCount==0)
+                if (tbSoPhieu.Text == "" || dgv.RowCount == 0)
                     MessageBox.Show("Bạn vẫn chưa điền thông tin!");
                 else
                 {
@@ -157,9 +156,7 @@ namespace NewProject
                     ResetInputBH();
                 }
             }
-                
         }
-
 
         private void TBTraTruoc_TextChanged(object sender, EventArgs e)
         {
@@ -176,11 +173,11 @@ namespace NewProject
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnLoadPhieuDichVu_Click(object sender, EventArgs e)
         {
-            if(tbSoPhieu.Text=="")
+            if (tbSoPhieu.Text == "")
             {
-                 MessageBox.Show("Bạn chưa nhập mã phiếu!", "Thông Báo");
+                MessageBox.Show("Bạn chưa nhập mã phiếu!", "Thông Báo");
             }
             else
             {
@@ -188,15 +185,12 @@ namespace NewProject
             }
         }
 
-        
-
         private void TBSoLuong_TextChanged(object sender, EventArgs e)
         {
             BtnAdd_Visible();
         }
 
-  
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private void BtnEditPhieuDichVu_Click(object sender, EventArgs e)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -221,7 +215,6 @@ namespace NewProject
                 }
                 else
                     MessageBox.Show("Số tiền bạn trả trước không đủ để thực hiện dịch vụ này! ", "Thông báo");
-                
             }
         }
 

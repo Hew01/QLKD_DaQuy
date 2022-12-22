@@ -103,7 +103,7 @@ namespace NewProject
             f.ShowDialog();
         }
 
-        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void danhSachSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDanhSachSP f = new FormDanhSachSP(MainUser);
             f.ShowDialog();

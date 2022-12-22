@@ -26,7 +26,7 @@ namespace NewProject
         private void BtnOK_Click(object sender, EventArgs e)
         {
             if (TbPassword.Text != TbRePass.Text)
-                MessageBox.Show("Mật khẩu và mật khẩu nhập lại không trùng hợp với nhau!", "Thông báo!");
+                MessageBox.Show("Mật khẩu và mật khẩu nhập lại không trùng với nhau!", "Thông báo!");
             else
             {
                 using (DB_QLKDEntities db = new DB_QLKDEntities())

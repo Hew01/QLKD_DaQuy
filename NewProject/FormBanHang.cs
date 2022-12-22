@@ -52,23 +52,30 @@ namespace NewProject
             AdjustSumMoney(mapbh);
             dgv.DataSource = result.ToList();
         }
-        private bool IsSPMuaValid()
+
+        public bool IsSPMuaValid(string productName, string productType, string amount)
         {
-            if ((CBSanPham.Text != "") &&
-                (CBLoaiSP.Text != "") &&
-                (!(string.IsNullOrEmpty(TBSoLuong.Text))))
+            productName = CBSanPham.Text;
+            productType = CBLoaiSP.Text;
+            amount = TBSoLuong.Text;
+            if ((productName != "") &&
+                (productType != "") &&
+                (!string.IsNullOrEmpty(amount)))
                 return true;
             else return false;
         }
-        private bool IsCustomerInfoValid()
+
+        public bool IsCustomerInfoValid(string customerName)
         {
-            if (string.IsNullOrEmpty(TB_TenKH.Text))
+            customerName = TB_TenKH.Text;
+            if (string.IsNullOrEmpty(customerName))
                 return false;
             else return true;
         }
+
         private void BtnAdd_Visible()
         {
-            if ((IsSPMuaValid()) && (IsCustomerInfoValid()))
+            if (IsSPMuaValid(CBSanPham.Text, CBLoaiSP.Text, TBSoLuong.Text) && IsCustomerInfoValid(TB_TenKH.Text))
                 BtnAdd.Enabled = true;
             else BtnAdd.Enabled = false;
         }
@@ -87,33 +94,35 @@ namespace NewProject
                       select p.TongTien).First();
             LbSumMoney.Text = $"{sum} đồng";
         }    
-        private void BtnAdd_Click(object sender, EventArgs e)
+
+        private void BtnAddPhieuBanHang_Click(object sender, EventArgs e)
         {
             string maPBH = TB_IDPBH.Text;
             string tenKH = TB_TenKH.Text;
             int loaiSP = Convert.ToInt32(CBLoaiSP.Text);
             var msp = from c in db.SANPHAMs
-                where c.TenSP == CBSanPham.Text
-                select c.MaSP;
+                      where c.TenSP == CBSanPham.Text
+                      select c.MaSP;
             int masp = Convert.ToInt32(msp.First());
             int soluong = Convert.ToInt32(TBSoLuong.Text);
             var donGiaMuaVao = from c in db.SANPHAMs
-                where c.MaSP == masp
-                select c.DonGiaMuaVao;
+                               where c.MaSP == masp
+                               select c.DonGiaMuaVao;
             var loiNhuan = from c in db.LOAISPs
-                where c.MaLoaiSP == loaiSP
-                select c.PhanTramLoiNhuan;
+                           where c.MaLoaiSP == loaiSP
+                           select c.PhanTramLoiNhuan;
             double profit = Convert.ToDouble(loiNhuan.First().ToString()) / 100;
             int donGiaMua = Convert.ToInt32(donGiaMuaVao.First().ToString());
             int donGiaBan = Convert.ToInt32(donGiaMua + (donGiaMua * profit));
-            
+
             DB_QLKD.AddCT_PBH(maPBH, masp, soluong, donGiaBan, pbh_DateTime.Value, tenKH);
             db.SaveChanges();
             LoadData();
             AdjustSumMoney(Convert.ToInt32(maPBH));
             ResetInputBH();
         }
-        private void BtnDelete_Click(object sender, EventArgs e)
+
+        private void BtnDeletePhieuBanHang_Click(object sender, EventArgs e)
         {
             int maPBH = Convert.ToInt32(TB_IDPBH.Text);
             if (dataGridView1.Rows.Count == 0)
@@ -125,7 +134,7 @@ namespace NewProject
                                              select d.MaPBH).First());
                 string tenSP = dgv.SelectedCells[0].OwningRow.Cells["Sản_Phẩm"].Value.ToString();
                 int maSP = Convert.ToInt32((from c in db.SANPHAMs
-                                           where c.TenSP == tenSP
+                                            where c.TenSP == tenSP
                                             select c.MaSP).First());
                 DB_QLKD.Delete_CTPBH(mapbh, maSP);
                 LoadData();
@@ -165,9 +174,9 @@ namespace NewProject
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnLoadPhieuBanHang_Click(object sender, EventArgs e)
         {
-            if(TB_IDPBH.Text=="")
+            if (TB_IDPBH.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập mã phiếu cần xem", "Thông Báo");
             }
@@ -388,7 +397,7 @@ namespace NewProject
             }
         }
 
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private void BtnEditPhieuBanHang_Click(object sender, EventArgs e)
         {
             int maPBH = Convert.ToInt32(TB_IDPBH.Text);
 

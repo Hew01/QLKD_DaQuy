@@ -28,7 +28,8 @@ namespace NewProject
             donGiaBan.Text = "";
             donGiaMua.Text = "";
         }
-        private void BtnOK_Click(object sender, EventArgs e)
+
+        private void BtnThemSP_Click(object sender, EventArgs e)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {
@@ -36,8 +37,8 @@ namespace NewProject
                 int loaiSP = Convert.ToInt32(cbLoaiSP.Text);
                 long giaBan = Convert.ToInt64(donGiaBan.Text);
                 long giaMua = Convert.ToInt64(donGiaMua.Text);
-                
-                
+
+
                 //tạo sp mới
                 SANPHAM sp = new SANPHAM();
                 sp.TenSP = tenSP;

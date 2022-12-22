@@ -40,9 +40,10 @@ namespace NewProject
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(337, 134);
+            this.BtnCancel.Location = new System.Drawing.Point(253, 109);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(75, 29);
+            this.BtnCancel.Size = new System.Drawing.Size(56, 24);
             this.BtnCancel.TabIndex = 4;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
@@ -50,38 +51,42 @@ namespace NewProject
             // 
             // BtnOK
             // 
-            this.BtnOK.Location = new System.Drawing.Point(256, 134);
+            this.BtnOK.Location = new System.Drawing.Point(192, 109);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnOK.Name = "BtnOK";
-            this.BtnOK.Size = new System.Drawing.Size(75, 29);
+            this.BtnOK.Size = new System.Drawing.Size(56, 24);
             this.BtnOK.TabIndex = 3;
             this.BtnOK.Text = "OK";
             this.BtnOK.UseVisualStyleBackColor = true;
-            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            this.BtnOK.Click += new System.EventHandler(this.BtnThemDV_Click);
             // 
             // donGia
             // 
             this.donGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donGia.Location = new System.Drawing.Point(163, 81);
+            this.donGia.Location = new System.Drawing.Point(122, 66);
+            this.donGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.donGia.Name = "donGia";
-            this.donGia.Size = new System.Drawing.Size(226, 27);
+            this.donGia.Size = new System.Drawing.Size(170, 23);
             this.donGia.TabIndex = 2;
             this.donGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_IDPBH_KeyPress);
             // 
             // tbDichVu
             // 
             this.tbDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDichVu.Location = new System.Drawing.Point(163, 42);
+            this.tbDichVu.Location = new System.Drawing.Point(122, 34);
+            this.tbDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDichVu.Name = "tbDichVu";
-            this.tbDichVu.Size = new System.Drawing.Size(226, 27);
+            this.tbDichVu.Size = new System.Drawing.Size(170, 23);
             this.tbDichVu.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 77);
+            this.label3.Location = new System.Drawing.Point(10, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 25);
+            this.label3.Size = new System.Drawing.Size(113, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Đơn giá dịch vụ";
             // 
@@ -89,18 +94,19 @@ namespace NewProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(82, 38);
+            this.label2.Location = new System.Drawing.Point(62, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 25);
+            this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Dịch vụ";
             // 
             // FormThemDV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(440, 190);
+            this.ClientSize = new System.Drawing.Size(330, 154);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.donGia);
@@ -108,6 +114,7 @@ namespace NewProject
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FormThemDV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

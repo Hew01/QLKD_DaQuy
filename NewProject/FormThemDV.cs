@@ -26,7 +26,8 @@ namespace NewProject
             tbDichVu.Text = "";
             donGia.Text = "";
         }
-        private void BtnOK_Click(object sender, EventArgs e)
+
+        private void BtnThemDV_Click(object sender, EventArgs e)
         {
             using (DB_QLKDEntities db = new DB_QLKDEntities())
             {

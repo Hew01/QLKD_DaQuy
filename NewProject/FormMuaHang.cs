@@ -147,9 +147,9 @@ namespace NewProject
 
         private void BtnThemPMH_Click(object sender, EventArgs e)
         {
-            if (CheckSoLuong_PMH(TBSoLuong.Text) && CheckSoPhieu_PMH(tbSoPhieu.Text))
+            if (!CheckSoLuong_PMH(TBSoLuong.Text) && !CheckSoPhieu_PMH(tbSoPhieu.Text))
             {
-                MessageBox.Show("Lỗi", "Dữ liệu nhập vào không hợp lệ");
+                MessageBox.Show("Dữ liệu nhập vào không hợp lệ", "Lỗi");
                 return;
             }
 
@@ -232,6 +232,11 @@ namespace NewProject
             MessageBox.Show("Sửa thành công", "Thông Báo");
             ResetInputBH();
             LbSumMoney.Text = $"{value} đồng";
+        }
+
+        private void btnInPhieuMuaHang_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BtnXemPMH_Click(object sender, EventArgs e)

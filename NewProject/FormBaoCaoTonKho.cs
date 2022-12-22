@@ -41,7 +41,7 @@ namespace NewProject
             }
         }
 
-        private void btn_Click(object sender, EventArgs e)
+        private void btnLoadStorageReport_Click(object sender, EventArgs e)
         {
             try
             {

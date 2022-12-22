@@ -323,12 +323,13 @@
             this.btnInPhieuMuaHang.TabIndex = 33;
             this.btnInPhieuMuaHang.Text = "In";
             this.btnInPhieuMuaHang.UseVisualStyleBackColor = true;
+            this.btnInPhieuMuaHang.Click += new System.EventHandler(this.btnInPhieuMuaHang_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 306);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(762, 180);
@@ -337,7 +338,7 @@
             // BtnXemPMH
             // 
             this.BtnXemPMH.Location = new System.Drawing.Point(603, 230);
-            this.BtnXemPMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnXemPMH.Margin = new System.Windows.Forms.Padding(2);
             this.BtnXemPMH.Name = "BtnXemPMH";
             this.BtnXemPMH.Size = new System.Drawing.Size(60, 31);
             this.BtnXemPMH.TabIndex = 37;

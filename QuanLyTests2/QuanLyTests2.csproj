@@ -56,6 +56,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="DB_QLKDTests.cs" />
+    <Compile Include="FormBanHangTests.cs" />
     <Compile Include="FormMuaHangTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
