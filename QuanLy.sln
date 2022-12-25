@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLy", "NewProject\QuanLy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyTests2", "QuanLyTests2\QuanLyTests2.csproj", "{1F0E5A5F-83CB-44F8-8F48-B35FE3713255}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GemstoneJewelrySetup", "GemstoneJewelry\GemstoneJewelry.vdproj", "{87DBD0C6-FF5A-40B9-9325-C00B26109EDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{1F0E5A5F-83CB-44F8-8F48-B35FE3713255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F0E5A5F-83CB-44F8-8F48-B35FE3713255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F0E5A5F-83CB-44F8-8F48-B35FE3713255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DBD0C6-FF5A-40B9-9325-C00B26109EDB}.Debug|Any CPU.ActiveCfg = Debug
+		{87DBD0C6-FF5A-40B9-9325-C00B26109EDB}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

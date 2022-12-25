@@ -136,4 +136,7 @@
   <data name="pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngtree-vintage-gemstone-logo-with-foliage-ornament-design-png-image_4373355-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diamond_computer_pc_sketch_jewelry_icon_193950" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diamond_computer_pc_sketch_jewelry_icon_193950.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
